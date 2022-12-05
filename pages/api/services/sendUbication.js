@@ -54,7 +54,7 @@ export default async function(req,res){
                         console.log("return statement");
                         return res.json({
                             status:"emails sent",
-                            user:user
+                            username:user
                         });
                     }
                 }

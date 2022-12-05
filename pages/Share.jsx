@@ -28,7 +28,7 @@ const Share=()=>{
         });
         const response=await axios.post("/api/services/sendUbication",{emails:correos});
         console.log(response);
-        const {status,user}=response.data;
+        const {status,username}=response.data;
         if(status=="Invalid Session"){
             //se modifico la cookie
             toast.error('Ups! La sesion no es valida. Prueba volver a iniciar sesion. ', {
@@ -63,7 +63,7 @@ const Share=()=>{
             document.getElementById("formEmails").innerHTML="";
             setVisibility(true);
             setDestinatarios(correos);
-            setUser(user);
+            setUser(username);
         }
     }
     const removerCampo=()=>{
