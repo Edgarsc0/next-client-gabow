@@ -98,7 +98,7 @@ const Share=()=>{
                 <button onClick={enviarCorreos}>Empezar a compartir Ubicación</button>
             </div>
             <div id="map">
-                <MyAwesomeMap visibility={visibility} dest={destinatarios} from={user}/>
+                <MyAwesomeMap visibility={visibility} dest={destinatarios} from={userSharing}/>
             </div>       
         </>
     )
