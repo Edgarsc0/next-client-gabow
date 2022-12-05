@@ -86,7 +86,6 @@ const Edificio = () => {
                 <div className={styles.container}>
                     <input className={styles.buscador} type="search" placeholder='Buscar'/>
                     <Select className={styles.buscador} options={data} onChange={cambiar} placeholder='Piso'/>
-                    <ShowImage piso={piso}></ShowImage>
                     <Link href="/Ruta"><button type="button" className={styles.button}>Iniciar ruta</button></Link>
                 </div>
             </>
@@ -101,7 +100,6 @@ const Edificio = () => {
                 <div className={styles.container}>
                     <input className={styles.buscador} type="search" placeholder='Buscar'/>
                     <Select className={styles.buscador} options={data2} onChange={cambiar2} placeholder='Piso'/>
-                    <ShowImage width={950} piso={piso2} height={700}></ShowImage>
                     <Link href="/Ruta"><button type="button" className={styles.button}>Iniciar ruta</button></Link>
                 </div>
             </>
