@@ -28,7 +28,12 @@ const Mapa = ({visibility,dest,from}) => {
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
         setData([position.coords.latitude,position.coords.longitude]);
-        socket.emit("newCor",{cor:[position.coords.latitude,position.coords.longitude],to:dest,from:from,at:Date.now()});
+        socket.emit("newCor",{
+            cor:[position.coords.latitude,position.coords.longitude],
+            to:dest,
+            from:from,
+            at:Date.now()
+        });
     }
     const error=(error)=>{
         console.log(error);
