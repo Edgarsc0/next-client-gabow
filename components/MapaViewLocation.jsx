@@ -34,6 +34,7 @@ export default function MapaViewLocation(){
     socket.on("stopWp",({to})=>{
         console.log("evento stopWp recibido");
         if(to.includes(cookie)){
+            socket.disconnect();
             toast.success('Se dejo de compartir ubicación.', {
                 position: "top-right",
                 autoClose: 3000,
@@ -44,7 +45,7 @@ export default function MapaViewLocation(){
                 progress: undefined,
                 theme: "dark",
             });
-            socket.disconnect();
+            window.location.href="/Mapas";
         }else{
             console.log("user not in 'to' list");
         }
