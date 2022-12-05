@@ -21,26 +21,27 @@ const Mapa = ({visibility,dest}) => {
     const mapRef = useRef();
     const [cord, setCord] = useState([19.472819274952897, -99.14333273147834])
     const [data,setData]=useState([19.472819274952897, -99.14333273147834]);
+    console.log(dest);
+    const success=(position)=>{
+        const mapC = mapRef.current;
+        mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
+        setData([position.coords.latitude,position.coords.longitude]);
+        socket.emit("newCor",{cor:[position.coords.latitude,position.coords.longitude],to:dest});
+    }
+    const error=(error)=>{
+        console.log(error);
+    }
+    const options={
+        enableHighAccuracy:true,
+        timeout:5000,
+        maximumAge:0
+    }
     useEffect(()=>{
         const idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
         console.log(data);        
     });
+
     if(visibility){
-        console.log(dest);
-        const success=(position)=>{
-            const mapC = mapRef.current;
-            mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
-            setData([position.coords.latitude,position.coords.longitude]);
-            socket.emit("newCor",{cor:[position.coords.latitude,position.coords.longitude],to:dest});
-        }
-        const error=(error)=>{
-            console.log(error);
-        }
-        const options={
-            enableHighAccuracy:true,
-            timeout:5000,
-            maximumAge:0
-        }
         return (
             <>
                 <Head>
