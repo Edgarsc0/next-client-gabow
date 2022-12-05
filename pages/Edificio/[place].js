@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import Image from 'next/image'
+
 import Link from 'next/link'
 import styles from '../../styles/Edificio.module.scss'
 import { useRouter } from 'next/router'
 import Select from 'react-select'
-import Edificios from '../../components/Edificios'
-import ShowImage from '../../components/ShowImage'
-import dynamic from "next/dynamic"
+
 import Aul_piso1 from "../../public/Espacios/Aul_Piso1.svg";
 import Aul_piso2 from "../../public/Espacios/Aul_Piso2.svg";
 import Aul_piso3 from "../../public/Espacios/Aul_Piso3.svg";
