@@ -13,7 +13,7 @@ const icon = new Icon({
     iconSize: [25,25]
 })
 const socket=io("http://localhost:8000");
-export default function(){
+export default function MapaViewLocation(){
     const mapRef = useRef();
     const mapC=mapRef.current;
     const [userLocation,setUserLocation]=useState([]);

@@ -18,11 +18,15 @@ const icon = new Icon({
 const socket=io("http://localhost:8000");
 const Mapa = ({visibility,dest}) => {
     //<Marker icon={icon} position={data}></Marker>
+    const mapRef = useRef();
+    const [cord, setCord] = useState([19.472819274952897, -99.14333273147834])
+    const [data,setData]=useState([19.472819274952897, -99.14333273147834]);
+    useEffect(()=>{
+        const idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
+        console.log(data);        
+    });
     if(visibility){
         console.log(dest);
-        const mapRef = useRef();
-        const [cord, setCord] = useState([19.472819274952897, -99.14333273147834])
-        const [data,setData]=useState([19.472819274952897, -99.14333273147834]);
         const success=(position)=>{
             const mapC = mapRef.current;
             mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
@@ -37,10 +41,6 @@ const Mapa = ({visibility,dest}) => {
             timeout:5000,
             maximumAge:0
         }
-        useEffect(()=>{
-            const idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
-            console.log(data);        
-        });
         return (
             <>
                 <Head>
