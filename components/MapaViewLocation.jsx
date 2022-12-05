@@ -8,6 +8,9 @@ import Select from 'react-select'
 import { useEffect } from 'react'
 import axios from 'axios'
 import io from "socket.io-client";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+
 const icon = new Icon({
     iconUrl: '/current.svg',
     iconSize: [25,25]
@@ -24,6 +27,23 @@ export default function MapaViewLocation(){
         if(to.includes(cookie)){
             console.log("aceptado");
             setUserLocation(cor);
+        }else{
+            console.log("user not in 'to' list");
+        }
+    })
+    socket.on("stopWp",({to})=>{
+        if(to.includes(cookie)){
+            toast.success('Se dejo de compartir ubicación.', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+            socket.disconnect();
         }else{
             console.log("user not in 'to' list");
         }
@@ -58,6 +78,18 @@ export default function MapaViewLocation(){
             <Head>
                 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
             </Head>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="dark"
+                />
             <div className={styles.container}>
                 <MapContainer ref={mapRef} center={[19.472819274952897, -99.14333273147834]} zoom={11}>
                     <TileLayer

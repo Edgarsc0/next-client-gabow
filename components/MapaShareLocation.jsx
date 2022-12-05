@@ -8,6 +8,8 @@ import Select from 'react-select'
 import { useEffect } from 'react'
 import axios from 'axios'
 import io from "socket.io-client";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const icon = new Icon({
     iconUrl: '/current.svg',
@@ -36,8 +38,23 @@ const Mapa = ({visibility,dest}) => {
         timeout:5000,
         maximumAge:0
     }
+    const stopWp=()=>{
+        navigator.geolocation.clearWatch(idWatchPosition);
+        socket.emit("stopWp",{to:dest});
+        toast.success('Se dejo de compartir ubicación.', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
+        socket.disconnect();
+    }
     useEffect(()=>{
-        const idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
+        globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
         console.log(data);        
     });
 
@@ -47,6 +64,18 @@ const Mapa = ({visibility,dest}) => {
                 <Head>
                     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
                 </Head>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="dark"
+                />
                 <h1>Compartiendo ubicacion en tiempo real</h1><hr></hr>
                 <div className={styles.container}>
                     <MapContainer ref={mapRef} center={cord} zoom={20}>
@@ -57,6 +86,7 @@ const Mapa = ({visibility,dest}) => {
                         <Marker position={data} icon={icon}/>
                     </MapContainer>
                 </div>
+                <button onClick={stopWp}>Detener Compartir Ubicacion</button>
             </>
         )
     }
