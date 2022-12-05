@@ -19,8 +19,9 @@ export default async function(req,res){
     const {emails}=req.body;
     console.log(emails);
     //console.log(params);
-    const decryptedToken=CryptoJS.AES.decrypt(params,process.env.SECRET_KEY).toString(CryptoJS.enc.Utf8);
+
     try{
+        const decryptedToken=CryptoJS.AES.decrypt(params,process.env.SECRET_KEY).toString(CryptoJS.enc.Utf8);
         const {email,user}=jwt.verify(decryptedToken,process.env.SECURE_KEY);
         console.log(email,user);
         let correosEnviados=0;

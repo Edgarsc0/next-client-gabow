@@ -45,6 +45,7 @@ const Share=()=>{
             },3500);
         }if(status=="Bad Email sent"){
             //no se pudo enviar un correo
+            
         }if(status=="emails sent"){
             /*const root=ReactDom.createRoot(document.getElementById("formEmails"));
             root.render(<MyAwesomeMap/>);*/
