@@ -60,6 +60,16 @@ export default function MapaViewLocation(){
                 setCookie(email);
                 console.log(email);
             }else{
+                toast.success('Ups! La sesion no es valida. Prueba volviendo a iniciar sesion.', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
                 console.log("Invalid Session");
                 socket.disconnect();
             }
