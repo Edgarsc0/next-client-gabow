@@ -51,7 +51,6 @@ const Mapa = ({visibility,dest}) => {
             progress: undefined,
             theme: "dark",
         });
-        socket.disconnect();
     }
     useEffect(()=>{
         globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
