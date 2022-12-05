@@ -26,6 +26,7 @@ export default function MapaViewLocation(){
     const [lastUpdate,setLastUpdate]=useState();
     socket.on("newCor",({cor,to,from,at})=>{
         console.log("cor recieved");
+        console.log(`socket emitido en: ${at}`);
         if(to.includes(cookie)){
             console.log("aceptado");
             setUserLocation(cor);
