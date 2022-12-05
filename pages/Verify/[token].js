@@ -7,7 +7,7 @@ const VerificationPage=()=>{
     const token=router.query.token;
     const [data,setData]=useState("Validando token....");
     const getData=async()=>{
-        const response=await axios.post("http://localhost:8000/api/token/verifyToken",{jwt:token});
+        const response=await axios.post("https://auth-server-express-production.up.railway.app/api/token/verifyToken",{jwt:token});
         setData(response.data.status);
     }
     useEffect(()=>{
