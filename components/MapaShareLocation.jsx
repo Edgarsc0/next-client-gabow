@@ -40,8 +40,8 @@ const Mapa = ({visibility,dest}) => {
     }
     const stopWp=()=>{
         navigator.geolocation.clearWatch(idWatchPosition);
+        console.log(idWatchPosition);
         socket.emit("stopWp",{to:dest});
-        socket.disconnect();
         toast.success('Se dejo de compartir ubicación.', {
             position: "top-right",
             autoClose: 3000,
