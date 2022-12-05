@@ -32,6 +32,7 @@ export default function MapaViewLocation(){
         }
     })
     socket.on("stopWp",({to})=>{
+        console.log("evento stopWp recibido");
         if(to.includes(cookie)){
             toast.success('Se dejo de compartir ubicación.', {
                 position: "top-right",
