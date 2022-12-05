@@ -41,6 +41,7 @@ const Mapa = ({visibility,dest}) => {
     const stopWp=()=>{
         navigator.geolocation.clearWatch(idWatchPosition);
         socket.emit("stopWp",{to:dest});
+        socket.disconnect();
         toast.success('Se dejo de compartir ubicación.', {
             position: "top-right",
             autoClose: 3000,
@@ -51,7 +52,6 @@ const Mapa = ({visibility,dest}) => {
             progress: undefined,
             theme: "dark",
         });
-        setTimeout(()=>socket.disconnect(),500);
     }
     useEffect(()=>{
         globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
