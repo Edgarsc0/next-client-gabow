@@ -5,6 +5,7 @@ export default function(req,res){
     con.query(myQuerys.selectPlaces,(error,result)=>{
         const data=[];
         if(error){
+            console.log(error);
             return res.json({
                 status:"Something went wrong"
             });
