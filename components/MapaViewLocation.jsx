@@ -30,7 +30,7 @@ export default function MapaViewLocation(){
             console.log("aceptado");
             setUserLocation(cor);
             setFromUser("Visualizando ubicación de: "+from);
-            setLastUpdate("Ultima vez actualizado: Hace"+(-Date.now()+at)/1000+"s");
+            setLastUpdate("Ultima vez actualizado: Hace "+(-Date.now()+at)/1000+"s");
         }else{
             console.log("user not in 'to' list");
         }
