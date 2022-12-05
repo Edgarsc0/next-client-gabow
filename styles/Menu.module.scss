@@ -1,0 +1,138 @@
+$spacing: 20px;
+$navy-blue: #f5f5f5;
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+
+    --satate-close: scale(0);
+    --satate-ham: scale(1);
+    --satate-menu: translate(-100%);
+    // padding: 40px 0;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: repeat(2, max-content);
+}
+
+.container:target {
+    --satate-menu: translate(0);
+    --satate-close: scale(1);
+    --satate-ham: scale(0);
+}
+
+.navLogo {
+    font-size: 2.5rem;
+    z-index: 3;
+}
+
+.navHam,
+.navClose {
+    cursor: pointer;
+    grid-column: -2/-1;
+    grid-row: 1/2;
+    transition: .4s transform;
+    z-index: 2;
+}
+
+.navHam {
+    transform: var(--satate-ham);
+}
+
+.navClose {
+    transform: var(--satate-close);
+}
+
+.navIcon {
+    width: 40px;
+}
+
+.navLinks {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    display: grid;
+    align-content: center;
+    gap: 2em;
+    padding-left: 5%;
+    transform: var(--satate-menu);
+    transition: .3s transform;
+    z-index: 2;
+
+    // padding-bottom: 70rem;
+    height: 100%;
+
+    li {
+        display: inline-block;
+        list-style-type: none;
+        font-size: 1em;
+        margin: 0 $spacing/2;
+        color: $navy-blue;
+        position: relative;
+        cursor: pointer;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 20px;
+            border-bottom: 1px solid $navy-blue;
+            transition: all ease-in 0.25s;
+        }
+
+        &:hover:after {
+            width: 100%;
+        }
+    }
+}
+
+.navItem {
+    list-style: none;
+}
+
+.navLink {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+
+}
+
+@media (min-width:900px) {
+    .container {
+        --satate-ham: scale(0);
+        --satate-menu: translate(0);
+    }
+
+    .container:target {
+        --satate-close: scale(0);
+    }
+
+    .navLinks {
+        padding: 0;
+        background-color: unset;
+        position: unset;
+        gap: 1.5em;
+        grid-auto-flow: column;
+        transform: unset;
+        grid-column: -2/-1;
+        grid-row: 1/2;
+
+        padding-bottom: 0;
+        height: 0;
+    }
+
+    .navLink {
+        font-size: 1rem;
+        letter-spacing: none;
+
+        transform: var(--satate-close);
+    }
+}

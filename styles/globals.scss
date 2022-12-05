@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  //   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+// html {
+//   font-size: 62.5%;
+
+//   @media only screen and (max-width: 800px) {
+//     font-size: 57%;
+//   }
+// }
+
+body {
+  color: white;
+  background: black;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+//   body {
+//     color: white;
+//     background: black;
+//   }
+// }
+.leaflet-container {
+  width: 75%;
+  height: 75vh;
+  z-index: 0;
+}
+
+@media (max-width:768px) {
+  .leaflet-container {
+    width: 100%;
+    height: 50vh;
+  }
+}
+
+.containerIni{
+  margin: 2% auto;
+  width: 90%;
+  max-width: 1200px;
+}

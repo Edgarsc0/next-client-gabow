@@ -1,0 +1,48 @@
+.container {
+  display: grid;
+  justify-content: center;
+  padding-bottom: 4rem;
+  height: 75vh;
+  z-index: 0;
+}
+
+.cont {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding-bottom: 4rem;
+  margin-left: 75%;
+  position: absolute;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .cont {
+    margin-left: 90%;
+  }
+}
+.button {
+  width: 60%;
+  height: 40px;
+  margin: 10px auto;
+  justify-content: center;
+  display: block;
+  color: #fff;
+  background: #573b8a;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.buscador {
+  margin: 10px auto;
+  width: 90%;
+  height: 40px;
+  border-radius: 5px;
+  border: #573b8a solid;
+}/*# sourceMappingURL=Edificio.module.css.map */
