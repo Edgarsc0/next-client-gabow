@@ -12,7 +12,7 @@ const Registro = () => {
         window.location.href="/Mapas";
     }
     const handleRegister=async(e)=>{
-        const socket=io("http://localhost:8000");
+        const socket=io("https://auth-server-express-production.up.railway.app/");
         e.preventDefault();
         const response=await axios.post("/api/auth/sendEmail",{
             email:e.target.email.value,
@@ -32,7 +32,7 @@ const Registro = () => {
                 theme: "colored",
             });
             socket.on("redirect",async({jwt})=>{
-                const responseRegister=await axios.post("http://localhost:8000/api/auth/register",{webToken:jwt});
+                const responseRegister=await axios.post("https://auth-server-express-production.up.railway.app/api/auth/register",{webToken:jwt});
                 if(responseRegister.data.status=="User registered"){
                     document.getElementById("Registerform").reset();
                     toast.success(`Registro exitoso! Porfavor, inicie sesion.`, {
@@ -74,7 +74,7 @@ const Registro = () => {
     }
     const handleLogin=async(e)=>{
         e.preventDefault();
-        const response=await axios.post("http://localhost:8000/api/auth/login",{
+        const response=await axios.post("https://auth-server-express-production.up.railway.app/api/auth/login",{
             email:e.target.email.value,
             password:e.target.pswd.value,
         });

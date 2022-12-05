@@ -36,7 +36,7 @@ export default async function(req,res){
                     <br>
                     Da click en el siguiente link para visualizarla
                     <br>
-                    <a href="http://localhost:3000/View">Ubicacion en tiempo real</a>                    
+                    <a href="https://next-client-gabow.vercel.app/View">Ubicacion en tiempo real</a>                    
                 `
             };
             transporter.sendMail(mailOptions, function(error, info){

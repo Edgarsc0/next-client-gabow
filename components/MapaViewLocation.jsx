@@ -12,7 +12,7 @@ const icon = new Icon({
     iconUrl: '/current.svg',
     iconSize: [25,25]
 })
-const socket=io("http://localhost:8000");
+const socket=io("https://auth-server-express-production.up.railway.app/");
 export default function MapaViewLocation(){
     const mapRef = useRef();
     const mapC=mapRef.current;

@@ -34,7 +34,7 @@ export default function (req,res){
                 <p>Seras registrado con el usuario ${user}.</p>
                 <br>
                 <p>Da click en el siguiente enlace para finalizar tu registro:</p>
-                <a href = "http://localhost:3000/Verify/${token}" >
+                <a href = "https://next-client-gabow.vercel.app/Verify/${token}" >
                     VERIFICAR CORREO
                 </a>
 

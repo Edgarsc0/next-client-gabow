@@ -15,7 +15,7 @@ const icon = new Icon({
 })
 //escuela: 19.45371285983326, -99.17530557712774
 //town center: 19.503565296138603, -99.20305358194275
-const socket=io("http://localhost:8000");
+const socket=io("https://auth-server-express-production.up.railway.app/");
 const Mapa = ({visibility,dest}) => {
     //<Marker icon={icon} position={data}></Marker>
     const mapRef = useRef();
