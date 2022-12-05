@@ -20,13 +20,15 @@ export default function MapaViewLocation(){
     const mapRef = useRef();
     const mapC=mapRef.current;
     const [userLocation,setUserLocation]=useState([]);
+    const [fromUser,setFromUser]=useState("Esperando Ubicación...");
     const [data,setData]=useState([19.472819274952897, -99.14333273147834]);
     const [cookie,setCookie]=useState("");
-    socket.on("newCor",({cor,to})=>{
+    socket.on("newCor",({cor,to,from})=>{
         console.log("cor recieved");
         if(to.includes(cookie)){
             console.log("aceptado");
             setUserLocation(cor);
+            setFromUser("Visualizando ubicación de: "+from);
         }else{
             console.log("user not in 'to' list");
         }
@@ -102,6 +104,7 @@ export default function MapaViewLocation(){
                     pauseOnHover
                     theme="dark"
                 />
+                <h1>{fromUser}</h1>
             <div className={styles.container}>
                 <MapContainer ref={mapRef} center={[19.472819274952897, -99.14333273147834]} zoom={11}>
                     <TileLayer

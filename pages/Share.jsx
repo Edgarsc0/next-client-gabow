@@ -10,6 +10,7 @@ const MyAwesomeMap = dynamic(() => import("../components/MapaShareLocation"), { 
 const Share=()=>{
     const [visibility,setVisibility]=useState(false);
     const [destinatarios,setDestinatarios]=useState([]);
+    const [userSharing,setUser]=useState();
     const agregarCampo=()=>{
         const div=document.getElementById("inputForm");
         //div.innerHTML+="<div name='email'><input></input></div>";
@@ -27,7 +28,7 @@ const Share=()=>{
         });
         const response=await axios.post("/api/services/sendUbication",{emails:correos});
         console.log(response);
-        const {status}=response.data;
+        const {status,user}=response.data;
         if(status=="Invalid Session"){
             //se modifico la cookie
             toast.error('Ups! La sesion no es valida. Prueba volver a iniciar sesion. ', {
@@ -62,6 +63,7 @@ const Share=()=>{
             document.getElementById("formEmails").innerHTML="";
             setVisibility(true);
             setDestinatarios(correos);
+            setUser(user);
         }
     }
     const removerCampo=()=>{
@@ -96,7 +98,7 @@ const Share=()=>{
                 <button onClick={enviarCorreos}>Empezar a compartir Ubicación</button>
             </div>
             <div id="map">
-                <MyAwesomeMap visibility={visibility} dest={destinatarios}/>
+                <MyAwesomeMap visibility={visibility} dest={destinatarios} from={user}/>
             </div>       
         </>
     )

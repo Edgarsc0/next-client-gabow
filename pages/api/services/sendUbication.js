@@ -53,7 +53,8 @@ export default async function(req,res){
                     if(correosEnviados==emails.length){
                         console.log("return statement");
                         return res.json({
-                            status:"emails sent"
+                            status:"emails sent",
+                            user:user
                         });
                     }
                 }

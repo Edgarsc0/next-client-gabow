@@ -18,7 +18,7 @@ const icon = new Icon({
 //escuela: 19.45371285983326, -99.17530557712774
 //town center: 19.503565296138603, -99.20305358194275
 const socket=io("https://auth-server-express-production.up.railway.app/");
-const Mapa = ({visibility,dest}) => {
+const Mapa = ({visibility,dest,from}) => {
     //<Marker icon={icon} position={data}></Marker>
     const mapRef = useRef();
     const [cord, setCord] = useState([19.472819274952897, -99.14333273147834])
@@ -28,7 +28,7 @@ const Mapa = ({visibility,dest}) => {
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
         setData([position.coords.latitude,position.coords.longitude]);
-        socket.emit("newCor",{cor:[position.coords.latitude,position.coords.longitude],to:dest});
+        socket.emit("newCor",{cor:[position.coords.latitude,position.coords.longitude],to:dest,from:from});
     }
     const error=(error)=>{
         console.log(error);
