@@ -32,7 +32,7 @@ const Edificio=()=>{
         getLugares();
     })
     if(places.includes(place)){
-        return(<Select placeholder=''></Select>)
+        return(<Select data={lugares} placeholder=''></Select>)
     }else{
         return(<h1>La busqueda no produjo resultados</h1>)
     }
