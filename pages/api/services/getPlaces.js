@@ -4,6 +4,7 @@ import myQuerys from "../db/querys";
 export default function(req,res){
     con.query(myQuerys.selectPlaces,(error,result)=>{
         const data=[];
+        const places=[];
         if(error){
             console.log(error);
             return res.json({
@@ -18,12 +19,14 @@ export default function(req,res){
                     desc:item.esg_descripcion,
                     direccion:item.esg_direccion
                 });
+                places.push(item.esg_nombre);
             })
 
-            console.log(data);
+            //console.log(data);
 
             return res.json({
-                info:data
+                info:data,
+                places:places
             });
         }
     });
