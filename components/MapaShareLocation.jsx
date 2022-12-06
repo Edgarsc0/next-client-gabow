@@ -34,6 +34,7 @@ const Mapa = ({visibility,dest,from}) => {
             from:from,
             at:Date.now()
         });
+        console.log(Date.now());
     }
     const error=(error)=>{
         console.log(error);
