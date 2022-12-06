@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import Select from 'react-select'
 import axios from "axios";
+import styles from '../styles/Mapas.module.scss'
 const Edificio=()=>{
     const router=useRouter();
     const {place}=router.query;
@@ -42,7 +43,7 @@ const Edificio=()=>{
         value:"12"
     }]*/
     if(places.includes(place)){
-        return(<Select options={lugares} placeholder='buscar'></Select>)
+        return(<Select className={styles.buscador} options={lugares} placeholder='buscar'></Select>)
     }else{
         return(<h1>La busqueda no produjo resultados</h1>)
     }
