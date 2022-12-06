@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
+import Select from 'react-select'
 import axios from "axios";
 const Edificio=()=>{
     const router=useRouter();
@@ -30,7 +31,7 @@ const Edificio=()=>{
         getLugares();
     })
     if(places.includes(place)){
-        
+        <Select></Select>
     }else{
         return(<h1>La busqueda no produjo resultados</h1>)
     }
