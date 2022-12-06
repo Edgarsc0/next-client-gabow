@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import Select from 'react-select'
 import axios from "axios";
-import styles from '../styles/Mapas.module.scss'
+import styles from '../../styles/Mapas.module.scss';
 const Edificio=()=>{
     const router=useRouter();
     const {place}=router.query;
