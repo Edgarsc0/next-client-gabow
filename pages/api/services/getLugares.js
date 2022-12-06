@@ -9,6 +9,9 @@ export default function(req,res){
                 error:err
             });
         }else{
+            con.query(myQuerys.selectInnerJoinTable,(err,result)=>{
+                console.log(result);
+            })
             console.log(result);
             const lugares=[];
             result.map(item=>{
