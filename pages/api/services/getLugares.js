@@ -11,7 +11,10 @@ export default function(req,res){
         }else{
             const lugares=[];
             result.map(item=>{
-                lugares.push(item.cod_lugar);
+                lugares.push({
+                    label:item.cod_lugar,
+                    value:item.cod_lugar
+                });
             })
             return res.json({
                 lugares:lugares

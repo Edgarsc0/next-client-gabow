@@ -16,6 +16,7 @@ const Edificio=()=>{
     }
     const getLugares=async()=>{
         const {data}=await axios.post("/api/services/getLugares",{place:place});
+        console.log(data.lugares);
         setLugares(data.lugares);
     }
     const getSVG=async()=>{
@@ -31,7 +32,7 @@ const Edificio=()=>{
         getLugares();
     })
     if(places.includes(place)){
-        return(<Select placeholder='Buscar'></Select>)
+        return(<Select placeholder=''></Select>)
     }else{
         return(<h1>La busqueda no produjo resultados</h1>)
     }
