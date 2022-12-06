@@ -8,7 +8,10 @@ const Edificio=()=>{
     const [places,setPlaces]=useState([]);
     const [piso,setPiso]=useState("PB");
     const [svg,setSVG]=useState();
-    const [lugares,setLugares]=useState([]);
+    const [lugares,setLugares]=useState([{
+        label:"Esperando bd...",
+        value:null
+    }]);
     const getData=async()=>{
         const {data}=await axios.post("/api/services/getPlaces");
         console.log(data);
@@ -31,15 +34,15 @@ const Edificio=()=>{
         }
         getLugares();
     })
-    const dataprueba=[{
+    /*const dataprueba=[{
         label:"EdifAulas",
-        value:"EdifAulas"
+        value:"12"
     },{
         label:"EdifGobierno",
-        value:"EdifGobierno"
-    }]
+        value:"12"
+    }]*/
     if(places.includes(place)){
-        return(<Select data={dataprueba} placeholder='buscar'></Select>)
+        return(<Select options={lugares} placeholder='buscar'></Select>)
     }else{
         return(<h1>La busqueda no produjo resultados</h1>)
     }
