@@ -62,7 +62,7 @@ const Mapa = () => {
                                 {item.label} <br />
                                 {item.desc} <br/>
                                 {item.direccion}<br/>
-                                <Link href={"https://auth-server-express-production.up.railway.app/Edificio/"+item.label}><button type='button' className={styles.button}>Ir a</button></Link>
+                                <Link href={"https://next-client-gabow.vercel.app/Edificio/"+item.label}><button type='button' className={styles.button}>Ir a</button></Link>
                             </Popup>
                         </Marker>
                     ))}
