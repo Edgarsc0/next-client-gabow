@@ -31,8 +31,15 @@ const Edificio=()=>{
         }
         getLugares();
     })
+    const dataprueba=[{
+        label:"EdifAulas",
+        value:"EdifAulas"
+    },{
+        label:"EdifGobierno",
+        value:"EdifGobierno"
+    }]
     if(places.includes(place)){
-        return(<Select data={lugares} placeholder=''></Select>)
+        return(<Select data={dataprueba} placeholder=''></Select>)
     }else{
         return(<h1>La busqueda no produjo resultados</h1>)
     }

@@ -22,6 +22,7 @@ export default function(req,res){
                 places.push(item.esg_nombre);
             })
 
+            console.log(data);
             //console.log(data);
 
             return res.json({
