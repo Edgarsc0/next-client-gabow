@@ -59,7 +59,7 @@ const Mapa = () => {
                     {data.map((item) => (
                         <Marker key={item.id} position={item.value} icon={icon} eventHandlers={{ click: onClick }}>
                             <Popup>
-                                {item.label} <br />
+                                {item.label} <br/>
                                 {item.desc} <br/>
                                 {item.direccion}<br/>
                                 <Link href={"https://next-client-gabow.vercel.app/Edificio/"+item.label}><button type='button' className={styles.button}>Ir a</button></Link>
