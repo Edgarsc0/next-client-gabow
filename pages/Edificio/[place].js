@@ -45,7 +45,7 @@ const Edificio=()=>{
     if(places.includes(place)){
         return(
             <>
-                {place}
+                <h1>{place}</h1>
                 <Select className={styles.buscador} options={lugares} placeholder='buscar'></Select>
             </>
         )

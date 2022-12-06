@@ -9,6 +9,7 @@ export default function(req,res){
                 error:err
             });
         }else{
+            console.log(result);
             const lugares=[];
             result.map(item=>{
                 lugares.push({
