@@ -43,7 +43,12 @@ const Edificio=()=>{
         value:"12"
     }]*/
     if(places.includes(place)){
-        return(<Select className={styles.buscador} options={lugares} placeholder='buscar'></Select>)
+        return(
+            <>
+                {place}
+                <Select className={styles.buscador} options={lugares} placeholder='buscar'></Select>
+            </>
+        )
     }else{
         return(<h1>La busqueda no produjo resultados</h1>)
     }
