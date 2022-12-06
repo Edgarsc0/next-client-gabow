@@ -6,3 +6,4 @@ const Edificio=()=>{
         <h1>Hola {place}</h1>
     )
 }
+export default Edificio;
