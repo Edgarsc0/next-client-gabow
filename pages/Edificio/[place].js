@@ -39,7 +39,7 @@ const Edificio=()=>{
         value:"EdifGobierno"
     }]
     if(places.includes(place)){
-        return(<Select data={dataprueba} placeholder=''></Select>)
+        return(<Select data={dataprueba} placeholder='buscar'></Select>)
     }else{
         return(<h1>La busqueda no produjo resultados</h1>)
     }
