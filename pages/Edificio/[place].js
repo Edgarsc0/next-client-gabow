@@ -7,7 +7,7 @@ const Edificio=()=>{
     const router=useRouter();
     const {place}=router.query;
     const [places,setPlaces]=useState([]);
-    const [piso,setPiso]=useState("PB");
+    const [piso,setPiso]=useState([{label:"",value:null}]);
     const [svg,setSVG]=useState();
     const [lugares,setLugares]=useState([{
         label:"Esperando bd...",
@@ -28,6 +28,10 @@ const Edificio=()=>{
             piso:piso,
             place:place
         });
+    }
+    const handleChange=async(optionSelected)=>{
+        const {data}=await axios.post("/api/services/getPisos",{lugar:optionSelected.value,place:place});
+        setPiso(data.pisos);
     }   
     useEffect(()=>{
         if(places.length==0){
@@ -35,18 +39,13 @@ const Edificio=()=>{
         }
         getLugares();
     })
-    /*const dataprueba=[{
-        label:"EdifAulas",
-        value:"12"
-    },{
-        label:"EdifGobierno",
-        value:"12"
-    }]*/
     if(places.includes(place)){
         return(
             <>
                 <h1>{place}</h1>
-                <Select className={styles.buscador} options={lugares} placeholder='buscar'></Select>
+                <Select className={styles.buscador} onChange={handleChange} options={lugares} placeholder='Selecciona un lugar...'></Select>
+                <Select className={styles.buscador} options={piso} placeholder='Selecciona un piso...'></Select>
+
             </>
         )
     }else{
