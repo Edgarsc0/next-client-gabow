@@ -49,6 +49,7 @@ const Edificio=()=>{
         if(selectedLugar && selectedPiso){
             getSVG();
             document.getElementById("svg").innerHTML=svg;
+            console.log(document.getElementsByTagName("rect"));
         }
     })
 
