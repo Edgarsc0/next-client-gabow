@@ -31,6 +31,7 @@ const Edificio=()=>{
             place:place,
             lugar:selectedLugar
         });
+        setSVG(data.svg);
     }
     const handleChangeLugar=async(optionSelected)=>{
         const {data}=await axios.post("/api/services/getPisos",{lugar:optionSelected.value,place:place});
@@ -49,7 +50,7 @@ const Edificio=()=>{
             getLugares();
         }
         if(selectedLugar && selectedPiso){
-            //getSVG();
+            document.getElementById("svg").innerHTML=svg;
         }
     })
 
