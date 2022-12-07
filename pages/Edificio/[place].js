@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Select from 'react-select'
 import axios from "axios";
 import styles from '../../styles/Mapas.module.scss';
+import "../../styles/svgStyle.css";
 const Edificio=()=>{
     const router=useRouter();
     const {place}=router.query;
@@ -49,7 +50,6 @@ const Edificio=()=>{
         if(selectedLugar && selectedPiso){
             getSVG();
             document.getElementById("svg").innerHTML=svg;
-            console.log(document.getElementsByTagName("rect"));
         }
     })
 
