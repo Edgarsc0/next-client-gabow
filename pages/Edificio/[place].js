@@ -8,6 +8,8 @@ const Edificio=()=>{
     const {place}=router.query;
     const [places,setPlaces]=useState([]);
     const [piso,setPiso]=useState([]);
+    const [selectedPiso,setSelectedPiso]=useState();
+    const [selectedLugar,setSelectedLugar]=useState();
     const [svg,setSVG]=useState();
     const [lugares,setLugares]=useState([{
         label:"Esperando bd...",
@@ -25,30 +27,39 @@ const Edificio=()=>{
     }
     const getSVG=async()=>{
         const {data}=await axios.post("/api/services/getSVG",{
-            piso:piso,
-            place:place
+            piso:selectedPiso,
+            place:place,
+            lugar:selectedLugar
         });
     }
-    const handleChange=async(optionSelected)=>{
+    const handleChangeLugar=async(optionSelected)=>{
         const {data}=await axios.post("/api/services/getPisos",{lugar:optionSelected.value,place:place});
         setPiso(data.pisos);
-    }   
+        setSelectedPiso(undefined);
+        setSelectedLugar(optionSelected.value);
+    }
+    const handleChangePiso=(optionSelected)=>{
+        setSelectedPiso(optionSelected.value);
+    }
     useEffect(()=>{
         if(places.length==0){
             getData();
         }
-        getLugares();
-        if(lugares && piso){
-            document.getElementById("svgcontainer").innerHTML="<h1>hola</h1>";
+        if(lugares[0].label=="Esperando bd..."){
+            getLugares();
+        }
+        if(selectedLugar && selectedPiso){
+            //getSVG();
         }
     })
+
     if(places.includes(place)){
         return(
             <>
                 <h1>{place}</h1>
-                <Select className={styles.buscador} onChange={handleChange} options={lugares} placeholder='Selecciona un lugar...'></Select>
-                <Select className={styles.buscador} options={piso} placeholder='Selecciona un piso...'></Select>
-                <div id="svgcontainer"></div>
+                <Select className={styles.buscador} onChange={handleChangeLugar} options={lugares} placeholder='Selecciona un lugar...'></Select>
+                <Select className={styles.buscador} onChange={handleChangePiso} options={piso} placeholder='Selecciona un piso...'></Select>
+                <div id="svg"></div>
             </>
         )
     }else{
