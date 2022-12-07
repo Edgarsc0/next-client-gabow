@@ -7,7 +7,7 @@ const Edificio=()=>{
     const router=useRouter();
     const {place}=router.query;
     const [places,setPlaces]=useState([]);
-    const [piso,setPiso]=useState([{label:"",value:null}]);
+    const [piso,setPiso]=useState([]);
     const [svg,setSVG]=useState();
     const [lugares,setLugares]=useState([{
         label:"Esperando bd...",
