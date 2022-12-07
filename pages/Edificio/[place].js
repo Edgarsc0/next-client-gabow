@@ -11,10 +11,7 @@ const Edificio=()=>{
     const [selectedPiso,setSelectedPiso]=useState();
     const [selectedLugar,setSelectedLugar]=useState();
     const [svg,setSVG]=useState();
-    const [lugares,setLugares]=useState([{
-        label:"Esperando bd...",
-        value:null
-    }]);
+    const [lugares,setLugares]=useState([]);
     const getData=async()=>{
         const {data}=await axios.post("/api/services/getPlaces");
         console.log(data);
@@ -46,10 +43,11 @@ const Edificio=()=>{
         if(places.length==0){
             getData();
         }
-        if(lugares[0].label=="Esperando bd..."){
+        if(lugares.length==0){
             getLugares();
         }
         if(selectedLugar && selectedPiso){
+            getSVG();
             document.getElementById("svg").innerHTML=svg;
         }
     })
