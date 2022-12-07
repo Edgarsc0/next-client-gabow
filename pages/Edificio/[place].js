@@ -38,6 +38,9 @@ const Edificio=()=>{
             getData();
         }
         getLugares();
+        if(lugares && piso){
+            document.getElementById("svgcontainer").innerHTML="<h1>hola</h1>";
+        }
     })
     if(places.includes(place)){
         return(
@@ -45,7 +48,7 @@ const Edificio=()=>{
                 <h1>{place}</h1>
                 <Select className={styles.buscador} onChange={handleChange} options={lugares} placeholder='Selecciona un lugar...'></Select>
                 <Select className={styles.buscador} options={piso} placeholder='Selecciona un piso...'></Select>
-
+                <div id="svgcontainer"></div>
             </>
         )
     }else{
