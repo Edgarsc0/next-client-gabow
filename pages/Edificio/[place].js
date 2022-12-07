@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Select from 'react-select'
 import axios from "axios";
 import styles from '../../styles/Mapas.module.scss';
-import "../../styles/svgStyle.css";
+import "../../styles/Svg.module.css";
 const Edificio=()=>{
     const router=useRouter();
     const {place}=router.query;
