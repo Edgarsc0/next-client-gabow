@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import Select from 'react-select'
 import axios from "axios";
 import styles from '../../styles/Mapas.module.scss';
+import "../../styles/Mapas.module.css";
+import Head from 'next/head';
 const Edificio=()=>{
     const router=useRouter();
     const {place}=router.query;
@@ -12,6 +14,7 @@ const Edificio=()=>{
     const [selectedLugar,setSelectedLugar]=useState();
     const [svg,setSVG]=useState();
     const [lugares,setLugares]=useState([]);
+    const [rectSelected,setRectSelected]=useState();
     const getData=async()=>{
         const {data}=await axios.post("/api/services/getPlaces");
         console.log(data);
@@ -49,8 +52,13 @@ const Edificio=()=>{
         if(selectedLugar && selectedPiso){
             getSVG();
             document.getElementById("svg").innerHTML=svg;
-            console.log(document.getElementsByName("aula"));
+            document.getElementsByName("aula").forEach(item=>{
+                item.onclick=()=>{
+                    setRectSelected(item.id);
+                }
+            });
         }
+
     })
 
     if(places.includes(place)){
@@ -58,6 +66,7 @@ const Edificio=()=>{
             <>
                 <div className={styles.container3}><h1>{place}</h1></div>
                 <hr></hr>
+                <div>{rectSelected}</div>
                 <div className={styles.header}>
                     <Select className={styles.buscador} onChange={handleChangeLugar} options={lugares} placeholder='Selecciona un lugar...'></Select>
                     <Select className={styles.buscador} onChange={handleChangePiso} options={piso} placeholder='Selecciona un piso...'></Select>

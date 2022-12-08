@@ -13,7 +13,9 @@
   display: flex;
   justify-content: center;
 }
-
+.resaltado{
+  fill: aqua;
+}
 .buscador {
   color: black;
   margin: 10px auto;
