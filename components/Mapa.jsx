@@ -51,7 +51,7 @@ const Mapa = () => {
             </Head>
             <div className={styles.header}>
                 <Select className={styles.buscador}  options={data} onChange={cambiar} placeholder='Buscar'/>
-                <button className={styles.button} onClick={handleSharePositionRedirect}>Compratir ubicacion</button>
+                <button className={styles.button} onClick={handleSharePositionRedirect}><strong>NEW! </strong>Compratir ubicacion</button>
             </div>            
             <div className={styles.container}>
                 <MapContainer ref={mapRef} center={cord} zoom={11}>
