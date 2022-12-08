@@ -13,7 +13,7 @@ const Edificio=()=>{
     const [selectedLugar,setSelectedLugar]=useState();
     const [svg,setSVG]=useState();
     const [lugares,setLugares]=useState([]);
-    const [currentPlaces,setCurrentPlaces]=useState();
+    const [currentPlaces,setCurrentPlaces]=useState([]);
     const [rectSelected,setRectSelected]=useState();
     const getData=async()=>{
         const {data}=await axios.post("/api/services/getPlaces");
