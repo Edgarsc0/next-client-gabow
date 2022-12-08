@@ -92,7 +92,6 @@ const Edificio=()=>{
                     <Select className={styles.buscador} onChange={handleChangePiso} options={piso} placeholder='Selecciona un piso...'></Select>
                 </div>
                 <div className={styles.container}>
-                    <h1>hola</h1>
                     <div id="svg"></div>
                 </div>
             </>
