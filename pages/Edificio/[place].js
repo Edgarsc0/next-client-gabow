@@ -78,7 +78,6 @@ const Edificio=()=>{
                 });
             }
         }
-
     })
     function Button({selected}){
         if(selected){
