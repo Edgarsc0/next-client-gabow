@@ -79,15 +79,15 @@ const Edificio=()=>{
     }
     function Lista({lst}){
         if(lst){
+            //console.log(lst);
+            const array=[...lst];
             return(
                 <>
-                <h3>En este piso...</h3>
-                <hr></hr>
-                <ul>
-                    {lst.forEach(item=>(
-                        <li>item.id</li>
+                    <ul>
+                    {array.map(item=>(
+                        <li>{item.id}</li>  
                     ))}
-                </ul>
+                    </ul>
                 </>
             )
         }
