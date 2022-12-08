@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import Select from 'react-select'
 import axios from "axios";
 import styles from '../../styles/Mapas.module.scss';
-
 const Edificio=()=>{
     const router=useRouter();
     const {place}=router.query;
@@ -13,7 +12,6 @@ const Edificio=()=>{
     const [selectedLugar,setSelectedLugar]=useState();
     const [svg,setSVG]=useState();
     const [lugares,setLugares]=useState([]);
-    const [currentPlaces,setCurrentPlaces]=useState([]);
     const [rectSelected,setRectSelected]=useState();
     const getData=async()=>{
         const {data}=await axios.post("/api/services/getPlaces");
@@ -53,17 +51,27 @@ const Edificio=()=>{
             getSVG();
             document.getElementById("svg").innerHTML=svg;
             if(place=="CECyT 9"){
-                setCurrentPlaces(document.getElementsByName("aula"));
                 document.getElementsByName("aula").forEach(item=>{
                     item.onclick=()=>{
                         setRectSelected(item.id);
                     }
+                    item.onmouseover=()=>{
+                        item.style.fill="aqua";
+                    }
+                    item.onmouseleave=()=>{
+                        item.style.fill="";
+                    }
                 });
             }if(place=="Town Center"){
-                setCurrentPlaces(document.getElementsByName("town"));
                 document.getElementsByName("town").forEach(item=>{
                     item.onclick=()=>{
                         setRectSelected(item.id);
+                    }
+                    item.onmouseover=()=>{
+                        item.style.fill="aqua";
+                    }
+                    item.onmouseleave=()=>{
+                        item.style.fill="";
                     }
                 });
             }
@@ -77,19 +85,6 @@ const Edificio=()=>{
             )
         }
     }
-    /*function Lista({lst}){
-            //console.log(lst);
-            const array=[...lst];
-            return(
-                <>
-                    <ul>
-                    {array.map(item=>(
-                        <li key={item.id}>{item.id}</li>  
-                    ))}
-                    </ul>
-                </>
-            )
-    }*/
     if(places.includes(place)){
         return(
             <>
