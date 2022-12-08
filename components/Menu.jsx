@@ -30,11 +30,6 @@ const Menu = () => {
                             </Link>
                         </li>
                         <li className={styles.navItem}>
-                            <Link href="/Ruta">
-                                <a className={styles.navLink}>Ruta</a>
-                            </Link>
-                        </li>
-                        <li className={styles.navItem}>
                             <Link href="/Favoritos">
                                 <a className={styles.navLink}>Favoritos</a>
                             </Link>
@@ -68,11 +63,6 @@ const Menu = () => {
                         <li className={styles.navItem}>
                             <Link href="/Mapas">
                                 <a className={styles.navLink}>Mapas</a>
-                            </Link>
-                        </li>
-                        <li className={styles.navItem}>
-                            <Link href="/Ruta">
-                                <a className={styles.navLink}>Ruta</a>
                             </Link>
                         </li>
                         <li className={styles.navItem}>
