@@ -64,9 +64,11 @@ const Edificio=()=>{
     if(places.includes(place)){
         return(
             <>
-                <div className={styles.container3}><h1>{place}</h1></div>
+                <div className={styles.container3}>
+                    <h1>{place}</h1>
+                    <div>{rectSelected}</div>
+                </div>
                 <hr></hr>
-                <div>{rectSelected}</div>
                 <div className={styles.header}>
                     <Select className={styles.buscador} onChange={handleChangeLugar} options={lugares} placeholder='Selecciona un lugar...'></Select>
                     <Select className={styles.buscador} onChange={handleChangePiso} options={piso} placeholder='Selecciona un piso...'></Select>
