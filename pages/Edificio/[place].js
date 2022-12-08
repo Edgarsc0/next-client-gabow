@@ -104,16 +104,7 @@ const Edificio=()=>{
                     <Select className={styles.buscador} onChange={handleChangeLugar} options={lugares} placeholder='Selecciona un lugar...'></Select>
                     <Select className={styles.buscador} onChange={handleChangePiso} options={piso} placeholder='Selecciona un piso...'></Select>
                 </div>
-                <div className={styles.container3}>
-                    <div>
-                        <ul>
-                            {[...currentPlaces].map(item=>(
-                                <li key={item.id}>{item.id}</li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div id="svg" className={styles.svg}></div>
-                </div>
+                <div id="svg"></div>
             </>
         )
     }else{
