@@ -4,7 +4,7 @@ import Select from 'react-select'
 import axios from "axios";
 import styles from '../../styles/Mapas.module.scss';
 import "../../styles/Mapas.module.css";
-import Head from 'next/head';
+
 const Edificio=()=>{
     const router=useRouter();
     const {place}=router.query;
@@ -60,7 +60,13 @@ const Edificio=()=>{
         }
 
     })
-
+    function Button({selected}){
+        if(selected){
+            return(
+                <button style={styles.button}>Iniciar ruta a {selectedLugar}</button>
+            )
+        }
+    }
     if(places.includes(place)){
         return(
             <>
@@ -68,7 +74,7 @@ const Edificio=()=>{
                     <h1>{place}</h1>
                 </div>
                 <div className={styles.container3}>
-                    <h2>{rectSelected}</h2>
+                    <Button selected={rectSelected}/>
                 </div>
                 <hr></hr>
                 <div className={styles.header}>
