@@ -15,6 +15,13 @@
     }
 }
 
+.container3 {
+    display: flex;
+    justify-content: center;
+    @media (max-width:768px) {
+        height: 70vh;
+    }
+}
 .container2 {
     display: flex;
     justify-content: center;
