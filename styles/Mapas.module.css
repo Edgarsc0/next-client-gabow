@@ -8,7 +8,9 @@
     height: 70vh;
   }
 }
-
+.svgContainer{
+  display: flex;
+}
 .container2 {
   display: flex;
   justify-content: center;

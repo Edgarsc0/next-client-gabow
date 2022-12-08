@@ -91,7 +91,10 @@ const Edificio=()=>{
                     <Select className={styles.buscador} onChange={handleChangeLugar} options={lugares} placeholder='Selecciona un lugar...'></Select>
                     <Select className={styles.buscador} onChange={handleChangePiso} options={piso} placeholder='Selecciona un piso...'></Select>
                 </div>
-                <div id="svg"></div>
+                <div className={styles.svgContainer}>
+                    <div>Hola</div>
+                    <div id="svg"></div>
+                </div>
             </>
         )
     }else{
