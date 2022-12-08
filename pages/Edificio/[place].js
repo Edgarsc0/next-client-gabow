@@ -52,11 +52,19 @@ const Edificio=()=>{
         if(selectedLugar && selectedPiso){
             getSVG();
             document.getElementById("svg").innerHTML=svg;
-            document.getElementsByName("aula").forEach(item=>{
-                item.onclick=()=>{
-                    setRectSelected(item.id);
-                }
-            });
+            if(place=="CECyT 9"){
+                document.getElementsByName("aula").forEach(item=>{
+                    item.onclick=()=>{
+                        setRectSelected(item.id);
+                    }
+                });
+            }if(place=="Town Center"){
+                document.getElementsByName("town").forEach(item=>{
+                    item.onclick=()=>{
+                        setRectSelected(item.id);
+                    }
+                });
+            }
         }
 
     })
