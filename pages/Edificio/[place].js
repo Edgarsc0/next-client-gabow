@@ -63,7 +63,7 @@ const Edificio=()=>{
     function Button({selected}){
         if(selected){
             return(
-                <button style={styles.button}>Iniciar ruta a {selectedLugar}</button>
+                <button className={styles.button}>Iniciar Ruta a {selected}</button>
             )
         }
     }
