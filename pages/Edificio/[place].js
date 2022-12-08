@@ -78,7 +78,6 @@ const Edificio=()=>{
         }
     }
     function Lista({lst}){
-        if(lst){
             //console.log(lst);
             const array=[...lst];
             return(
@@ -90,7 +89,6 @@ const Edificio=()=>{
                     </ul>
                 </>
             )
-        }
     }
     if(places.includes(place)){
         return(
