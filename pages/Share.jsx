@@ -1,11 +1,10 @@
 import React from "react";
-import ReactDom from "react-dom/client";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import dynamic from "next/dynamic"
 import 'react-toastify/dist/ReactToastify.css';
-import styles from '../styles/Mapas.module.scss'
 import { useState } from "react";
+import styles from "../styles/Mapas.module.scss";
 const MyAwesomeMap = dynamic(() => import("../components/MapaShareLocation"), { ssr:false });
 const Share=()=>{
     const [visibility,setVisibility]=useState(false);
@@ -87,7 +86,7 @@ const Share=()=>{
                 pauseOnHover
                 theme="dark"
             />
-            <div id="formEmails">
+            <div id="formEmails" className="containerIni">
                 <h1>Compartir Ubicacion en tiempo real</h1>
                 <hr></hr>
                 <h1><i>Share</i> esta en una fase de Pruebas. Procura tener siempre abierta esta pagina.</h1>
@@ -95,7 +94,8 @@ const Share=()=>{
                 <h1>Introduce el coreo de los destinatarios</h1>
                 <input name="email"></input><button onClick={agregarCampo}>+</button><button onClick={removerCampo}>-</button><br/>
                 <div id="inputForm"></div>
-                <button onClick={enviarCorreos}>Empezar a compartir Ubicación</button>
+                <br></br>
+                <button onClick={enviarCorreos} className={styles.button}>Empezar a compartir Ubicación</button>
             </div>
             <div id="map">
                 <MyAwesomeMap visibility={visibility} dest={destinatarios} from={userSharing}/>

@@ -13,6 +13,7 @@ const Edificio=()=>{
     const [svg,setSVG]=useState();
     const [lugares,setLugares]=useState([]);
     const [rectSelected,setRectSelected]=useState();
+    const [current,setCurrent]=useState();
     const getData=async()=>{
         const {data}=await axios.post("/api/services/getPlaces");
         console.log(data);
@@ -47,6 +48,7 @@ const Edificio=()=>{
         if(lugares.length==0){
             getLugares();
         }
+        
         if(selectedLugar && selectedPiso){
             getSVG();
             document.getElementById("svg").innerHTML=svg;
