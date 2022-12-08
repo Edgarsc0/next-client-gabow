@@ -85,7 +85,7 @@ const Edificio=()=>{
                 <>
                     <ul>
                     {array.map(item=>(
-                        <li>{item.id}</li>  
+                        <li key={item.id}>{item.id}</li>  
                     ))}
                     </ul>
                 </>
