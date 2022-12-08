@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import Select from 'react-select'
 import axios from "axios";
 import styles from '../../styles/Mapas.module.scss';
-import "../../styles/Mapas.module.css";
 
 const Edificio=()=>{
     const router=useRouter();
