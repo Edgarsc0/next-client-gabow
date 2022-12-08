@@ -108,7 +108,7 @@ const Edificio=()=>{
                     <div>
                         <ul>
                             {[...currentPlaces].map(item=>(
-                                <li>{item.id}</li>
+                                <li key={item.id}>{item.id}</li>
                             ))}
                         </ul>
                     </div>
