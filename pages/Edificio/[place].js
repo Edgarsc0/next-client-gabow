@@ -77,7 +77,7 @@ const Edificio=()=>{
             )
         }
     }
-    function Lista({lst}){
+    /*function Lista({lst}){
             //console.log(lst);
             const array=[...lst];
             return(
@@ -89,7 +89,7 @@ const Edificio=()=>{
                     </ul>
                 </>
             )
-    }
+    }*/
     if(places.includes(place)){
         return(
             <>
@@ -105,7 +105,13 @@ const Edificio=()=>{
                     <Select className={styles.buscador} onChange={handleChangePiso} options={piso} placeholder='Selecciona un piso...'></Select>
                 </div>
                 <div className={styles.container3}>
-                    <Lista lst={currentPlaces}/>
+                    <div>
+                        <ul>
+                            {[...currentPlaces].map(item=>(
+                                <li>{item.id}</li>
+                            ))}
+                        </ul>
+                    </div>
                     <div id="svg" className={styles.svg}></div>
                 </div>
             </>
