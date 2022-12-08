@@ -66,7 +66,9 @@ const Edificio=()=>{
             <>
                 <div className={styles.container3}>
                     <h1>{place}</h1>
-                    <div>{rectSelected}</div>
+                </div>
+                <div className={styles.container3}>
+                    <h2>{rectSelected}</h2>
                 </div>
                 <hr></hr>
                 <div className={styles.header}>
