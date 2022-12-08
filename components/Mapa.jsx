@@ -49,7 +49,10 @@ const Mapa = () => {
             <Head>
                 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
             </Head>
-            <Select className={styles.buscador}  options={data} onChange={cambiar} placeholder='Buscar'/>
+            <div className={styles.header}>
+                <Select className={styles.buscador}  options={data} onChange={cambiar} placeholder='Buscar'/>
+                <button className={styles.button} onClick={handleSharePositionRedirect}>Compratir ubicacion</button>
+            </div>            
             <div className={styles.container}>
                 <MapContainer ref={mapRef} center={cord} zoom={11}>
                     <TileLayer
@@ -68,7 +71,6 @@ const Mapa = () => {
                     ))}
                 </MapContainer>
             </div>
-            <button onClick={handleSharePositionRedirect}>Compratir ubicacion</button>
             <button onClick={handleViewPositionRedirect}>View</button>
         </>
     )
