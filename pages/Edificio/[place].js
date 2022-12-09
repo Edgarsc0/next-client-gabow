@@ -61,7 +61,7 @@ const Edificio=()=>{
                         value:item.id
                     });
                     item.onclick=()=>{
-                        setRectSelected(item.id);
+                        document.getElementById("button").innerHTML=`<button class="button">Iniciar Ruta a ${item.id}</button>`
                     }
                     item.onmouseover=()=>{
                         item.style.fill="aqua";
@@ -90,22 +90,14 @@ const Edificio=()=>{
         document.getElementById(option.value).onclick();
         window.location.href=`#${option.value}`;
     }
-    function Button({selected}){
-        if(selected){
-            return(
-                <button className={styles.button}>Iniciar Ruta a {selected}</button>
-            )
-        }
-    }
+
     if(places.includes(place)){
         return(
             <>
                 <div className={styles.container3}>
                     <h1>{place}</h1>
                 </div>
-                <div className={styles.container3}>
-                    <Button selected={rectSelected}/>
-                </div>
+                <div className={styles.container3} id="button"></div>
                 <hr></hr>
                 <div className={styles.header}>
                     <Select className={styles.buscador} onChange={handleChangeLugar} options={lugares} placeholder='Selecciona un lugar...'></Select>
