@@ -41,6 +41,7 @@ const Ruta = ({visibility}) => {
     });
 
     if(visibility){
+        window.location.href="#recorrido";
         return (
             <>
                 <Head>
