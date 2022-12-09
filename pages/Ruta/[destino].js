@@ -17,8 +17,7 @@ const Ruta = () => {
     const validarBusqueda=async()=>{
         const{data}=await axios.post("/api/services/getPlaceById",{id:destinoState});
         if(data.status!="ok"){
-            window.location.href="/Mapas";
-            toast.error('Ups! El destino no existe dentro de la Base de datos.', {
+            toast.error('Ups! Algo fallo al intentar registrar las credenciales. Intentalo de nuevo mas tarde. ', {
                 position: "top-right",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -26,8 +25,9 @@ const Ruta = () => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "dark",
+                theme: "colored",
             });
+            window.location.href="/Mapas";
         }
     }
     useEffect(()=>{
