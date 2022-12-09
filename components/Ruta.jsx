@@ -48,11 +48,13 @@ const Ruta = ({visibility,place,dest}) => {
             window.location.href="/Mapas";
         }if(data.status=="Token verified"){
             const email=data.token.email;
-            const {status,result}=await axios.post("/api/services/insertDate",{
+            const response=await axios.post("/api/services/insertDate",{
                 month:mes,
                 year:year,
                 day:dia
-            }).data;
+            });
+            console.log(response.data);
+            const {status,result}=response.data;
             if(place=="CECyT 9"){
                 if(status="ok"){
                     const id=result.ResultSetHeader.insertId;
