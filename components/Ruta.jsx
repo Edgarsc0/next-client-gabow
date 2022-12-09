@@ -22,10 +22,14 @@ const Ruta = ({visibility}) => {
     const mapRef = useRef();
     const [cord, setCord] = useState([19.472819274952897, -99.14333273147834])
     const [data,setData]=useState([[19.472819274952897, -99.14333273147834]]);
+    const [originCords,setOriginCords]=useState([]);
     const success=(position)=>{
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
         setData([...data,[position.coords.latitude,position.coords.longitude]]);
+        if(data.length==2){
+            setOriginCords([position.coords.latitude,position.coords.longitude]);
+        }
     }
     const error=(error)=>{
         console.log(error);
@@ -40,7 +44,7 @@ const Ruta = ({visibility}) => {
     }
     useEffect(()=>{
         globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
-        console.log(data);        
+        console.log(data);
     });
 
     if(visibility){
@@ -61,6 +65,9 @@ const Ruta = ({visibility}) => {
                     pauseOnHover
                     theme="dark"
                 />
+                <div className={styles.container}>
+                    <h1>{originCords}</h1>
+                </div>
                 <div className={styles.container} id="recorrido">
                     <MapContainer ref={mapRef} center={cord} zoom={20}>
                         <TileLayer

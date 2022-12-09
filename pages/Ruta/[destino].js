@@ -95,6 +95,7 @@ const Ruta = () => {
                         </div>
                     </div>
                 </div>
+                <br></br>
             </div>
             <MyAwesomeMap visibility={visible}/>
         </>
