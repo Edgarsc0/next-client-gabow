@@ -87,7 +87,7 @@ const Edificio=()=>{
     })
     const handleSearch=(option)=>{
         document.getElementById(option.value).setAttribute("class","resaltado");
-        document.getElementById(option.value).click();
+        document.getElementById(option.value).onclick();
         window.location.href=`#${option.value}`;
     }
     function Button({selected}){
