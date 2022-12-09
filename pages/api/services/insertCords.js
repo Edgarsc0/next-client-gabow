@@ -15,6 +15,10 @@ export default function(req,res){
             }
         });
         i++;
-        console.log(i==cords.length);
+        if(i==cords.length){
+            return res.json({
+                status:"ok"
+            });
+        }
     });
 }
