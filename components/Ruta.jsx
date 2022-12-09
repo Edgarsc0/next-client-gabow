@@ -25,7 +25,7 @@ const Ruta = ({visibility}) => {
     const success=(position)=>{
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
-        setData([position.coords.latitude,position.coords.longitude]);
+        setData([...data,[position.coords.latitude,position.coords.longitude]]);
     }
     const error=(error)=>{
         console.log(error);
@@ -37,7 +37,6 @@ const Ruta = ({visibility}) => {
     }
     useEffect(()=>{
         globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
-        window.location.href="#recorrido";
         console.log(data);        
     });
 
@@ -65,7 +64,7 @@ const Ruta = ({visibility}) => {
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         />                    
-                        <Marker position={data} icon={icon}/>
+                        <Marker position={data[data.length-1]} icon={icon}/>
                     </MapContainer>
                 </div>
             </>
