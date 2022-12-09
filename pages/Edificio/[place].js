@@ -103,44 +103,6 @@ const Edificio=()=>{
                     drag = false;
                 });
             }
-            // FUNCION DE ZOOM
-            function zoom (event) {
-                var zoom = event.deltaY > 0 ? -1 : 1;
-                var scale = 1 + factor * zoom;
-                offset = {
-                    x: event.offsetX,
-                    y: event.offsetY
-                };
-                matrix.preMultiplySelf(new DOMMatrix()
-                    .translateSelf(offset.x, offset.y)
-                    .scaleSelf(scale, scale)
-                    .translateSelf(-offset.x, -offset.y));
-                    if(matrix.d > 1.7){
-                        matrix.d = 1.6;
-                    }
-                    else{
-                        viewPort.style.transform = matrix.toString();
-                    }
-            }
-            // FUNCION REZOOM
-            function zoomInverso (event) {
-                var zoom = event.deltaY > 0 ? -1 : 1;
-                var scale = 1 - factor / zoom;
-                offset = {
-                    x: event.offsetX,
-                    y: event.offsetY
-                };
-                matrix.preMultiplySelf(new DOMMatrix()
-                    .translateSelf(offset.x, offset.y)
-                    .scaleSelf(scale, scale)
-                    .translateSelf(-offset.x, -offset.y));
-                if(matrix.d < .6){                 
-                    matrix.d = .5;
-                }
-                else{
-                    viewPort.style.transform = matrix.toString();
-                }
-            }
             if(place=="CECyT 9"){
                 current.length=0;
                 document.getElementsByName("aula").forEach(item=>{
