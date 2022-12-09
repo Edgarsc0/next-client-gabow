@@ -17,7 +17,7 @@ const icon = new Icon({
 })
 //escuela: 19.45371285983326, -99.17530557712774
 //town center: 19.503565296138603, -99.20305358194275
-const Ruta = ({visibility}) => {
+const Ruta = ({visibility,place,dest}) => {
     //<Marker icon={icon} position={data}></Marker>
     const mapRef = useRef();
     const [cord, setCord] = useState([19.472819274952897, -99.14333273147834])
@@ -37,12 +37,34 @@ const Ruta = ({visibility}) => {
         timeout:5000,
         maximumAge:0
     }
-    const handleFinish=()=>{
+    const handleFinish=async()=>{
         navigator.geolocation.clearWatch(idWatchPosition);
         const fecha=new Date();
-        console.log(fecha.getFullYear());
-        console.log(fecha.getDate());
-        console.log(fecha.getMonth());
+        const year=fecha.getFullYear();
+        const dia=fecha.getDate();
+        const mes=fecha.getMonth()+1;
+        const {data}=await axios.post("/api/auth/getCookie");
+        if(data.status=="Invalid token"){
+            window.location.href="/Mapas";
+        }if(data.status=="Token verified"){
+            const email=data.token.email;
+            const {status,result}=await axios.post("/api/services/insertDate",{
+                month:mes,
+                year:year,
+                day:dia
+            }).data;
+            if(place=="CECyT 9"){
+                if(status="ok"){
+                    const id=result.ResultSetHeader.insertId;
+                    console.log(id);
+                }
+            }if(place=="Town Center"){
+                if(status="ok"){
+                    const id=result.ResultSetHeader.insertId;
+                    console.log(id);
+                }
+            }
+        }
     }
     function calcularArea(px,py){
         var suma1=0;
