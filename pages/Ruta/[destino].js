@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Head from 'next/head'
-import Link from 'next/link'
 import styles from '../../styles/Ruta.module.scss'
 import { useRouter } from 'next/router'
 import axios from 'axios';
 import { useEffect } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Ruta = () => {
     const router=useRouter();
     const {destino}=router.query;
@@ -18,6 +18,16 @@ const Ruta = () => {
         const{data}=await axios.post("/api/services/getPlaceById",{id:destinoState});
         if(data.status!="ok"){
             window.location.href="/Mapas";
+            toast.error('Ups! El destino no existe dentro de la Base de datos.', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
         }
     }
     useEffect(()=>{
@@ -32,6 +42,18 @@ const Ruta = () => {
                 <title>GABOW</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
             <div className={styles.container}>
                 <div className={styles.ruta}>
                     <div>
