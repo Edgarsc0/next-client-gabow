@@ -106,7 +106,7 @@ const Edificio=()=>{
                 </div>
                 <hr></hr>
                 <div className={styles.header}>
-                    <Select className={styles.buscador} onChange={handleChangePiso} options={current} placeholder='Busca un lugar...'></Select>
+                    <Select className={styles.buscador} options={current} placeholder='Busca un lugar...'></Select>
                 </div>
                 <div className={styles.header}>
                     <Select className={styles.buscador} onChange={handleChangeLugar} options={lugares} placeholder='Selecciona un lugar...'></Select>
