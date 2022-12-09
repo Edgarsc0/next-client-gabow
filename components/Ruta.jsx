@@ -39,6 +39,10 @@ const Ruta = ({visibility}) => {
     }
     const handleFinish=()=>{
         navigator.geolocation.clearWatch(idWatchPosition);
+        const fecha=new Date();
+        console.log(fecha.getFullYear());
+        console.log(fecha.getDate());
+        console.log(fecha.getMonth());
     }
     function calcularArea(px,py){
         var suma1=0;
