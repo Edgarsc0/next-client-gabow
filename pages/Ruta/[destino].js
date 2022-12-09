@@ -6,11 +6,14 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import dynamic from "next/dynamic"
+const MyAwesomeMap = dynamic(() => import("../../components/Ruta"), { ssr:false });
 const Ruta = () => {
     const router=useRouter();
     const {destino}=router.query;
     const [destinoState,setDestinoState]=useState();
     const [data,setData]=useState([]);
+    const [visible,setVisible]=useState();
     const handleRedirectModify=async()=>{
         const {data}=await axios.post("/api/services/getPlaceById",{id:destino});
         window.location.href=`/Edificio/${data.place}`;
@@ -32,7 +35,8 @@ const Ruta = () => {
         }
     }
     const success=(position)=>{
-        setData(...data,[position.coords.latitude,position.coords.longitude]);
+        
+        setData([...data,[position.coords.latitude,position.coords.longitude]]);
     }
     const error=(error)=>{
         console.log(error);
@@ -102,6 +106,7 @@ const Ruta = () => {
                     </div>
                 </div>
             </div>
+            <MyAwesomeMap usercords={data}/>
         </>
     );
 }
