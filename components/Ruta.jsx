@@ -35,6 +35,9 @@ const Ruta = ({visibility}) => {
         timeout:5000,
         maximumAge:0
     }
+    const handleFinish=()=>{
+        navigator.geolocation.clearWatch(idWatchPosition);
+    }
     useEffect(()=>{
         globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
         console.log(data);        
@@ -67,6 +70,7 @@ const Ruta = ({visibility}) => {
                         <Marker position={data[data.length-1]} icon={icon}/>
                     </MapContainer>
                 </div>
+                <div className={styles.container}><button type="button" onClick={handleFinish} className={styles.button}>Finalizar Ruta</button></div>
             </>
         )
     }

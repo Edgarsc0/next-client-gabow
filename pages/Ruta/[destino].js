@@ -74,7 +74,6 @@ const Ruta = () => {
                         <br />
                         <button type="button" className={styles.button} onClick={handleInit}>Iniciar Ruta</button>
                         <button onClick={handleRedirectModify} type="button" className={styles.button}>Modificar Destino</button>
-                        <button type="button" className={styles.button}>Finalizar Ruta</button>
                     </div>
                     <div>
                         <br />
