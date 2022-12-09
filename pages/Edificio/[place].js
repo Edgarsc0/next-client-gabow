@@ -13,7 +13,7 @@ const Edificio=()=>{
     const [svg,setSVG]=useState();
     const [lugares,setLugares]=useState([]);
     const [rectSelected,setRectSelected]=useState();
-    const [current,setCurrent]=useState();
+    const [current,setCurrent]=useState([]);
     const getData=async()=>{
         const {data}=await axios.post("/api/services/getPlaces");
         console.log(data);
@@ -55,6 +55,10 @@ const Edificio=()=>{
             document.getElementById("svg").innerHTML=svg;
             if(place=="CECyT 9"){
                 document.getElementsByName("aula").forEach(item=>{
+                    current.push({
+                        label:item.id,
+                        value:item.id
+                    });
                     item.onclick=()=>{
                         setRectSelected(item.id);
                     }
@@ -100,6 +104,7 @@ const Edificio=()=>{
                 <div className={styles.header}>
                     <Select className={styles.buscador} onChange={handleChangeLugar} options={lugares} placeholder='Selecciona un lugar...'></Select>
                     <Select className={styles.buscador} onChange={handleChangePiso} options={piso} placeholder='Selecciona un piso...'></Select>
+                    <Select className={styles.buscador} options={current} placeholder="En este piso..."></Select>
                 </div>
                 <div id="svg"></div>
             </>
