@@ -75,6 +75,7 @@ const Ruta = ({visibility,place,dest}) => {
                             cords:dataCords,
                             id_ruta:idRuta
                         });
+                        console.log(cordsResponse.data);
                     }
                 }
             }if(place=="Town Center"){
