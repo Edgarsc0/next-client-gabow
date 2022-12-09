@@ -23,7 +23,7 @@ const Ruta = ({visibility}) => {
     const [cord, setCord] = useState([19.472819274952897, -99.14333273147834])
     const [data,setData]=useState([[19.472819274952897, -99.14333273147834]]);
     const [originCords,setOriginCords]=useState();
-    const [origin,setOrigin]=useState();
+    const [origin,setOrigin]=useState("Calculando origen...");
     const success=(position)=>{
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
@@ -103,7 +103,7 @@ const Ruta = ({visibility}) => {
     useEffect(()=>{
         globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
         console.log(data);
-        if(originCords && !origin){
+        if(originCords && origin!="Calculando origen..."){
             if(isInEscuela(data[1])){
                 if(isInEdifAulas(data[1])){
                     setOrigin("EdifAulas");                    
