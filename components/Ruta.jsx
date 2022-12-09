@@ -37,11 +37,11 @@ const Ruta = ({visibility}) => {
     }
     useEffect(()=>{
         globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
+        window.location.href="#recorrido";
         console.log(data);        
     });
 
     if(visibility){
-        window.location.href="#recorrido";
         return (
             <>
                 <Head>
