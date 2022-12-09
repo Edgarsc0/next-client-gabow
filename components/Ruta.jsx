@@ -144,7 +144,7 @@ const Ruta = ({visibility}) => {
                 <div className={styles.container3}>
                     <h1>Origen: {origin}</h1>
                 </div>
-                <div className={styles.container} id="recorrido">
+                <div className={styles.container3} id="recorrido">
                     <MapContainer ref={mapRef} center={cord} zoom={20}>
                         <TileLayer
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -153,7 +153,7 @@ const Ruta = ({visibility}) => {
                         <Marker position={data[data.length-1]} icon={icon}/>
                     </MapContainer>
                 </div>
-                <div className={styles.container}><button type="button" onClick={handleFinish} className={styles.button}>Finalizar Ruta</button></div>
+                <div className={styles.container3}><button type="button" onClick={handleFinish} className={styles.button}>Finalizar Ruta</button></div>
             </>
         )
     }
