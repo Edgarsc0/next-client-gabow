@@ -21,7 +21,7 @@ const Ruta = ({visibility}) => {
     //<Marker icon={icon} position={data}></Marker>
     const mapRef = useRef();
     const [cord, setCord] = useState([19.472819274952897, -99.14333273147834])
-    const [data,setData]=useState([19.472819274952897, -99.14333273147834]);
+    const [data,setData]=useState([[19.472819274952897, -99.14333273147834]]);
     const success=(position)=>{
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
