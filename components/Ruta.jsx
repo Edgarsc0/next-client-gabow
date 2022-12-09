@@ -27,9 +27,6 @@ const Ruta = ({visibility}) => {
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
         setData([...data,[position.coords.latitude,position.coords.longitude]]);
-        if(data.length==2){
-            setOriginCords([position.coords.latitude,position.coords.longitude]);
-        }
     }
     const error=(error)=>{
         console.log(error);
@@ -45,6 +42,9 @@ const Ruta = ({visibility}) => {
     useEffect(()=>{
         globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
         console.log(data);
+        if(data.length==2){
+            setOriginCords(data[1]);
+        }
     });
 
     if(visibility){
