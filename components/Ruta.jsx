@@ -205,6 +205,9 @@ const Ruta = ({visibility,place,dest}) => {
                 <div className={styles.container3}>
                     <h1>Origen: {origin}</h1>
                 </div>
+                <div className={styles.container3}>
+                    <h1>{dataCords.toString()}</h1>
+                </div>
                 <div className={styles.container3} id="recorrido">
                     <MapContainer ref={mapRef} center={cord} zoom={20}>
                         <TileLayer
