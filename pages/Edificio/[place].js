@@ -72,8 +72,12 @@ const Edificio=()=>{
                 });
             }if(place=="Town Center"){
                 document.getElementsByName("town").forEach(item=>{
+                    current.push({
+                        label:item.id,
+                        value:item.id
+                    });
                     item.onclick=()=>{
-                        setRectSelected(item.id);
+                        document.getElementById("button").innerHTML=`<button class="button">Iniciar Ruta a ${item.id}</button>`
                     }
                     item.onmouseover=()=>{
                         item.style.fill="aqua";
