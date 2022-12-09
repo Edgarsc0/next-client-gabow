@@ -28,6 +28,17 @@
   cursor: pointer;
   animation: ring 1s infinite alternate;
 }
+@keyframes ring {
+  0% {
+      // opacity: 0;
+      border: #fbca67 solid 2px;
+  }
+
+  100% {
+      // opacity: 1;
+      border: #573b8a solid 2px;
+  }
+}
 html,
 body {
   padding: 0;
