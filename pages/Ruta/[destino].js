@@ -9,12 +9,22 @@ import { useEffect } from 'react';
 const Ruta = () => {
     const router=useRouter();
     const {destino}=router.query;
+    const [destinoState,setDestinoState]=useState();
     const handleRedirectModify=async()=>{
         const {data}=await axios.post("/api/services/getPlaceById",{id:destino});
         window.location.href=`/Edificio/${data.place}`;
     }
+    const validarBusqueda=async()=>{
+        const{data}=await axios.post("/api/services/getPlaceById",{id:destinoState});
+        if(data.status!="ok"){
+            window.location.href="/Mapas";
+        }
+    }
     useEffect(()=>{
-
+        setDestinoState(destino);
+        if(destinoState){
+            validarBusqueda();
+        }
     });
     return (
         <>
