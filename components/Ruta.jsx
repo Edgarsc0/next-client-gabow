@@ -142,8 +142,7 @@ const Ruta = ({visibility}) => {
                     theme="dark"
                 />
                 <div className={styles.container}>
-                    <h1>{originCords}</h1><br></br>
-                    <h1>{origin}</h1>
+                    <h1>Origen: {origin}</h1>
                 </div>
                 <div className={styles.container} id="recorrido">
                     <MapContainer ref={mapRef} center={cord} zoom={20}>
