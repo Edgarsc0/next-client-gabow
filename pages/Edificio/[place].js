@@ -25,6 +25,7 @@ const Edificio=()=>{
         setLugares(data.lugares);
     }
     const getSVG=async()=>{
+        document.getElementById("svg").innerHTML="CARGANDO..."
         const {data}=await axios.post("/api/services/getSVG",{
             piso:selectedPiso,
             place:place,
