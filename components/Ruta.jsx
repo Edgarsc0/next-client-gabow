@@ -57,7 +57,7 @@ const Ruta = ({visibility,place,dest}) => {
             const {status,result}=response.data;
             if(place=="CECyT 9"){
                 if(status="ok"){
-                    const id=result.ResultSetHeader.insertId;
+                    const id=result.insertId;
                     console.log(id);
                 }
             }if(place=="Town Center"){
