@@ -42,9 +42,6 @@ const Edificio=()=>{
     const handleChangePiso=(optionSelected)=>{
         setSelectedPiso(optionSelected.value);
     }
-    const handleRedirect=()=>{
-        console.log("hola");
-    }
     useEffect(()=>{
         if(places.length==0){
             getData();
