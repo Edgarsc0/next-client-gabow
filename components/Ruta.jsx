@@ -53,7 +53,7 @@ const Ruta = ({visibility,place,dest}) => {
                 year:year,
                 day:dia
             });
-            console.log(response.data);
+            //console.log(response.data);
             const {status,result}=response.data;
             if(place=="CECyT 9"){
                 if(status="ok"){
@@ -67,7 +67,7 @@ const Ruta = ({visibility,place,dest}) => {
                         id_espg:1
                     });
                     console.log(response.data);
-                    const {status,result}=response.data;
+                    const {status,results}=response.data;
                     if(status=="ok"){
                         const id=result.insertId;
                         console.log(id);

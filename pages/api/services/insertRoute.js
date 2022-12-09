@@ -10,7 +10,7 @@ export default function(req,res){
         }else{
             return res.json({
                 status:"ok",
-                result:result
+                results:result
             })
         }
     })
