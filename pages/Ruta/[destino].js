@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../../styles/Ruta.module.scss'
 import { useRouter } from 'next/router'
+import axios from 'axios';
+import { useEffect } from 'react';
 
 const Ruta = () => {
     const router=useRouter();
     const {destino}=router.query;
+    const handleRedirectModify=async()=>{
+        const {data}=await axios.post("/api/services/getPlaceById",{id:destino});
+        window.location.href=`/Edificio/${data.place}`;
+    }
+    const validarBusqueda=async()=>{
+        const {data}=await axios.post("/api/services/getPlaceById",{id:destino});
+        if(data.status!="ok"){
+            window.location.href="/Mapas";
+        }
+    }
+    useEffect(()=>{
+        validarBusqueda();
+    });
     return (
         <>
             <Head>
@@ -23,8 +38,8 @@ const Ruta = () => {
                         <div>Origen: Primer piso</div>
                         <div>Lugar: {destino}</div>
                         <br />
-                        <Link href="/Edificio"><button type="button" className={styles.button}>Modificar Destino</button></Link>
-                        <Link href="/Mapas"><button type="button" className={styles.button}>Finalizar Ruta</button></Link>
+                        <button onClick={handleRedirectModify} type="button" className={styles.button}>Modificar Destino</button>
+                        <button type="button" className={styles.button}>Finalizar Ruta</button>
                     </div>
                     <div>
                         <br />
