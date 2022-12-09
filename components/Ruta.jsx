@@ -21,13 +21,13 @@ const Ruta = ({visibility,place,dest}) => {
     //<Marker icon={icon} position={data}></Marker>
     const mapRef = useRef();
     const [cord, setCord] = useState([19.472819274952897, -99.14333273147834])
-    const [data,setData]=useState([[19.472819274952897, -99.14333273147834]]);
+    const [dataCords,setData]=useState([[19.472819274952897, -99.14333273147834]]);
     const [originCords,setOriginCords]=useState();
     const [origin,setOrigin]=useState("Calculando origen...");
     const success=(position)=>{
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
-        setData([...data,[position.coords.latitude,position.coords.longitude]]);
+        setData([...dataCords,[position.coords.latitude,position.coords.longitude]]);
     }
     const error=(error)=>{
         console.log(error);
@@ -72,7 +72,7 @@ const Ruta = ({visibility,place,dest}) => {
                         const idRuta=results.insertId;
                         console.log("id ruta: "+idRuta);
                         const cordsResponse=await axios.post("/api/services/insertCords",{
-                            cords:data
+                            cords:dataCords
                         });
                     }
                 }
@@ -158,13 +158,13 @@ const Ruta = ({visibility,place,dest}) => {
     }
     useEffect(()=>{
         globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
-        console.log(data);
+        console.log(dataCords);
         if(originCords && origin=="Calculando origen..."){
-            if(isInEscuela(data[1])){
-                if(isInEdifAulas(data[1])){
+            if(isInEscuela(dataCords[1])){
+                if(isInEdifAulas(dataCords[1])){
                     setOrigin("EdifAulas");                    
                 }else{
-                    if(isInEdifGob(data[1])){
+                    if(isInEdifGob(dataCords[1])){
                         setOrigin("EdifGob");
                     }else{
                         setOrigin("AreaComun");
@@ -174,8 +174,8 @@ const Ruta = ({visibility,place,dest}) => {
                 setOrigin("Externo");
             }
         }
-        if(data.length==2){
-            setOriginCords(data[1]);
+        if(dataCords.length==2){
+            setOriginCords(dataCords[1]);
         }
     });
 
@@ -206,7 +206,7 @@ const Ruta = ({visibility,place,dest}) => {
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         />                    
-                        <Marker position={data[data.length-1]} icon={icon}/>
+                        <Marker position={dataCords[dataCords.length-1]} icon={icon}/>
                     </MapContainer>
                 </div>
                 <div className={styles.container3}><button type="button" onClick={handleFinish} className={styles.button}>Finalizar Ruta</button></div>
