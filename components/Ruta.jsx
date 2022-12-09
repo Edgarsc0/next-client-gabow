@@ -104,11 +104,11 @@ const Ruta = ({visibility}) => {
         globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
         console.log(data);
         if(originCords && !origin){
-            if(isInEscuela([19.45351898389171, -99.17560374699974])){
-                if(isInEdifAulas([19.45351898389171, -99.17560374699974])){
+            if(isInEscuela(data[1])){
+                if(isInEdifAulas(data[1])){
                     setOrigin("EdifAulas");                    
                 }else{
-                    if(isInEdifGob([19.45351898389171, -99.17560374699974])){
+                    if(isInEdifGob(data[1])){
                         setOrigin("EdifGob");
                     }else{
                         setOrigin("AreaComun");
