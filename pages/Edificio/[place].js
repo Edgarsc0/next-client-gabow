@@ -85,6 +85,9 @@ const Edificio=()=>{
             }
         }
     })
+    const handleSearch=(option)=>{
+        document.getElementById(option.value).setAttribute("class","resaltado");
+    }
     function Button({selected}){
         if(selected){
             return(
@@ -105,7 +108,7 @@ const Edificio=()=>{
                 <div className={styles.header}>
                     <Select className={styles.buscador} onChange={handleChangeLugar} options={lugares} placeholder='Selecciona un lugar...'></Select>
                     <Select className={styles.buscador} onChange={handleChangePiso} options={piso} placeholder='Selecciona un piso...'></Select>
-                    <Select className={styles.buscador} options={current} placeholder="En este piso..."></Select>
+                    <Select className={styles.buscador} options={current} onChange={handleSearch} placeholder="En este piso..."></Select>
                 </div>
                 <div id="svg"></div>
             </>
