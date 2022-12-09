@@ -10,6 +10,7 @@ const Ruta = () => {
     const router=useRouter();
     const {destino}=router.query;
     const [destinoState,setDestinoState]=useState();
+    const [data,setData]=useState([]);
     const handleRedirectModify=async()=>{
         const {data}=await axios.post("/api/services/getPlaceById",{id:destino});
         window.location.href=`/Edificio/${data.place}`;
@@ -30,11 +31,24 @@ const Ruta = () => {
             window.location.href="/Mapas";
         }
     }
+    const success=(position)=>{
+        setData(...data,[position.coords.latitude,position.coords.longitude]);
+    }
+    const error=(error)=>{
+        console.log(error);
+    }
+    const options={
+        enableHighAccuracy:true,
+        timeout:5000,
+        maximumAge:0
+    }
     useEffect(()=>{
         setDestinoState(destino);
         if(destinoState){
             validarBusqueda();
         }
+        globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
+        console.log(data);
     });
     return (
         <>
