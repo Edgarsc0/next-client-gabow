@@ -35,6 +35,7 @@ const Ruta = () => {
     }
     const handleInit=()=>{
         setVisible(true);
+        window.location.href="#recorrido";
     }
     useEffect(()=>{
         setDestinoState(destino);

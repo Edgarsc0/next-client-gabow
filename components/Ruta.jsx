@@ -58,7 +58,7 @@ const Ruta = ({visibility}) => {
                     pauseOnHover
                     theme="dark"
                 />
-                <div className={styles.container}>
+                <div className={styles.container} id="recorrido">
                     <MapContainer ref={mapRef} center={cord} zoom={20}>
                         <TileLayer
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
