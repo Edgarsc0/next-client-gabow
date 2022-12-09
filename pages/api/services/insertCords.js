@@ -3,6 +3,7 @@ import myQuerys from "../db/querys";
 export default function(req,res){
     const {cords,id_ruta}=req.body;
     console.log(cords);
+    var i=0;
     cords.forEach(item=>{
         console.log(item);
         con.query(myQuerys.insertCords,[item[0],item[1],id_ruta],(err,result)=>{
@@ -13,8 +14,7 @@ export default function(req,res){
                 });
             }
         });
-    });
-    return res.json({
-        status:"ok"
+        i++;
+        console.log(i==cords.length);
     });
 }
