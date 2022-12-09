@@ -54,6 +54,7 @@ const Edificio=()=>{
             getSVG();
             document.getElementById("svg").innerHTML=svg;
             if(place=="CECyT 9"){
+                current.length=0;
                 document.getElementsByName("aula").forEach(item=>{
                     current.push({
                         label:item.id,
