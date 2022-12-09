@@ -141,7 +141,7 @@ const Ruta = ({visibility}) => {
                     pauseOnHover
                     theme="dark"
                 />
-                <div className={styles.container}>
+                <div className={styles.container3}>
                     <h1>Origen: {origin}</h1>
                 </div>
                 <div className={styles.container} id="recorrido">
