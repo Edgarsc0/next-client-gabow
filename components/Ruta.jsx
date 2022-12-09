@@ -15,19 +15,15 @@ const icon = new Icon({
 //escuela: 19.45371285983326, -99.17530557712774
 //town center: 19.503565296138603, -99.20305358194275
 const Ruta = ({usercords}) => {
-    
-    const mapRef = useRef();
-    const mapC=mapRef.current;
     if(usercords){
         console.log(usercords);
-        mapC.flyTo(usercords[usercords.length-1],18,{duration:2})
         return (
             <>
                 <Head>
                     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
                 </Head>         
                 <div className={styles.container}>
-                    <MapContainer ref={mapRef} center={[19.472819274952897, -99.14333273147834]} zoom={11}>
+                    <MapContainer center={usercords[usercords.length-1]} zoom={18}>
                         <TileLayer
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
