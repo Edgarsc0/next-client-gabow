@@ -66,6 +66,11 @@ const Ruta = ({visibility,place,dest}) => {
                         id_fecha:id,
                         id_espg:1
                     });
+                    const {status,result}=response.data;
+                    if(status=="ok"){
+                        const id=result.insertId;
+                        console.log(id);
+                    }
                 }
             }if(place=="Town Center"){
                 if(status="ok"){
@@ -78,6 +83,11 @@ const Ruta = ({visibility,place,dest}) => {
                         id_fecha:id,
                         id_espg:2
                     });
+                    const {status,result}=response.data;
+                    if(status=="ok"){
+                        const id=result.insertId;
+                        console.log(id);
+                    }
                 }
             }
         }
