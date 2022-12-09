@@ -71,6 +71,9 @@ const Ruta = ({visibility,place,dest}) => {
                     if(status=="ok"){
                         const idRuta=results.insertId;
                         console.log("id ruta: "+idRuta);
+                        const cordsResponse=await axios.post("/api/services/insertCords",{
+                            cords:data
+                        });
                     }
                 }
             }if(place=="Town Center"){
@@ -84,10 +87,10 @@ const Ruta = ({visibility,place,dest}) => {
                         id_fecha:id,
                         id_espg:2
                     });
-                    const {status,result}=response.data;
+                    const {status,results}=response.data;
                     if(status=="ok"){
-                        const id=result.insertId;
-                        console.log(id);
+                        const idRuta=results.insertId;
+                        console.log("id ruta: "+idRuta);
                     }
                 }
             }
