@@ -1,10 +1,12 @@
 import con from "../db/config";
 import myQuerys from "../db/querys";
 export default function(req,res){
-    console.log(req.body);
-    const {cords}=req.body;
+    const {cords,id_ruta}=req.body;
     console.log(cords);
+    cords.forEach(item=>{
+        console.log(item);
+    });
     return res.json({
-        status:"ok"
+        staus:"ok"
     });
 }

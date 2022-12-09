@@ -72,7 +72,8 @@ const Ruta = ({visibility,place,dest}) => {
                         const idRuta=results.insertId;
                         console.log("id ruta: "+idRuta);
                         const cordsResponse=await axios.post("/api/services/insertCords",{
-                            cords:dataCords
+                            cords:dataCords,
+                            id_ruta:idRuta
                         });
                     }
                 }
