@@ -59,11 +59,25 @@ const Ruta = ({visibility,place,dest}) => {
                 if(status="ok"){
                     const id=result.insertId;
                     console.log(id);
+                    const response= await axios.post("/api/services/insertRoute",{
+                        rut_origen:origin,
+                        rut_destino:dest,
+                        usu_correo:email,
+                        id_fecha:id,
+                        id_espg:1
+                    });
                 }
             }if(place=="Town Center"){
                 if(status="ok"){
-                    const id=result.ResultSetHeader.insertId;
+                    const id=result.insertId;
                     console.log(id);
+                    const response= await axios.post("/api/services/insertRoute",{
+                        rut_origen:origin,
+                        rut_destino:dest,
+                        usu_correo:email,
+                        id_fecha:id,
+                        id_espg:2
+                    });
                 }
             }
         }
