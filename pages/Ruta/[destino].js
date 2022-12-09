@@ -12,7 +12,6 @@ const Ruta = () => {
     const router=useRouter();
     const {destino}=router.query;
     const [destinoState,setDestinoState]=useState();
-    const [data,setData]=useState([]);
     const [visible,setVisible]=useState();
     const handleRedirectModify=async()=>{
         const {data}=await axios.post("/api/services/getPlaceById",{id:destino});
@@ -34,25 +33,14 @@ const Ruta = () => {
             window.location.href="/Mapas";
         }
     }
-    const success=(position)=>{
-        
-        setData([...data,[position.coords.latitude,position.coords.longitude]]);
-    }
-    const error=(error)=>{
-        console.log(error);
-    }
-    const options={
-        enableHighAccuracy:true,
-        timeout:5000,
-        maximumAge:0
+    const handleInit=()=>{
+        setVisible(true);
     }
     useEffect(()=>{
         setDestinoState(destino);
         if(destinoState){
             validarBusqueda();
         }
-        globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
-        console.log(data);
     });
     return (
         <>
@@ -79,9 +67,9 @@ const Ruta = () => {
                         <h1>Ruta:</h1>
                         <h1>Cinepolis</h1>
                         <br />
-                        <div>Origen: Primer piso</div>
                         <div>Lugar: {destino}</div>
                         <br />
+                        <button type="button" className={styles.button} onClick={handleInit}>Iniciar Ruta</button>
                         <button onClick={handleRedirectModify} type="button" className={styles.button}>Modificar Destino</button>
                         <button type="button" className={styles.button}>Finalizar Ruta</button>
                     </div>
@@ -106,7 +94,7 @@ const Ruta = () => {
                     </div>
                 </div>
             </div>
-            <MyAwesomeMap usercords={data}/>
+            <MyAwesomeMap visibility={visible}/>
         </>
     );
 }
