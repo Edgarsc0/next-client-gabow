@@ -66,6 +66,7 @@ const Ruta = ({visibility,place,dest}) => {
                         id_fecha:id,
                         id_espg:1
                     });
+                    console.log(response.data);
                     const {status,result}=response.data;
                     if(status=="ok"){
                         const id=result.insertId;
