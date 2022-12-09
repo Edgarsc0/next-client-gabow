@@ -13,7 +13,7 @@ const Edificio=()=>{
     const [svg,setSVG]=useState();
     const [lugares,setLugares]=useState([]);
     const [rectSelected,setRectSelected]=useState();
-    const [current,setCurrent]=useState();
+    const [current,setCurrent]=useState([]);
     const getData=async()=>{
         const {data}=await axios.post("/api/services/getPlaces");
         console.log(data);
@@ -30,6 +30,7 @@ const Edificio=()=>{
             place:place,
             lugar:selectedLugar
         });
+
         setSVG(data.svg);
     }
     const handleChangeLugar=async(optionSelected)=>{
@@ -52,10 +53,17 @@ const Edificio=()=>{
         if(selectedLugar && selectedPiso){
             getSVG();
             document.getElementById("svg").innerHTML=svg;
+            const curentLugares=[];
             if(place=="CECyT 9"){
+                
                 document.getElementsByName("aula").forEach(item=>{
+                    curentLugares.push({
+                        label:item.id,
+                        value:item.id
+                    });
                     item.onclick=()=>{
                         setRectSelected(item.id);
+                        //setRectSelected(item.id);
                     }
                     item.onmouseover=()=>{
                         item.style.fill="aqua";
@@ -64,6 +72,7 @@ const Edificio=()=>{
                         item.style.fill="";
                     }
                 });
+                setCurrent(curentLugares);
             }if(place=="Town Center"){
                 document.getElementsByName("town").forEach(item=>{
                     item.onclick=()=>{
@@ -96,6 +105,9 @@ const Edificio=()=>{
                     <Button selected={rectSelected}/>
                 </div>
                 <hr></hr>
+                <div className={styles.header}>
+                    <Select className={styles.buscador} onChange={handleChangePiso} options={current} placeholder='Busca un lugar...'></Select>
+                </div>
                 <div className={styles.header}>
                     <Select className={styles.buscador} onChange={handleChangeLugar} options={lugares} placeholder='Selecciona un lugar...'></Select>
                     <Select className={styles.buscador} onChange={handleChangePiso} options={piso} placeholder='Selecciona un piso...'></Select>
