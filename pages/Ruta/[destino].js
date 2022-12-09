@@ -2,8 +2,11 @@ import React from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../../styles/Ruta.module.scss'
+import { useRouter } from 'next/router'
 
 const Ruta = () => {
+    const router=useRouter();
+    const {destino}=router.query;
     return (
         <>
             <Head>
@@ -18,7 +21,7 @@ const Ruta = () => {
                         <h1>Cinepolis</h1>
                         <br />
                         <div>Origen: Primer piso</div>
-                        <div>Lugar: Town Center El Rosario</div>
+                        <div>Lugar: {destino}</div>
                         <br />
                         <Link href="/Edificio"><button type="button" className={styles.button}>Modificar Destino</button></Link>
                         <Link href="/Mapas"><button type="button" className={styles.button}>Finalizar Ruta</button></Link>
