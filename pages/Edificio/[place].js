@@ -53,6 +53,94 @@ const Edificio=()=>{
         if(selectedLugar && selectedPiso){
             getSVG();
             document.getElementById("svg").innerHTML=svg;
+            if(svg){
+                var svgCanvas = document.getElementById("eqXo87N13f91");
+                var viewPort = document.getElementById("viewport");
+                console.log(svgCanvas)
+                console.log(viewPort)
+                var drag = false;
+                var offset = { x: 0, y: 0 };
+                var factor = .1;
+                var matrix = new DOMMatrix();
+                // MIENTRASS ESTE EL MOUSE CLICKEANDO
+                svgCanvas.addEventListener('pointerdown', function (event) {
+                    drag = true;
+                    offset = { x: event.offsetX, y: event.offsetY };
+                });
+                // MIENTRAS SE MUEVA EL MOUSE
+                svgCanvas.addEventListener('pointermove', function (event) {
+                    if (drag) {
+                        var tx = event.offsetX - offset.x;
+                        var ty = event.offsetY - offset.y;
+                            offset = {
+                                x: event.offsetX,
+                                y: event.offsetY
+                            };                
+                            matrix.preMultiplySelf(new DOMMatrix()
+                            .translateSelf(tx, ty));
+                            // SOLO SI ESTA DENTRO DE LOS LIMITES
+                            if((matrix.e > -1100 && matrix.e < 1100) && (matrix.f > -700 && matrix.f < 700)){
+                                viewPort.style.transform = matrix.toString();
+                            }
+                            else{
+                                if(matrix.e < 0){
+                                    matrix.e += 1;
+                                }
+                                else if(matrix.e > 0){
+                                    matrix.e -= 1;
+                                }
+                                else if(matrix.f < 0){
+                                    matrix.f += 1;
+                                }
+                                else if(matrix.f > 0){
+                                    matrix.f -= 1;
+                                }
+                            }
+                    }
+                });
+                // CUANDO EL MOUSE ABANDONE EL SVG
+                svgCanvas.addEventListener('pointerup', function (event) {
+                    drag = false;
+                });
+            }
+            // FUNCION DE ZOOM
+            function zoom (event) {
+                var zoom = event.deltaY > 0 ? -1 : 1;
+                var scale = 1 + factor * zoom;
+                offset = {
+                    x: event.offsetX,
+                    y: event.offsetY
+                };
+                matrix.preMultiplySelf(new DOMMatrix()
+                    .translateSelf(offset.x, offset.y)
+                    .scaleSelf(scale, scale)
+                    .translateSelf(-offset.x, -offset.y));
+                    if(matrix.d > 1.7){
+                        matrix.d = 1.6;
+                    }
+                    else{
+                        viewPort.style.transform = matrix.toString();
+                    }
+            }
+            // FUNCION REZOOM
+            function zoomInverso (event) {
+                var zoom = event.deltaY > 0 ? -1 : 1;
+                var scale = 1 - factor / zoom;
+                offset = {
+                    x: event.offsetX,
+                    y: event.offsetY
+                };
+                matrix.preMultiplySelf(new DOMMatrix()
+                    .translateSelf(offset.x, offset.y)
+                    .scaleSelf(scale, scale)
+                    .translateSelf(-offset.x, -offset.y));
+                if(matrix.d < .6){                 
+                    matrix.d = .5;
+                }
+                else{
+                    viewPort.style.transform = matrix.toString();
+                }
+            }
             if(place=="CECyT 9"){
                 current.length=0;
                 document.getElementsByName("aula").forEach(item=>{
@@ -76,6 +164,7 @@ const Edificio=()=>{
                     }
                 });
             }if(place=="Town Center"){
+                current.length=0;
                 document.getElementsByName("town").forEach(item=>{
                     current.push({
                         label:item.id,
