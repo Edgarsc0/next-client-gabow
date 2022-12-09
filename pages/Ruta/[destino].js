@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../styles/Ruta.module.scss'
+import styles from '../../styles/Ruta.module.scss'
 
 const Ruta = () => {
     return (
