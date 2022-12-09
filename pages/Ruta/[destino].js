@@ -13,6 +13,7 @@ const Ruta = () => {
     const {destino}=router.query;
     const [destinoState,setDestinoState]=useState();
     const [visible,setVisible]=useState();
+    const [place,setPlace]=useState();
     const handleRedirectModify=async()=>{
         const {data}=await axios.post("/api/services/getPlaceById",{id:destino});
         window.location.href=`/Edificio/${data.place}`;
@@ -20,7 +21,7 @@ const Ruta = () => {
     const validarBusqueda=async()=>{
         const{data}=await axios.post("/api/services/getPlaceById",{id:destinoState});
         if(data.status!="ok"){
-            toast.error('Ups! Algo fallo al intentar registrar las credenciales. Intentalo de nuevo mas tarde. ', {
+            toast.error('Ups! El lugar destino no existe en la bd.', {
                 position: "top-right",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -31,6 +32,8 @@ const Ruta = () => {
                 theme: "colored",
             });
             window.location.href="/Mapas";
+        }else{
+            setPlace(data.place);
         }
     }
     const handleInit=()=>{
@@ -65,9 +68,9 @@ const Ruta = () => {
                     <div>
                         <br />
                         <h1>Ruta:</h1>
-                        <h1>Cinepolis</h1>
+                        <h1>{destino}</h1>
                         <br />
-                        <div>Lugar: {destino}</div>
+                        <div>Lugar: {place}</div>
                         <br />
                         <button type="button" className={styles.button} onClick={handleInit}>Iniciar Ruta</button>
                         <button onClick={handleRedirectModify} type="button" className={styles.button}>Modificar Destino</button>
