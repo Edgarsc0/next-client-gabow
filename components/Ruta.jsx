@@ -69,8 +69,8 @@ const Ruta = ({visibility,place,dest}) => {
                     console.log(response.data);
                     const {status,results}=response.data;
                     if(status=="ok"){
-                        const id=result.insertId;
-                        console.log(id);
+                        const idRuta=results.insertId;
+                        console.log("id ruta: "+idRuta);
                     }
                 }
             }if(place=="Town Center"){
