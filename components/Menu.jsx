@@ -12,12 +12,15 @@ const Menu = () => {
         .then(res=>res.json())
         .then(data=>setData(data))
     },[]);
+    const redirect=()=>{
+        window.location.href="/";
+    }
     console.log(data);
     if(data.cookie!=undefined){
         return (
             <>
                 <nav className={styles.container} id="nav">
-                    <h2 className={`${styles.navLogo}`}>GABOW</h2>
+                    <h2 className={`${styles.navLogo}`} onClick={redirect}>GABOW</h2>
                     <ul className={styles.navLinks} >
                         {/* <li className={styles.navItem}>
                             <Link href="/">
@@ -53,7 +56,7 @@ const Menu = () => {
         return (
             <>
                 <nav className={styles.container} id="nav">
-                    <h2 className={`${styles.navLogo}`}>GABOW</h2>
+                    <h2 className={`${styles.navLogo}`} onClick={redirect}>GABOW</h2>
                     <ul className={styles.navLinks} >
                         {/* <li className={styles.navItem}>
                             <Link href="/">
