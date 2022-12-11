@@ -4,6 +4,7 @@ export default function(req,res){
     const {cords,id_ruta}=req.body;
     console.log(cords);
     return res.json({
+        cords:cords,
         status:"ok"
     });
     /*var i=0;
