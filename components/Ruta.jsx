@@ -27,7 +27,7 @@ const Ruta = ({visibility,place,dest}) => {
     const success=(position)=>{
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
-        setData([...dataCords,[position.coords.latitude,position.coords.longitude]]);
+        dataCords.push([position.coords.latitude,position.coords.longitude]);
     }
     const error=(error)=>{
         console.log(error);
@@ -206,7 +206,11 @@ const Ruta = ({visibility,place,dest}) => {
                     <h1>Origen: {origin}</h1>
                 </div>
                 <div className={styles.container3}>
-                    <h1>{dataCords.toString()}</h1>
+                    <ol>
+                        {dataCords.map(item=>(
+                            <li>{item.toString()}</li>
+                        ))}
+                    </ol>
                 </div>
                 <div className={styles.container3} id="recorrido">
                     <MapContainer ref={mapRef} center={cord} zoom={20}>
