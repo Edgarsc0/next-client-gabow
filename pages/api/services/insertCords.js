@@ -3,6 +3,7 @@ import myQuerys from "../db/querys";
 export default function(req,res){
     const {cords,id_ruta}=req.body;
     console.log(cords);
+    console.log(cords.toString());
     return res.json({
         cords:cords,
         status:"ok"
