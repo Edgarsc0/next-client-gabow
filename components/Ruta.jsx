@@ -28,8 +28,6 @@ const Ruta = ({visibility,place,dest}) => {
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
         setCord([...dataCords,[position.coords.latitude,position.coords.longitude]])
-        dataCords.push([position.coords.latitude,position.coords.longitude]);
-        console.log(dataCords);
     }
     const error=(error)=>{
         console.log(error);
