@@ -208,7 +208,7 @@ const Ruta = ({visibility,place,dest}) => {
                 <div className={styles.container3}>
                     <ol>
                         {dataCords.map(item=>(
-                            <li>{item.toString()}</li>
+                            <li key={dataCords.indexOf(item)}>{item.toString()}</li>
                         ))}
                     </ol>
                 </div>
