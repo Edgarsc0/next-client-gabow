@@ -1,5 +1,6 @@
 import con from "../db/config";
 import myQuerys from "../db/querys";
+let i=0;
 export default function(req,res){
     const {cords,id_ruta}=req.body;
     console.log(cords);
@@ -13,5 +14,12 @@ export default function(req,res){
                 });
             }
         });
+        i++;
+        if(i==cords.length){
+            return {
+                status:"ok",
+                cords:cords
+            }
+        }
     });
 }
