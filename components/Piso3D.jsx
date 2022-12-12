@@ -5,7 +5,7 @@ export function Piso3D({selected}) {
   const { nodes, materials } = useGLTF(selected);
   if(selected=="Piso3.glb"){
     return (
-      <group {...props} dispose={null}>
+      <group  dispose={null}>
         <group position={[0.05, 0.05, 0.02]} rotation={[-Math.PI / 2, 0, 0]} scale={1}>
           <group position={[-42.65, 53.53, 51.2]}>
             <group position={[0, -88.94, 0]} rotation={[0, 0, Math.PI]}>
@@ -228,7 +228,7 @@ export function Piso3D({selected}) {
       </group>
     )
   }if(selected=="Piso2.glb"){
-    return(<group {...props} dispose={null}>
+    return(<group  dispose={null}>
       <group position={[0.07, 0.05, 0.02]} rotation={[-Math.PI / 2, 0, 0]} scale={1}>
         <group position={[-42.65, 53.53, 51.2]}>
           <group position={[0, -88.94, 0]} rotation={[0, 0, Math.PI]}>
@@ -533,4 +533,3 @@ export function Piso3D({selected}) {
   }
 }
 
-useGLTF.preload('/Piso3.glb')
