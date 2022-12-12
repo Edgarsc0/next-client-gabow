@@ -29,7 +29,7 @@ const Ruta = ({visibility,place,dest}) => {
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
         cordsArray.push([position.coords.latitude,position.coords.longitude]);
-        console.log(cordsArray);
+        console.log("CordsArray:"+cordsArray);
         setData([position.coords.latitude,position.coords.longitude]);
     }
     const error=(error)=>{
