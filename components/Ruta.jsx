@@ -29,7 +29,7 @@ const Ruta = ({visibility,place,dest}) => {
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
         cordsArray.push([position.coords.latitude,position.coords.longitude]);
-        console.log("CordsArray:"+cordsArray);
+        console.log(cordsArray);
         setData([position.coords.latitude,position.coords.longitude]);
     }
     const error=(error)=>{
@@ -167,7 +167,7 @@ const Ruta = ({visibility,place,dest}) => {
     }
     useEffect(()=>{
         globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
-        console.log("Estado dataCords:"+dataCords);
+        //console.log(dataCords);
         if(originCords && origin=="Calculando origen..."){
             if(isInEscuela(dataCords[1])){
                 if(isInEdifAulas(dataCords[1])){
