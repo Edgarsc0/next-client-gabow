@@ -73,8 +73,9 @@ const Mapa = () => {
                 </MapContainer>
             </div>
             <div className="contianerIni">
-                <h1>Acerca de Compartir Ubica</p>
+                <h1>Acerca de Compartir Ubica</h1>
                 <br></br>
+                <p>Podras compartir tu ubicacion con los usuarios que tu quieras</p>
                 <h1>About View</h1>
             </div>
         </>
