@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
+import { useState } from 'react';
 import styles from '../styles/Mapas.module.scss'
 export default function MisRutas(){
-    const [cords,setCords]=useEffect([]);
+    const [cords,setCords]=useState([]);
     return(
         <>
             <div className={styles.container3}>
