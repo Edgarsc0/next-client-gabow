@@ -19,8 +19,9 @@ export default function MisRutas(){
         console.log(data);
         if(data.info.length==0){
             window.location.href="/Mapas";
+        }else{
+            setRoutes(data.info);
         }
-        setRoutes(data.info);
     }   
     useEffect(()=>{
         if(!userobj.user){
