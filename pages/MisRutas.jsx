@@ -50,8 +50,7 @@ export default function MisRutas(){
                         </tr>
                     </thead>
                     <tbody>
-                        {routes.map(item=>{
-                            (
+                        {routes.map(item=>(
                                 <tr>
                                     <td className={favstyle.celda}>{item.id_ruta}</td>
                                     <td className={favstyle.celda}>{item.rut_origen}</td>
@@ -72,7 +71,7 @@ export default function MisRutas(){
                                     </td>
                                 </tr>
                             )
-                        })}
+                        )}
                     </tbody>
                 </table>
             </div>
