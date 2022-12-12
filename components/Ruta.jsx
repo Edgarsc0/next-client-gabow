@@ -167,7 +167,7 @@ const Ruta = ({visibility,place,dest}) => {
     }
     useEffect(()=>{
         globalThis.idWatchPosition=navigator.geolocation.watchPosition(success,error,options);
-        console.log(dataCords);
+        console.log("Estado dataCords:"+dataCords);
         if(originCords && origin=="Calculando origen..."){
             if(isInEscuela(dataCords[1])){
                 if(isInEdifAulas(dataCords[1])){
