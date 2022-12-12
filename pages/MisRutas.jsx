@@ -38,7 +38,6 @@ export default function MisRutas(){
             <div className={styles.container3}>
                 <h1>Mis Rutas: {userobj.user}</h1>
             </div>
-            <hr></hr>
             <div className={favstyle.container}>
                 <table className={favstyle.tabla}>
                     <thead>
