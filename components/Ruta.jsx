@@ -15,6 +15,7 @@ const icon = new Icon({
     iconUrl: '/current.svg',
     iconSize: [25,25]
 })
+const cordsArray=[];
 //escuela: 19.45371285983326, -99.17530557712774
 //town center: 19.503565296138603, -99.20305358194275
 const Ruta = ({visibility,place,dest}) => {
@@ -24,7 +25,6 @@ const Ruta = ({visibility,place,dest}) => {
     const [dataCords,setData]=useState([19.472819274952897, -99.14333273147834]);
     const [originCords,setOriginCords]=useState();
     const [origin,setOrigin]=useState("Calculando origen...");
-    let cordsArray=[];
     const success=(position)=>{
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
