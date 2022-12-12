@@ -24,7 +24,7 @@ const Ruta = ({visibility,place,dest}) => {
     const [dataCords,setData]=useState([19.472819274952897, -99.14333273147834]);
     const [originCords,setOriginCords]=useState();
     const [origin,setOrigin]=useState("Calculando origen...");
-    const cordsArray=[];
+    let cordsArray=[];
     const success=(position)=>{
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
@@ -74,6 +74,7 @@ const Ruta = ({visibility,place,dest}) => {
                     if(status=="ok"){
                         const idRuta=results.insertId;
                         console.log("id ruta: "+idRuta);
+                        console.log(cordsArray.length);
                         const cordsResponse=await axios.post("/api/services/insertCords",{
                             cords:cordsArray,
                             id_ruta:idRuta
