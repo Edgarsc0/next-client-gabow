@@ -74,6 +74,10 @@ const Ruta = ({visibility,place,dest}) => {
                         const idRuta=results.insertId;
                         console.log("id ruta: "+idRuta);
                         console.log(cordsArray.length);
+                        document.getElementById("idruta").innerHTML=`
+                            <h1>id ruta: ${idRuta}</h1><br>
+                            <h1>coordenadas obtenidas: ${cordsArray.length}</h1>
+                        `;
                         const cordsResponse=await axios.post("/api/services/insertCords",{
                             cords:cordsArray,
                             id_ruta:idRuta
@@ -242,6 +246,7 @@ const Ruta = ({visibility,place,dest}) => {
                 </div>
                 <div className={styles.container3}>
                     <h1>{dataCords}</h1>
+                    <div id="idruta"></div>
                 </div>
                 <div className={styles.container3} id="recorrido">
                     <MapContainer ref={mapRef} center={cord} zoom={20}>
