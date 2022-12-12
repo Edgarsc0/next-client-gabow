@@ -3,7 +3,11 @@ import myQuerys from "../db/querys";
 export default function(req,res){
     const {cords,id_ruta}=req.body;
     console.log(cords);
-    console.log(cords.toString());
+    return res.json({
+        status: "ok",
+        cords:cords
+    });
+    /*console.log(cords.toString());
     cords.forEach(item=>{
         console.log(item);
         con.query(myQuerys.insertCords,[item[0],item[1],id_ruta],(err,result)=>{
@@ -16,5 +20,5 @@ export default function(req,res){
                 console.log(result);
             }
         });
-    });
+    });*/
 }
