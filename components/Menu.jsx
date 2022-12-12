@@ -63,6 +63,11 @@ const Menu = () => {
                 <nav className={styles.container} id="nav">
                     <h2 className={`${styles.navLogo}`} onClick={redirect}>GABOW</h2>
                     <ul className={styles.navLinks} >
+                        {/* <li className={styles.navItem}>
+                            <Link href="/">
+                                <a className={styles.navLink}>Inicio</a>
+                            </Link>
+                        </li> */}
                         <li className={styles.navItem}>
                             <Link href="/Mapas">
                                 <a className={styles.navLink}>Mapas</a>
