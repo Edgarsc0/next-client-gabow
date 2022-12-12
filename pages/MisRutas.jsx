@@ -17,6 +17,9 @@ export default function MisRutas(){
             user:userobj.email
         });
         console.log(data);
+        if(data.info.length==0){
+            window.location.href="/Mapas";
+        }
         setRoutes(data.info);
     }   
     useEffect(()=>{
