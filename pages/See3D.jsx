@@ -35,7 +35,7 @@ const See3D = () => {
                 <Canvas camera={{zoom : .85 , position : [-100 , 250 , -240]}}>
                 <ambientLight intensity={.3} />
                 <Suspense>
-                    <Piso3D selected={search}/>
+
                 </Suspense>
                 <OrbitControls/>
                 <Environment background>
