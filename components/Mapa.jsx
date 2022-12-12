@@ -72,7 +72,7 @@ const Mapa = () => {
                     ))}
                 </MapContainer>
             </div>
-            <div className="contianerIni">
+            <div className="containerIni">
                 <h1>Acerca de Compartir Ubica</h1>
                 <br></br>
                 <p>Podras compartir tu ubicacion con los usuarios que tu quieras</p>
