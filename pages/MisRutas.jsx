@@ -17,7 +17,7 @@ export default function MisRutas(){
     });
     return(
         <>
-            <div className={styles.container3}>
+            <div className={styles.container}>
                 <h1>Mis Rutas: {email}</h1>
             </div>
             <hr></hr>
