@@ -5,7 +5,7 @@ import { Piso3D } from "../components/Piso3D";
 import Select from 'react-select'
 import * as THREE from 'three';
 import { useState } from "react";
-
+import styles from '../styles/Mapas.module.scss';
 const options = [{
 
     lavel : 'Piso 3',
@@ -30,7 +30,7 @@ const See3D = () => {
     }
     return(
         <>
-            <Select options={options} onChange={change3dView} placeholder='Pisos'/>
+            <Select options={options} className={styles.buscador} onChange={change3dView} placeholder='Pisos'/>
             <div style={{ width: '500px' , height:'500px' , margin: '10px auto'}}>
                 <Canvas camera={{zoom : .85 , position : [-100 , 250 , -240]}}>
                 <ambientLight intensity={.3} />

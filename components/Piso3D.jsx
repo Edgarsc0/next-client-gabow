@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
-
+import styles from '../styles/Mapas.module.scss';
 export function Piso3D({selected}) {
   const { nodes, materials } = useGLTF(selected);
   if(selected=="Piso3.glb"){
