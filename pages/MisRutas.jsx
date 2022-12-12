@@ -21,7 +21,7 @@ export default function MisRutas(){
         }else{
             getCords();
         }
-    });
+    },[userobj]);
     return(
         <>
             <div className={styles.container3}>
