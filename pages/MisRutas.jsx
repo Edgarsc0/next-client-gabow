@@ -43,12 +43,8 @@ export default function MisRutas(){
                 <table className={favstyle.tabla}>
                     <thead>
                         <tr>
-                            <th>Id</th>
                             <th>Origen</th>
                             <th>Destino</th>
-                            <th>Dia</th>
-                            <th>Mes</th>
-                            <th>Año</th>
                             <th>Lugar</th>
                             <th></th>
                         </tr>
@@ -56,12 +52,8 @@ export default function MisRutas(){
                     <tbody>
                         {routes.map(item=>(
                                 <tr key={item.id_ruta}>
-                                    <td className={favstyle.celda}>{item.id_ruta}</td>
                                     <td className={favstyle.celda}>{item.rut_origen}</td>
                                     <td className={favstyle.celda}>{item.rut_destino}</td>
-                                    <td className={favstyle.celda}>{item.rfc_dia}</td>
-                                    <td className={favstyle.celda}>{item.rfc_mes}</td>
-                                    <td className={favstyle.celda}>{item.rfc_anno}</td>
                                     <td className={favstyle.celda}>{item.esg_nombre}</td>
                                     <td>
                                         <Link href={`/ConsultarRuta/${item.id_ruta}`}>
