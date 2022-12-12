@@ -5,16 +5,23 @@ import styles from '../styles/Mapas.module.scss'
 export default function MisRutas(){
     const [cords,setCords]=useState([]);
     const [userobj,setUser]=useState({});
-    const getEmail=async()=>{
+    const getUser=async()=>{
         const {data}=await axios.post("/api/auth/getCookie");
         setUser(data.token);
     }
     const getCords=async()=>{
-        const {data}=await axios.post("/api/services/getRoutes");
+        const {data}=await axios.post("/api/services/getRoutes",{
+            user:userobj.email
+        });
+        console.log(data);
     }
     useEffect(()=>{
-        getEmail();
-    });
+        if(!userobj.user){
+            getUser();
+        }else{
+            getCords();
+        }
+    },[]);
     return(
         <>
             <div className={styles.container3}>
