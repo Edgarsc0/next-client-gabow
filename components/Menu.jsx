@@ -74,11 +74,6 @@ const Menu = () => {
                             </Link>
                         </li>
                         <li className={styles.navItem}>
-                            <Link href="/Favoritos">
-                                <a className={styles.navLink}>Favoritos</a>
-                            </Link>
-                        </li>
-                        <li className={styles.navItem}>
                             <Link href='/Registro'>
                                 <a className={styles.navLink}>Iniciar Sesion</a>
                             </Link>
