@@ -24,11 +24,13 @@ const Ruta = ({visibility,place,dest}) => {
     const [dataCords,setData]=useState([[19.472819274952897, -99.14333273147834]]);
     const [originCords,setOriginCords]=useState();
     const [origin,setOrigin]=useState("Calculando origen...");
+    const cordsArray=[];
     const success=(position)=>{
         const mapC = mapRef.current;
         mapC.flyTo([position.coords.latitude,position.coords.longitude],18,{duration:2});
-        console.log(dataCords);
-        setData([...dataCords,[position.coords.latitude,position.coords.longitude]]);
+        cordsArray.push([position.coords.latitude,position.coords.longitude]);
+        console.log(cordsArray);
+        setData([position.coords.latitude,position.coords.longitude]);
     }
     const error=(error)=>{
         console.log(error);
@@ -73,7 +75,7 @@ const Ruta = ({visibility,place,dest}) => {
                         const idRuta=results.insertId;
                         console.log("id ruta: "+idRuta);
                         const cordsResponse=await axios.post("/api/services/insertCords",{
-                            cords:dataCords,
+                            cords:cordsArray,
                             id_ruta:idRuta
                         });
                         console.log(cordsResponse.data);
@@ -208,11 +210,7 @@ const Ruta = ({visibility,place,dest}) => {
                     <h1>Origen: {origin}</h1>
                 </div>
                 <div className={styles.container3}>
-                    <ol>
-                        {dataCords.map(item=>(
-                            <li key={dataCords.indexOf(item)}>{item.toString()}</li>
-                        ))}
-                    </ol>
+                    <h1>{dataCords}</h1>
                 </div>
                 <div className={styles.container3} id="recorrido">
                     <MapContainer ref={mapRef} center={cord} zoom={20}>
@@ -220,7 +218,7 @@ const Ruta = ({visibility,place,dest}) => {
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         />                    
-                        <Marker position={dataCords[dataCords.length-1]} icon={icon}/>
+                        <Marker position={dataCords} icon={icon}/>
                     </MapContainer>
                 </div>
                 <div className={styles.container3}><button type="button" onClick={handleFinish} className={styles.button}>Finalizar Ruta</button></div>
