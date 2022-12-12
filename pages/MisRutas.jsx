@@ -59,6 +59,11 @@ export default function MisRutas(){
                                         <Link href={`/ConsultarRuta/${item.id_ruta}`}>
                                             <button type="button" className={styles.button}>Consultar ruta</button>
                                         </Link>
+                                        <Link href={`/EliminarRuta/${item.id_ruta}`}>
+                                            <button type="button" className={styles.button}>
+                                                <lord-icon src="https://cdn.lordicon.com/kfzfxczd.json" trigger="hover" colors="primary:#ffffff" width="32px" height="32px"></lord-icon>
+                                            </button>
+                                        </Link>
                                     </td>
                                 </tr>
                             )
