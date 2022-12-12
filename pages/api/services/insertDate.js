@@ -5,7 +5,8 @@ export default function(req,res){
     con.query(myQuerys.insertDate,[day,month,year],(err,result)=>{
         if(err){
             return res.json({
-                status:"Something went wrong"
+                status:"Something went wrong",
+                error:err
             });
         }else{
             return res.json({

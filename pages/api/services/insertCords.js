@@ -10,7 +10,8 @@ export default function(req,res){
             if(err){
                 console.log(err);
                 return res.json({
-                    status: "something went wrong"
+                    status: "something went wrong",
+                    error:err
                 });
             }
         });

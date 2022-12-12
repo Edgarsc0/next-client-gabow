@@ -56,8 +56,7 @@ const Ruta = ({visibility,place,dest}) => {
                 year:year,
                 day:dia
             });
-            //console.log(response.data);
-            const {status,result}=response.data;
+            const {status,result,error}=response.data;
             if(place=="CECyT 9"){
                 if(status="ok"){
                     const id=result.insertId;
@@ -70,7 +69,7 @@ const Ruta = ({visibility,place,dest}) => {
                         id_espg:1
                     });
                     console.log(response.data);
-                    const {status,results}=response.data;
+                    const {status,results,error}=response.data;
                     if(status=="ok"){
                         const idRuta=results.insertId;
                         console.log("id ruta: "+idRuta);
@@ -81,16 +80,41 @@ const Ruta = ({visibility,place,dest}) => {
                         });
                         if(cordsResponse.data.status=="ok"){
                             window.location.href="/Mapas";
-                        }
-                        /*try{
-                            const cordsResponse=await axios.post("/api/services/insertCords",{
-                                cords:cordsArray,
-                                id_ruta:idRuta
+                        }else{
+                            toast.error(`Ups! Algo fallo al subir las coordenadas. ERROR: ${cordsResponse.data.error}`, {
+                                position: "top-right",
+                                autoClose: 3000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: "colored",
                             });
-                        }catch(error){
-                            window.location.href="/Mapas";
-                        }*/
+                        }
+                    }else{
+                        toast.error(`Ups! Algo fallo al subir la Ruta. ERROR: ${error}`, {
+                            position: "top-right",
+                            autoClose: 3000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored",
+                        });
                     }
+                }else{
+                    toast.error(`Ups! Algo fallo al subir la Ruta. ERROR: ${error}`, {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                    });
                 }
             }if(place=="Town Center"){
                 if(status="ok"){

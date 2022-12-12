@@ -6,7 +6,8 @@ export default function(req,res){
         if(err){
             console.log(err);
             return res.json({
-                status:"Something went wrong"
+                status:"Something went wrong",
+                error:err
             });
         }else{
             return res.json({
