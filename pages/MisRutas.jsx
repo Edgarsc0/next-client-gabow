@@ -12,7 +12,7 @@ export default function MisRutas(){
         const {data}=await axios.post("/api/auth/getCookie");
         setUser(data.token);
     }
-    const getCords=async()=>{
+    const getRoutes=async()=>{
         const {data}=await axios.post("/api/services/getRoutes",{
             user:userobj.email
         });
@@ -23,7 +23,9 @@ export default function MisRutas(){
         if(!userobj.user){
             getUser();
         }else{
-            getCords();
+            if(routes.length==0){
+                getRoutes();
+            }
         }
     });
     return(
