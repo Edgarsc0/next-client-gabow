@@ -1,9 +1,9 @@
+
+
 const See3D = () => {
 
     return(
-
-        <h1>PENE</h1>
-
+        <></>
     )
 
 }

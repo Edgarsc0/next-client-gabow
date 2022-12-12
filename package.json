@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.46.4",
     "axios": "^1.2.0",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.3",
@@ -25,9 +26,11 @@
     "react-dom": "18.2.0",
     "react-leaflet": "^4.2.0",
     "react-select": "^5.7.0",
+    "react-three-fiber": "^6.0.13",
     "react-toastify": "^9.1.1",
     "sass": "^1.56.1",
-    "socket.io-client": "^4.5.4"
+    "socket.io-client": "^4.5.4",
+    "three": "^0.147.0"
   },
   "devDependencies": {
     "eslint": "8.29.0",
