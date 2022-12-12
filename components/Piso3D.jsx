@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Piso3D(props) {
-  const { nodes, materials } = useGLTF('/public/Piso3.glb')
+  const { nodes, materials } = useGLTF('../public/Piso3.glb')
   return (
     <group {...props} dispose={null}>
       <group position={[0.05, 0.05, 0.02]} rotation={[-Math.PI / 2, 0, 0]} scale={1}>
