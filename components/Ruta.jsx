@@ -21,7 +21,7 @@ const Ruta = ({visibility,place,dest}) => {
     //<Marker icon={icon} position={data}></Marker>
     const mapRef = useRef();
     const [cord, setCord] = useState([19.472819274952897, -99.14333273147834])
-    const [dataCords,setData]=useState([[19.472819274952897, -99.14333273147834]]);
+    const [dataCords,setData]=useState([19.472819274952897, -99.14333273147834]);
     const [originCords,setOriginCords]=useState();
     const [origin,setOrigin]=useState("Calculando origen...");
     const cordsArray=[];
