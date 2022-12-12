@@ -74,10 +74,7 @@ const Ruta = ({visibility,place,dest}) => {
                         const idRuta=results.insertId;
                         console.log("id ruta: "+idRuta);
                         console.log(cordsArray.length);
-                        document.getElementById("idruta").innerHTML=`
-                            <h1>id ruta: ${idRuta}</h1><br>
-                            <h1>coordenadas obtenidas: ${cordsArray.length}</h1>
-                        `;
+                        window.localStorage.setItem("(idruta,longitud)",`(${idRuta},${cordsArray.length})`);
                         const cordsResponse=await axios.post("/api/services/insertCords",{
                             cords:cordsArray,
                             id_ruta:idRuta
