@@ -72,8 +72,8 @@ const Mapa = () => {
                     ))}
                 </MapContainer>
             </div>
-            <div className={styles.container}>
-                <h1>About Compartir Ubicacion</h1>
+            <div className="contianerIni">
+                <h1>Acerca de Compartir Ubica</p>
                 <br></br>
                 <h1>About View</h1>
             </div>
