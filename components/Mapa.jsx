@@ -72,6 +72,10 @@ const Mapa = () => {
                     ))}
                 </MapContainer>
             </div>
+            <div className={styles.container}>
+                <h1>About Compartir Ubicacion</h1>
+                <h1>About View</h1>
+            </div>
         </>
     )
 }
