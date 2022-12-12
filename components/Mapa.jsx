@@ -76,7 +76,7 @@ const Mapa = () => {
                 <h1>Acerca de Compartir Ubicación</h1>
                 <hr></hr>
                 <p>Podras compartir tu ubicacion con los usuarios que tu quieras ingresando sus respectivos correos.</p>
-                <h1>About View</h1>
+                <h1>Acerca de View</h1>
                 <hr></hr>
                 <p>Una vista <strong>tridimencional</strong> de los edificios, por ahora solo CECyT 9.<br></br>Edificio de aulas</p>
             </div>
