@@ -75,11 +75,12 @@ const Ruta = ({visibility,place,dest}) => {
                         const idRuta=results.insertId;
                         console.log("id ruta: "+idRuta);
                         console.log(cordsArray.length);
-                        const cordsResponse=await axios.post("/api/services/insertCords",{
-                            cords:cordsArray,
-                            id_ruta:idRuta
-                        });
-                        if(cordsResponse.data.status=="ok"){
+                        try{
+                            const cordsResponse=await axios.post("/api/services/insertCords",{
+                                cords:cordsArray,
+                                id_ruta:idRuta
+                            });
+                        }catch(error){
                             window.location.href="/Mapas";
                         }
                     }
