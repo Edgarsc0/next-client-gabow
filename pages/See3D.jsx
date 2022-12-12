@@ -23,7 +23,7 @@ const options = [{
 
 
 const See3D = () => {
-    const [search,setSearch]=useState();
+    const [search,setSearch]=useState("Piso3.glb");
     const change3dView = (selectedOption) =>{
         console.log(selectedOption.value);
         setSearch(selectedOption.value);
@@ -35,7 +35,7 @@ const See3D = () => {
                 <Canvas camera={{zoom : .85 , position : [-100 , 250 , -240]}}>
                 <ambientLight intensity={.3} />
                 <Suspense>
-
+                    <Piso3D selected={search}/>
                 </Suspense>
                 <OrbitControls/>
                 <Environment background>
