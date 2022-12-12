@@ -25,7 +25,7 @@ export default function MisRutas(){
         }else{
             getCords();
         }
-    },[userobj]);
+    });
     return(
         <>
             <Script src="https://cdn.lordicon.com/pzdvqjsp.js"></Script>
