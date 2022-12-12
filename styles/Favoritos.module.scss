@@ -3,14 +3,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 75vh;
 	overflow:scroll;
 }
 .tabla{
     width: 700px;
     text-align: center;
     background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-    overflow: hidden;
+    overflow: scroll;
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
 }
