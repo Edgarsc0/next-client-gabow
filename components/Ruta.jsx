@@ -128,10 +128,42 @@ const Ruta = ({visibility,place,dest}) => {
                         id_fecha:id,
                         id_espg:2
                     });
-                    const {status,results}=response.data;
+                    console.log(response.data);
+                    const {status,results,error}=response.data;
                     if(status=="ok"){
                         const idRuta=results.insertId;
                         console.log("id ruta: "+idRuta);
+                        console.log(cordsArray.length);
+                        window.localStorage.setItem("(idruta,longitud)",`(${idRuta},${cordsArray.length})`);
+                        const cordsResponse=await axios.post("/api/services/insertCords",{
+                            cords:cordsArray,
+                            id_ruta:idRuta
+                        });
+                        if(cordsResponse.data.status=="ok"){
+                            window.location.href="/Mapas";
+                        }else{
+                            toast.error(`Ups! Algo fallo al subir las coordenadas. ERROR: ${cordsResponse.data.error}`, {
+                                position: "top-right",
+                                autoClose: 3000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: "colored",
+                            });
+                        }
+                    }else{
+                        toast.error(`Ups! Algo fallo al subir la Ruta. ERROR: ${error}`, {
+                            position: "top-right",
+                            autoClose: 3000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored",
+                        });
                     }
                 }
             }

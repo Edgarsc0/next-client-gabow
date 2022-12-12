@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Piso3D(props) {
+export function Piso33D(props) {
   const { nodes, materials } = useGLTF('Piso3.glb')
   return (
     <group {...props} dispose={null}>

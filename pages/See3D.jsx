@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import {Canvas} from 'react-three-fiber';
 import { Environment, OrbitControls , Sky } from "@react-three/drei";
-import { Piso3D } from "../components/Piso3D";
+import { Piso33D } from "../components/Piso33D";
 import * as THREE from 'three';
 
 const See3D = () => {
@@ -13,7 +13,7 @@ const See3D = () => {
                 <Canvas camera={{zoom : .85 , position : [-100 , 250 , -240]}}>
                 <ambientLight intensity={.3} />
                 <Suspense>
-                    <Piso3D/>
+                    <Piso33D/>
                 </Suspense>
                 <OrbitControls/>
                 <Environment background>
