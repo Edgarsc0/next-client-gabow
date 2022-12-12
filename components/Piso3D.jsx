@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
-import styles from '../styles/Mapas.module.scss';
+
 export function Piso3D({selected}) {
   const { nodes, materials } = useGLTF(selected);
   if(selected=="Piso3.glb"){
@@ -530,6 +530,142 @@ export function Piso3D({selected}) {
         <mesh geometry={nodes.pot_1.geometry} material={materials['Subsurface Textured 3']} position={[-198.8, -113.03, -49.95]} rotation={[0, 0, -0.02]} scale={0.11} />
       </group>
     </group>)
+  }if(selected=="Piso1.glb"){
+    return(
+      <group dispose={null}>
+      <group position={[0.07, 0.05, 0.02]} rotation={[-Math.PI / 2, 0, 0]} scale={1}>
+        <group position={[-42.65, 53.53, 51.2]}>
+          <group position={[0, -88.94, 0]} rotation={[0, 0, Math.PI]}>
+            <mesh geometry={nodes['3D_Text_10_-_P'].geometry} material={materials.Prestige} position={[-28.06, -5.98, 0.71]} scale={0.22} />
+            <mesh geometry={nodes['3D_Text_10_-_r'].geometry} material={materials.Prestige} position={[-21.97, -5.98, 0.71]} scale={0.22} />
+            <mesh geometry={nodes['3D_Text_10_-_r_1'].geometry} material={materials.Prestige} position={[8.26, -5.98, 0.71]} scale={0.22} />
+            <mesh geometry={nodes['3D_Text_10_-_o'].geometry} material={materials.Prestige} position={[-17.85, -5.98, 0.71]} scale={0.22} />
+            <mesh geometry={nodes['3D_Text_10_-_o_1'].geometry} material={materials.Prestige} position={[2.16, -5.98, 0.71]} scale={0.22} />
+            <mesh geometry={nodes['3D_Text_10_-_f'].geometry} material={materials.Prestige} position={[-11.75, -5.98, 0.71]} scale={0.22} />
+            <mesh geometry={nodes['3D_Text_10_-_e'].geometry} material={materials.Prestige} position={[-8.33, -5.98, 0.71]} scale={0.22} />
+            <mesh geometry={nodes['3D_Text_10_-_e_1'].geometry} material={materials.Prestige} position={[12.39, -5.98, 0.71]} scale={0.22} />
+            <mesh geometry={nodes['3D_Text_10_-_s'].geometry} material={materials.Prestige} position={[-2.66, -5.98, 0.71]} scale={0.22} />
+            <mesh geometry={nodes['3D_Text_10_-_s_1'].geometry} material={materials.Prestige} position={[18.05, -5.98, 0.71]} scale={0.22} />
+            <mesh geometry={nodes.RestroomSign.geometry} material={materials['Metal 1']} position={[0, -3.05, 19.82]} scale={17.14} />
+            <mesh geometry={nodes.Tape.geometry} material={materials['Tape 1']} position={[0, -0.49, 19.82]} scale={8.22} />
+          </group>
+          <mesh geometry={nodes['3D_Text_11_-_P'].geometry} material={materials['Prestige 1']} position={[-24.3, -5.43, 0.71]} scale={0.23} />
+          <mesh geometry={nodes['3D_Text_11_-_r'].geometry} material={materials['Prestige 1']} position={[-18.14, -5.43, 0.71]} scale={0.23} />
+          <mesh geometry={nodes['3D_Text_11_-_r_1'].geometry} material={materials['Prestige 1']} position={[12.48, -5.43, 0.71]} scale={0.23} />
+          <mesh geometry={nodes['3D_Text_11_-_o'].geometry} material={materials['Prestige 1']} position={[-13.97, -5.43, 0.71]} scale={0.23} />
+          <mesh geometry={nodes['3D_Text_11_-_o_1'].geometry} material={materials['Prestige 1']} position={[6.3, -5.43, 0.71]} scale={0.23} />
+          <mesh geometry={nodes['3D_Text_11_-_f'].geometry} material={materials['Prestige 1']} position={[-7.79, -5.43, 0.71]} scale={0.23} />
+          <mesh geometry={nodes['3D_Text_11_-_e'].geometry} material={materials['Prestige 1']} position={[-4.32, -5.43, 0.71]} scale={0.23} />
+          <mesh geometry={nodes['3D_Text_11_-_s'].geometry} material={materials['Prestige 1']} position={[1.42, -5.43, 0.71]} scale={0.23} />
+          <mesh geometry={nodes['3D_Text_11_-_s_1'].geometry} material={materials['Prestige 1']} position={[22.35, -5.43, 0.71]} scale={0.23} />
+          <mesh geometry={nodes['3D_Text_11_-_a'].geometry} material={materials['Prestige 1']} position={[16.66, -5.43, 0.71]} scale={0.23} />
+          <mesh geometry={nodes.RestroomSign_1.geometry} material={materials.Metal} position={[0, -3.05, 19.82]} scale={17.14} />
+          <mesh geometry={nodes.Tape_1.geometry} material={materials.Tape} position={[0, -0.49, 19.82]} scale={8.22} />
+        </group>
+        <group position={[-115.76, 263.72, -12.45]} rotation={[0, 0, Math.PI]}>
+          <mesh geometry={nodes['3D_Text_13_-_2'].geometry} material={materials['Safari 11']} position={[-5.2, 94.04, -1.59]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_13_-_3'].geometry} material={materials['Safari 11']} position={[-5.2, 112.52, -1.59]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_14_-_2'].geometry} material={materials['Safari 12']} position={[-5.2, 165.95, -1.59]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_14_-_2_1'].geometry} material={materials['Safari 12']} position={[-5.2, 184.43, -1.59]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_15_-_I'].geometry} material={materials['Safari 13']} position={[-3.59, 328.26, -0.61]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_n'].geometry} material={materials['Safari 13']} position={[-3.59, 333.63, -0.61]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_g'].geometry} material={materials['Safari 13']} position={[-3.59, 345.44, -0.61]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_l'].geometry} material={materials['Safari 13']} position={[-3.59, 355.98, -0.61]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_e'].geometry} material={materials['Safari 13']} position={[-3.59, 360.85, -0.61]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_s'].geometry} material={materials['Safari 13']} position={[-3.59, 371.64, -0.61]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_L'].geometry} material={materials['Safari 13']} position={[-3.59, 301.81, 20.77]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_a'].geometry} material={materials['Safari 13']} position={[-3.59, 311.8, 20.77]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_a_1'].geometry} material={materials['Safari 13']} position={[-3.59, 353.76, 20.77]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_b'].geometry} material={materials['Safari 13']} position={[-3.59, 322.5, 20.77]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_o'].geometry} material={materials['Safari 13']} position={[-3.59, 334.29, 20.77]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_o_1'].geometry} material={materials['Safari 13']} position={[-3.59, 371.26, 20.77]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_o_2'].geometry} material={materials['Safari 13']} position={[-3.59, 395.6, 20.77]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_r'].geometry} material={materials['Safari 13']} position={[-3.59, 345.91, 20.77]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_r_1'].geometry} material={materials['Safari 13']} position={[-3.59, 382.88, 20.77]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_t'].geometry} material={materials['Safari 13']} position={[-3.59, 364.46, 20.77]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_15_-_i'].geometry} material={materials['Safari 13']} position={[-3.59, 390.73, 20.77]} rotation={[0, 0, Math.PI / 2]} scale={0.43} />
+          <mesh geometry={nodes['3D_Text_12_-_2'].geometry} material={materials['Safari 10']} position={[-216.75, 93.88, -1.59]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_12_-_0'].geometry} material={materials['Safari 10']} position={[-216.75, 112.36, -1.59]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_1_-_1'].geometry} material={materials['Safari 1']} position={[-216.75, 156.35, 0]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_1_-_9'].geometry} material={materials['Safari 1']} position={[-216.75, 174.82, 0]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_2_-_1'].geometry} material={materials['Safari 2']} position={[-216.75, 219.53, 0]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_2_-_8'].geometry} material={materials['Safari 2']} position={[-216.75, 238.01, 0]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_3_-_1'].geometry} material={materials['Safari 3']} position={[-216.75, 277.52, 0]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_3_-_7'].geometry} material={materials['Safari 3']} position={[-216.75, 296, 0]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_4_-_1'].geometry} material={materials['Safari 4']} position={[-216.75, 333.18, 0]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_4_-_6'].geometry} material={materials['Safari 4']} position={[-216.75, 351.65, 0]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_5_-_1'].geometry} material={materials['Safari 5']} position={[-216.75, 390.99, 0]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_5_-_5'].geometry} material={materials['Safari 5']} position={[-216.75, 409.46, 0]} rotation={[0, 0, Math.PI / 2]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_6_-_2'].geometry} material={materials['Safari 6']} position={[-133.9, 83.83, 0]} rotation={[0, 0, Math.PI]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_6_-_1'].geometry} material={materials['Safari 6']} position={[-152.37, 83.83, 0]} rotation={[0, 0, Math.PI]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_9_-_B'].geometry} material={materials['Safari 9']} position={[62.59, 89.14, 28.74]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_a'].geometry} material={materials['Safari 9']} position={[57.51, 89.14, 25.32]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_a_1'].geometry} material={materials['Safari 9']} position={[43.71, 89.14, 16.02]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_a_2'].geometry} material={materials['Safari 9']} position={[38.2, 89.14, 24.95]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_s'].geometry} material={materials['Safari 9']} position={[53.16, 89.14, 22.38]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_i'].geometry} material={materials['Safari 9']} position={[49.42, 89.14, 19.87]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_i_1'].geometry} material={materials['Safari 9']} position={[30.12, 89.14, 19.5]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_c'].geometry} material={materials['Safari 9']} position={[47.44, 89.14, 18.53]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_c_1'].geometry} material={materials['Safari 9']} position={[33.84, 89.14, 22.02]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_I'].geometry} material={materials['Safari 9']} position={[37.33, 89.14, 11.71]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_C'].geometry} material={materials['Safari 9']} position={[67.52, 89.14, 44.72]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_o'].geometry} material={materials['Safari 9']} position={[62.58, 89.14, 41.39]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_o_1'].geometry} material={materials['Safari 9']} position={[28.13, 89.14, 18.17]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_m'].geometry} material={materials['Safari 9']} position={[57.85, 89.14, 38.2]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_p'].geometry} material={materials['Safari 9']} position={[50.57, 89.14, 33.29]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_u'].geometry} material={materials['Safari 9']} position={[45.77, 89.14, 30.06]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_t'].geometry} material={materials['Safari 9']} position={[40.96, 89.14, 26.82]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_9_-_n'].geometry} material={materials['Safari 9']} position={[23.41, 89.14, 14.98]} rotation={[0, -0.59, Math.PI]} scale={0.21} />
+          <mesh geometry={nodes['3D_Text_8_-_4'].geometry} material={materials['Safari 8']} position={[17.7, 449.08, 0]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_8_-_'].geometry} material={materials['Safari 8']} position={[36.18, 449.08, 0]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_8_-_0'].geometry} material={materials['Safari 8']} position={[44.78, 449.08, 0]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_7_-_2'].geometry} material={materials['Safari 7']} position={[-170.3, 449.08, 0]} scale={0.72} />
+          <mesh geometry={nodes['3D_Text_7_-_4'].geometry} material={materials['Safari 7']} position={[-151.82, 449.08, 0]} scale={0.72} />
+        </group>
+        <group position={[-14, -5.38, -49.95]}>
+          <mesh geometry={nodes['Box_-_baked_12'].geometry} material={materials['Alpine 9']} position={[-98.4, -249.89, 0]} />
+          <mesh geometry={nodes['Box_-_baked_7'].geometry} material={materials['Congo 1']} position={[117.55, -208.55, 0]} rotation={[0, 0, Math.PI]} scale={[1.3, 1, 1]} />
+          <mesh geometry={nodes['Box_-_baked_13'].geometry} material={materials.Congo} position={[63.18, 215.18, 0]} scale={[1.3, 1, 1]} />
+          <mesh geometry={nodes['Box_-_baked_1'].geometry} material={materials.Alpine} position={[131.43, 47.25, 0]} />
+          <mesh geometry={nodes['Box_-_baked_9'].geometry} material={materials['Alpine 6']} position={[-99.01, 47.25, 0]} />
+          <mesh geometry={nodes['Box_-_baked_11'].geometry} material={materials['Alpine 8']} position={[-98.79, -154.01, 0]} />
+          <mesh geometry={nodes['Box_-_baked_10'].geometry} material={materials['Alpine 7']} position={[-99.01, -22.9, 0]} />
+          <mesh geometry={nodes['Box_-_baked_2'].geometry} material={materials['Alpine 1']} position={[131.43, -13.34, 0]} />
+          <mesh geometry={nodes['Box_-_baked_3'].geometry} material={materials['Alpine 2']} position={[131.43, -73.13, 0]} />
+          <mesh geometry={nodes['Box_-_baked_4'].geometry} material={materials['Alpine 3']} position={[131.43, -132.77, 0]} />
+          <mesh geometry={nodes['Box_-_baked_5'].geometry} material={materials['Alpine 4']} position={[131.43, -189.47, 0]} />
+          <mesh geometry={nodes['Box_-_baked_6'].geometry} material={materials['Alpine 5']} position={[131.43, -246.38, 0]} />
+          <mesh geometry={nodes['Box_-_baked_8'].geometry} material={materials['Crocodile Smile 1']} position={[-120.71, -206.54, 0]} rotation={[0, 0, Math.PI]} />
+          <mesh geometry={nodes['Box_-_baked'].geometry} material={materials['Crocodile Smile']} position={[-109.11, 208.9, 0]} />
+          <mesh geometry={nodes['Plane_-_baked'].geometry} material={materials.Diesel} position={[-425, 509.9, 0]} />
+        </group>
+        <mesh geometry={nodes.pot.geometry} material={materials['Subsurface Textured 1']} position={[-0.14, 0, 0.15]} scale={.13} />
+        <mesh geometry={nodes.dirt.geometry} material={materials['Material.003 14']} position={[-0.14, 0, 0.15]} scale={.13} />
+        <mesh geometry={nodes.plant.geometry} material={materials['Material.001 5']} position={[-0.14, 0, 0.15]} scale={.13} />
+        <mesh geometry={nodes.pot_1.geometry} material={materials['Subsurface Textured']} position={[-0.14, 0, 0]}   scale={.13} />
+        <mesh geometry={nodes.dirt_1.geometry} material={materials['Material.003 13']} position={[-0.14, 0, 0]}   scale={.13} />
+        <mesh geometry={nodes.plant_1.geometry} material={materials['Material.001 4']} position={[-0.14, 0, 0]}   scale={.13} />
+        <mesh geometry={nodes.vase.geometry} material={materials['Material.001 3']} position={[-0.14, 0, -0.08]}   scale={0.13} />
+        <mesh geometry={nodes.cane1.geometry} material={materials['Material.003 9']} position={[-0.14, 0, -0.08]}    scale={0.13} />
+        <mesh geometry={nodes.cane2.geometry} material={materials['Material.003 10']} position={[-0.14, 0, -0.08]}   scale={0.13} />
+        <mesh geometry={nodes.cane3.geometry} material={materials['Material.003 11']} position={[-0.14, 0, -0.08]}   scale={0.13} />
+        <mesh geometry={nodes.cane4.geometry} material={materials['Material.003 12']} position={[-0.14, 0, -0.08]}   scale={0.13} />
+        <mesh geometry={nodes.wave1.geometry} material={materials['Material.002 9']} position={[-0.14, 0, -0.08]}   scale={0.13} />
+        <mesh geometry={nodes.wave2.geometry} material={materials['Material.002 10']} position={[-0.14, 0, -0.08]}   scale={0.13} />
+        <mesh geometry={nodes.wave3.geometry} material={materials['Material.002 11']} position={[-0.14, 0, -0.08]}   scale={0.13} />
+        <mesh geometry={nodes.wave4.geometry} material={materials['Material.002 12']} position={[-0.14, 0, -0.08]}   scale={0.13} />
+        <mesh geometry={nodes.vase_1.geometry} material={materials['Material.001 2']} position={[-0.14, 0, 0.07]}   scale={0.13} />
+        <mesh geometry={nodes.cane1_1.geometry} material={materials['Material.003 5']} position={[-0.14, 0, 0.07]}   scale={0.13} />
+        <mesh geometry={nodes.cane2_1.geometry} material={materials['Material.003 6']} position={[-0.14, 0, 0.07]}   scale={0.13} />
+        <mesh geometry={nodes.cane3_1.geometry} material={materials['Material.003 7']} position={[-0.14, 0, 0.07]}   scale={0.13} />
+        <mesh geometry={nodes.cane4_1.geometry} material={materials['Material.003 8']} position={[-0.14, 0, 0.07]}   scale={0.13} />
+        <mesh geometry={nodes.wave1_1.geometry} material={materials['Material.002 5']} position={[-0.14, 0, 0.07]}   scale={0.13} />
+        <mesh geometry={nodes.wave2_1.geometry} material={materials['Material.002 6']} position={[-0.14, 0, 0.07]}   scale={0.13} />
+        <mesh geometry={nodes.wave3_1.geometry} material={materials['Material.002 7']} position={[-0.14, 0, 0.07]}   scale={0.13} />
+        <mesh geometry={nodes.wave4_1.geometry} material={materials['Material.002 8']} position={[-0.14, 0, 0.07]}   scale={0.13} />      
+      </group>
+    </group>
+    )
   }
 }
 
