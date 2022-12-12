@@ -13,8 +13,4 @@ export default function(req,res){
             }
         });
     });
-    return res.json({
-        status: "ok",
-        cords:cords
-    });
 }
