@@ -44,41 +44,33 @@ export default function MisRutas(){
                             <th>Mes</th>
                             <th>Año</th>
                             <th>Lugar</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className={favstyle.celda}>Town Center</td>
-                            <td className={favstyle.celda}>Cinepolis</td>
-                            <td className={favstyle.celda}>
-                                <Link href="/Ruta"><button type="button" className={styles.button}>Iniciar ruta</button></Link>
-                                <button type="button" className={favstyle.button}><lord-icon src="https://cdn.lordicon.com/kfzfxczd.json" trigger="hover" colors="primary:#ffffff" width="32px" height="32px"></lord-icon></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className={favstyle.celda}>Town Center</td>
-                            <td className={favstyle.celda}>Walmart</td>
-                            <td className={favstyle.celda}>
-                                <Link href="/Ruta"><button type="button" className={styles.button}>Iniciar ruta</button></Link>
-                                <button type="button" className={favstyle.button}><lord-icon src="https://cdn.lordicon.com/kfzfxczd.json" trigger="hover" colors="primary:#ffffff" width="32px" height="32px"></lord-icon></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className={favstyle.celda}>CECyT 9</td>
-                            <td className={favstyle.celda}>Aula 4.0</td>
-                            <td className={favstyle.celda}>
-                                <Link href="/Ruta"><button type="button" className={styles.button}>Iniciar ruta</button></Link>
-                                <button type="button" className={favstyle.button}><lord-icon src="https://cdn.lordicon.com/kfzfxczd.json" trigger="hover" colors="primary:#ffffff" width="32px" height="32px"></lord-icon></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className={favstyle.celda}>CECyT 9</td>
-                            <td className={favstyle.celda}>Salon 13</td>
-                            <td className={favstyle.celda}>
-                                <Link href="/Ruta"><button type="button" className={styles.button}>Iniciar ruta</button></Link>
-                                <button type="button" className={favstyle.button}><lord-icon src="https://cdn.lordicon.com/kfzfxczd.json" trigger="hover" colors="primary:#ffffff" width="32px" height="32px"></lord-icon></button>
-                            </td>
-                        </tr>
+                        {routes.map(item=>{
+                            (
+                                <tr>
+                                    <td className={favstyle.celda}>{item.id_ruta}</td>
+                                    <td className={favstyle.celda}>{item.rut_origen}</td>
+                                    <td className={favstyle.celda}>{item.rut_destino}</td>
+                                    <td className={favstyle.celda}>{item.rfc_dia}</td>
+                                    <td className={favstyle.celda}>{item.rfc_mes}</td>
+                                    <td className={favstyle.celda}>{item.rfc_anno}</td>
+                                    <td className={favstyle.celda}>{item.esg_nombre}</td>
+                                    <td>
+                                        <Link href={`/ConsultarRuta/${item.id_ruta}`}>
+                                            <button type="button" className={styles.button}>Consultar ruta</button>
+                                        </Link>
+                                        <Link href={`/EliminarRuta/${item.id_ruta}`}>
+                                            <button type="button" className={styles.button}>
+                                                <lord-icon src="https://cdn.lordicon.com/kfzfxczd.json" trigger="hover" colors="primary:#ffffff" width="32px" height="32px"></lord-icon>
+                                            </button>
+                                        </Link>
+                                    </td>
+                                </tr>
+                            )
+                        })}
                     </tbody>
                 </table>
             </div>
