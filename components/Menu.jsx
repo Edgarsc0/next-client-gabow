@@ -33,7 +33,7 @@ const Menu = () => {
                             </Link>
                         </li>
                         <li className={styles.navItem}>
-                            <Link href="/Favoritos">
+                            <Link href="/MisRutas">
                                 <a className={styles.navLink}>Mis Rutas</a>
                             </Link>
                         </li>
