@@ -4,21 +4,21 @@ import { useState } from 'react';
 import styles from '../styles/Mapas.module.scss'
 export default function MisRutas(){
     const [cords,setCords]=useState([]);
-    const [email,setEmail]=useState();
+    const [user,setUser]=useState();
     const getEmail=async()=>{
         const {data}=await axios.post("/api/auth/getCookie");
-        setEmail(data.token.email);
+        setUser(data.token);
     }
     const getCords=async()=>{
         const {data}=await axios.post("/api/services/getRoutes");
     }
     useEffect(()=>{
-        getEmail();
+        
     });
     return(
         <>
-            <div className="containerIni">
-                <h1>Mis Rutas: {email}</h1>
+            <div className={styles.container3}>
+                <h1>Mis Rutas: {user.user}</h1>
             </div>
             <hr></hr>
         </>
