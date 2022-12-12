@@ -4,7 +4,7 @@ import { useState } from 'react';
 import styles from '../styles/Mapas.module.scss'
 export default function MisRutas(){
     const [cords,setCords]=useState([]);
-    const [user,setUser]=useState();
+    const [userobj,setUser]=useState();
     const getEmail=async()=>{
         const {data}=await axios.post("/api/auth/getCookie");
         setUser(data.token);
@@ -18,7 +18,7 @@ export default function MisRutas(){
     return(
         <>
             <div className={styles.container3}>
-                <h1>Mis Rutas: {user.user}</h1>
+                <h1>Mis Rutas: {userobj.user}</h1>
             </div>
             <hr></hr>
         </>
