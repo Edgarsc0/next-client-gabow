@@ -6,18 +6,19 @@ import Select from 'react-select'
 import * as THREE from 'three';
 import { useState } from "react";
 import styles from '../styles/Mapas.module.scss';
-const options = [{
-
-    label : 'Piso 3',
-    value : 'Piso3.glb'
-
-},
-{
-
-    label : 'Piso 2',
-    value : 'Piso2.glb'
-
-}
+const options = [
+    {
+        label : 'Piso 3',
+        value : 'Piso3.glb'
+    },
+    {
+        label : 'Piso 2',
+        value : 'Piso2.glb'
+    },
+    {
+        label: "Piso 1",
+        value: "Piso1.glb"
+    }
 ];
 
 
