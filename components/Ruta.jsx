@@ -79,11 +79,9 @@ const Ruta = ({visibility,place,dest}) => {
                             cords:cordsArray,
                             id_ruta:idRuta
                         });
-                        console.log(cordsResponse.data);
-                        console.log(cordsResponse.cords);
-                        /*if(cordsResponse.data.status=="ok"){
+                        if(cordsResponse.data.status=="ok"){
                             window.location.href="/Mapas";
-                        }*/
+                        }
                     }
                 }
             }if(place=="Town Center"){
