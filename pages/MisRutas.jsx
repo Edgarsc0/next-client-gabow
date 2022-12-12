@@ -4,8 +4,8 @@ export default function MisRutas(){
         <>
             <div className={styles.container3}>
                 <h1>Mis Rutas</h1>
-                <hr></hr>
             </div>
+            <hr></hr>
         </>
     )
 }
