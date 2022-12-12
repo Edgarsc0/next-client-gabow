@@ -15,7 +15,9 @@ const VerificationPage=()=>{
     })
     return(
         <>
-            <h1>Given token: {token}, server response: {data}</h1>
+            <div className="container3">
+                <h1>Given token: {token}, server response: {data}</h1>
+            </div>
         </>
     )
 }

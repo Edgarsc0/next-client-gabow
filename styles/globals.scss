@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
+.container3 {
+  display: flex;
+  justify-content: center;
+  @media (max-width:768px) {
+  }
+}
 .button {
   // margin: 0.5%;
   // border-radius: 20px;

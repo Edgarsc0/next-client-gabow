@@ -42,7 +42,7 @@ const Mapa = () => {
         window.location.href="/Share";
     }
     const handleViewPositionRedirect=()=>{
-        window.location.href="/See";
+        window.location.href="/See3D";
     }
     return (
         <>
