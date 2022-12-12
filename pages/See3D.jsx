@@ -8,13 +8,13 @@ import { useState } from "react";
 import styles from '../styles/Mapas.module.scss';
 const options = [{
 
-    lavel : 'Piso 3',
+    label : 'Piso 3',
     value : 'Piso3.glb'
 
 },
 {
 
-    lavel : 'Piso 2',
+    label : 'Piso 2',
     value : 'Piso2.glb'
 
 }
@@ -30,8 +30,10 @@ const See3D = () => {
     }
     return(
         <>
-            <Select options={options} className={styles.buscador} onChange={change3dView} placeholder='Pisos'/>
-            <div style={{ width: '500px' , height:'500px' , margin: '10px auto'}}>
+            <div className={styles.header}>
+                <Select options={options} className={styles.buscador} onChange={change3dView} placeholder='Pisos'/>
+            </div>
+            <div className="containerIni2">
                 <Canvas camera={{zoom : .85 , position : [-100 , 250 , -240]}}>
                 <ambientLight intensity={.3} />
                 <Suspense>
