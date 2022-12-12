@@ -51,7 +51,7 @@ export default function MisRutas(){
                     </thead>
                     <tbody>
                         {routes.map(item=>(
-                                <tr>
+                                <tr key={item.id_ruta}>
                                     <td className={favstyle.celda}>{item.id_ruta}</td>
                                     <td className={favstyle.celda}>{item.rut_origen}</td>
                                     <td className={favstyle.celda}>{item.rut_destino}</td>
