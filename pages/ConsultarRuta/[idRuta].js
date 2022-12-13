@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic"
 const MyAwesomeMap = dynamic(() => import("../../components/ConsultarRuta"), { ssr:false })
 export default function ConsultarRuta(){
     const router=useRouter();
