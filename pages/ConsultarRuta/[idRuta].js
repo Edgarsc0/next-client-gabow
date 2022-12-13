@@ -7,6 +7,7 @@ export default function ConsultarRuta(){
     const {idRuta}=router.query;
     const [idState,setIdState]=useState();
     const [userobj,setUser]=useState({});
+    const [todoOK,setTodoOK]=useState(false);
     const [rutaInfo,setRutaInfo]=useState({
         rut_origen:"Esperando informacion...",
         rut_destino:"Esperando informacion...",
@@ -31,6 +32,7 @@ export default function ConsultarRuta(){
         console.log(data);
         if(data.info){
             setRutaInfo(data.info);
+            setTodoOK(true);
         }else{
             //no existe en el id buscado
             console.log("no hay data.info");
@@ -44,6 +46,9 @@ export default function ConsultarRuta(){
         }
         if(!userobj.user){
             getUser();
+        }
+        if(todoOK){
+            console.log("Obteniendo coordenadas...");
         }
     });
     return(

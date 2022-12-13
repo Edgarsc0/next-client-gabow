@@ -8,18 +8,18 @@ const handleSendEmail =() =>{
 
 }
 
+const [sesion,setSesion] = useState();
+
+const getSesion = async() =>{
+
+  const response = await axios.post('/api/auth/getCookie');
+  setSesion(Object.values(response.status)[0]);
+  console.log(sesion);
+  console.log('que pedo')
+
+}
+
 const Contacto = () => {
-
-  const [sesion,setSesion] = useState();
-
-  const getSesion = async() =>{
-
-    const response = await axios.post('/api/auth/getCookie');
-    setSesion(Object.values(response.status)[0]);
-    console.log(sesion);
-    console.log('que pedo')
-
-  }
 
   if(sesion == 'Token verified'){
 
