@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-const MyAwesomeMap = dynamic(() => import("../components/ConsultarRuta"), { ssr:false })
+const MyAwesomeMap = dynamic(() => import("../../components/ConsultarRuta"), { ssr:false })
 export default function ConsultarRuta(){
     const router=useRouter();
     const {idRuta}=router.query;
