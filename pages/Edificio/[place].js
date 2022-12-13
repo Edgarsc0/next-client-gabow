@@ -130,15 +130,24 @@ const Edificio=()=>{
                         document.getElementById("button").innerHTML=`
                             <button class="button" onclick="">Iniciar Ruta a ${item.id}</button>
                             <button class="button" onclick='function addToFavs(){
-                                const placeValue="${place}";
-                                const lugarValue="${item.id}";
-                                document.cookie ="favs=[{\\"place\\":\\""+placeValue+"\\",\\"lugar\\":\\""+lugarValue+"\\"}]";
                                 const contenido = document.cookie.split(";");
                                 const busqueda=contenido.find(item=>item.split("=").includes("favs"));
-                                console.log(busqueda);
-                                const objeto =JSON.parse(busqueda.split("=")[1]);
-                                console.log(objeto);
-                                console.log(JSON.stringify(objeto));
+                                if(busqueda){
+                                    const objeto =JSON.parse(busqueda.split("=")[1]);
+                                    console.log(objeto);
+                                    objeto.push({
+                                        "place":"${place}",
+                                        "lugar":"${item.id}"
+                                    });
+                                    console.log(JSON.stringify(objeto));
+                                    document.cookie="favs="+JSON.stringify(objeto);
+                                }else{
+                                    const placeValue="${place}";
+                                    const lugarValue="${item.id}";
+                                    document.cookie ="favs=[{\\"place\\":\\""+placeValue+"\\",\\"lugar\\":\\""+lugarValue+"\\"}]";
+                                }
+                                console.log(document.cookie);
+
                             }
                             addToFavs();
                             '>Añadir a Favoritos</button>
