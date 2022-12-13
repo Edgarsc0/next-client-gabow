@@ -130,10 +130,7 @@ const Edificio=()=>{
                         document.getElementById("button").innerHTML=`
                             <button class="button" onclick="">Iniciar Ruta a ${item.id}</button>
                             <button class="button" onclick="function addToFavs(){
-                                document.cookie ='favs=[{
-                                    place:${place},
-                                    lugar:${item.id}
-                                }]';
+                                document.cookie ='favs=[{place:${place},lugar:${item.id}}]';
                                 const contenido = document.cookie.split(';')
                                 const busqueda=JSON.parse(contenido.find(item=>item.split('=').includes('favs')).split('=')[1]);
                                 console.log(busqueda);
