@@ -10,6 +10,8 @@ const Contacto = () => {
 
   const [sesion,setSesion] = useState();
   const [statusMail,setStatusMail] = useState();
+  const [name,setName] = useState();
+  const [email,setEmail] = useState();
 
   const getSesion = async() =>{
 
@@ -17,6 +19,8 @@ const Contacto = () => {
     //setSesion(response.data.status)
     //seesion=="Token verified"
     setSesion(response.data.status);
+    setName(response.data.token.user);
+    setEmail(response.data.token.email);
     console.log(sesion);
 
   }
@@ -25,15 +29,17 @@ const Contacto = () => {
       e.preventDefault();
       console.log({
         //params
-        name : e.target.name.value,
-        email : e.target.email.value,
+        //params
+        name : name||e.target.name.value,
+        email : email||e.target.email.value,
         affair : e.target.affair.value,
         message : e.target.message.value
       });
-      const response = await axios.post('/api/auth/sendContactNS',{
+      /*const response = await axios.post('/api/auth/sendContactNS',{
         //params
-        name : e.target.name.value,
-        email : e.target.email.value,
+        //params
+        name : name||e.target.name.value,
+        email : email||e.target.email.value,
         affair : e.target.affair.value,
         message : e.target.message.value
       });
@@ -71,7 +77,7 @@ const Contacto = () => {
           theme: "colored",
       });
   
-    }
+    }*/
   
   }
 
@@ -79,12 +85,15 @@ const Contacto = () => {
     if(!sesion){
       getSesion();
     }
+    if(sesion){
+      
+    }
   });
   if(sesion == 'Token verified'){
 
     return (
       <div className={styles.container}>
-        <form className={styles.main}>
+        <form className={styles.main} onSubmit={handleSendEmail}>
           <section>
             <label className={styles.label}>Asunto:</label>
             <input className={styles.input} type="text" placeholder="Asunto:" />
