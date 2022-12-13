@@ -35,7 +35,7 @@ const Contacto = () => {
         affair : e.target.affair.value,
         message : e.target.message.value
       });
-      /*const response = await axios.post('/api/auth/sendContactNS',{
+      const response = await axios.post('/api/services/sendContactNS',{
         //params
         //params
         name : name||e.target.name.value,
@@ -77,7 +77,7 @@ const Contacto = () => {
           theme: "colored",
       });
   
-    }*/
+    }
   
   }
 
