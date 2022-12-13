@@ -114,7 +114,7 @@ const Contacto = () => {
         theme="colored"
       />
       <div className={styles.container}>
-        <form className={styles.main}>
+        <form className={styles.main} onSubmit={handleSendEmail}>
           <section>
             <label className={styles.label}>Tu Nombre:</label>
             <input name='name' className={styles.input} type="text" placeholder="Tu Nombre:" />
@@ -125,7 +125,7 @@ const Contacto = () => {
             <label className={styles.label}>Mensaje:</label>
             <textarea name='message' className={styles.mes} rows='6' placeholder="Mensaje:"></textarea>
           </section>
-          <div><button onClick={handleSendEmail} className={styles.button}>Enviar</button></div>
+          <div><button className={styles.button}>Enviar</button></div>
         </form>
       </div>
       </>
