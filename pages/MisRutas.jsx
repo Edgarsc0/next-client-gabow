@@ -22,6 +22,11 @@ export default function MisRutas(){
         }else{
             setRoutes(data.info);
         }
+    }
+    const handleDeleteRoute=async(id)=>{
+        const {data}=await axios.post("/api/services/deleteRoute",{
+            id:id
+        });
     }   
     useEffect(()=>{
         if(!userobj.user){
@@ -58,11 +63,9 @@ export default function MisRutas(){
                                         <Link href={`/ConsultarRuta/${item.id_ruta}`}>
                                             <button type="button" className={styles.button}>Consultar ruta({item.id_ruta})</button>
                                         </Link>
-                                        <Link href={`/EliminarRuta/${item.id_ruta}`}>
-                                            <button type="button" className={styles.button}>
-                                                <lord-icon src="https://cdn.lordicon.com/kfzfxczd.json" trigger="hover" colors="primary:#ffffff" width="32px" height="32px"></lord-icon>
-                                            </button>
-                                        </Link>
+                                        <button type="button" className={styles.button} onClick={()=>handleDeleteRoute(item.id_ruta)}>
+                                            <lord-icon src="https://cdn.lordicon.com/kfzfxczd.json" trigger="hover" colors="primary:#ffffff" width="32px" height="32px"></lord-icon>
+                                        </button>
                                     </td>
                                 </tr>
                             )

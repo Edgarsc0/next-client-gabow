@@ -10,7 +10,7 @@ import axios from 'axios'
 
 const icon = new Icon({
     iconUrl: '/current.svg',
-    iconSize: [50, 50]
+    iconSize: [25, 25]
 })
 //escuela: 19.45371285983326, -99.17530557712774
 //town center: 19.503565296138603, -99.20305358194275

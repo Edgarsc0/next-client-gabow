@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import styles from '../styles/Registro.module.scss'
@@ -11,17 +11,93 @@ const Registro = () => {
     const redirigir=()=>{
         window.location.href="/Mapas";
     }
+
+    const [validate,setValidate] = useState(false);
+
+    const handleVerify =()=>{
+
+        if(validate){
+
+            setValidate(false);
+
+        }
+        else{
+
+            setValidate(true);
+
+        }
+
+
+    }
+
     const handleRegister=async(e)=>{
-        const socket=io("https://auth-server-express-production.up.railway.app/");
-        e.preventDefault();
-        const response=await axios.post("/api/auth/sendEmail",{
-            email:e.target.email.value,
-            user:e.target.user.value,
-            pswd:e.target.pswd.value,
-        });
-        const {error}=response.data;
-        if(!error){
-            toast.success(`Email enviado a ${e.target.email.value}! Revisa tu bandeja de entrada.`, {
+
+        if(validate){
+
+            const socket=io("https://auth-server-express-production.up.railway.app/");
+            e.preventDefault();
+            const response=await axios.post("/api/auth/sendEmail",{
+                email:e.target.email.value,
+                user:e.target.user.value,
+                pswd:e.target.pswd.value,
+            });
+            const {error}=response.data;
+            if(!error){
+                toast.success(`Email enviado a ${e.target.email.value}! Revisa tu bandeja de entrada.`, {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                });
+                socket.on("redirect",async({jwt})=>{
+                    const responseRegister=await axios.post("https://auth-server-express-production.up.railway.app/api/auth/register",{webToken:jwt});
+                    if(responseRegister.data.status=="User registered"){
+                        document.getElementById("Registerform").reset();
+                        toast.success(`Registro exitoso! Porfavor, inicie sesion.`, {
+                            position: "top-right",
+                            autoClose: 3000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored",
+                        });
+                    }else{
+                        toast.error('Ups! Algo fallo al intentar registrar las credenciales. Intentalo de nuevo mas tarde. ', {
+                            position: "top-right",
+                            autoClose: 3000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored",
+                        });
+                    }
+                    socket.disconnect();
+                });
+            }else{
+                toast.error('Ups! Algo fallo. Revisa que el correo electronico este bien escrito y de preferencia que sea Gmail.', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                });
+            }
+
+        }
+        else{
+
+            toast.error('Primero tienes que aceptar los terminos y condiciones', {
                 position: "top-right",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -31,45 +107,7 @@ const Registro = () => {
                 progress: undefined,
                 theme: "colored",
             });
-            socket.on("redirect",async({jwt})=>{
-                const responseRegister=await axios.post("https://auth-server-express-production.up.railway.app/api/auth/register",{webToken:jwt});
-                if(responseRegister.data.status=="User registered"){
-                    document.getElementById("Registerform").reset();
-                    toast.success(`Registro exitoso! Porfavor, inicie sesion.`, {
-                        position: "top-right",
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "colored",
-                    });
-                }else{
-                    toast.error('Ups! Algo fallo al intentar registrar las credenciales. Intentalo de nuevo mas tarde. ', {
-                        position: "top-right",
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "colored",
-                    });
-                }
-                socket.disconnect();
-            });
-        }else{
-            toast.error('Ups! Algo fallo. Revisa que el correo electronico este bien escrito y de preferencia que sea Gmail.', {
-                position: "top-right",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-            });
+
         }
     }
     const handleLogin=async(e)=>{
@@ -106,6 +144,9 @@ const Registro = () => {
             redirigir();
         }
     }
+
+
+
     return (
         <>
             <Head>
@@ -133,7 +174,7 @@ const Registro = () => {
                             <input type="text" name="user" placeholder="Usuario" required="" className={styles.input} />
                             <input type="email" name="email" placeholder="Correo" required="" className={styles.input} />
                             <input type="password" name="pswd" placeholder="Contraseña" required="" className={styles.input} />
-                            <label className={styles.ter}><input type="checkbox"/>Acepto</label>
+                            <label className={styles.ter}><input onClick={handleVerify} type="checkbox"/>Acepto</label>
                             <Link href='/Terminos'><a className={styles.ter}>Terminos y Condiciones</a></Link>
                             <button className={styles.button}>Registrarse</button>
                         </form>
