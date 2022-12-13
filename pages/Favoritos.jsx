@@ -20,7 +20,9 @@ const Favoritos = () => {
         console.log(id);
         const localStorageList = JSON.parse(window.localStorage.getItem('favs'));
         const index = localStorageList.indexOf(localStorageList.find(item=>item.lugar == id));
-        const newLocalStorageList = localStorageList.splice(index);
+        console.log(index);
+        const newLocalStorageList = localStorageList.splice(index-1,index);
+        console.log(newLocalStorageList);
         window.localStorage.setItem('favs',JSON.stringify(newLocalStorageList));
     }
     
