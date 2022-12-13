@@ -23,7 +23,7 @@ export default function ConsultarRuta(){
             setRutaInfo(data.info);
         }else{
             //no existe en el id buscado
-            window.location.location="/Mapas";
+            window.location.href="/Mapas";
         }
     }
     useEffect(()=>{
