@@ -1,5 +1,9 @@
 import React from 'react'
 import styles from '../styles/Contacto.module.scss'
+import axios from 'axios'
+
+const response = axios.post("/api/auth/getCookie");
+console.log(response)
 
 const Contacto = () => {
   return (

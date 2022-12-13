@@ -7,6 +7,9 @@ export default function ConsultarRuta(){
     const {idRuta}=router.query;
     const [idState,setIdState]=useState();
     const [userobj,setUser]=useState({});
+    const [rutaInfo,setRutaInfo]=useState({
+        rut_destino:"Esperando informacion..."
+    });
     const getUser=async()=>{
         const {data}=await axios.post("/api/auth/getCookie");
         setUser(data.token);
@@ -16,7 +19,12 @@ export default function ConsultarRuta(){
             id:idState,
             email:userobj.email
         });
-        console.log(data);
+        if(data.info){
+            setRutaInfo(data.info);
+        }else{
+            //no existe en el id buscado
+            window.location.location="/Mapas";
+        }
     }
     useEffect(()=>{
         setIdState(idRuta);
@@ -30,6 +38,7 @@ export default function ConsultarRuta(){
     return(
         <>
             <h1>hola</h1>
+            <h1>Destino: {rutaInfo.rut_destino}</h1>
         </>
     )
 }
