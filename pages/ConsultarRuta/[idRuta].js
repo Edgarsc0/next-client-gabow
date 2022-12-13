@@ -8,6 +8,7 @@ export default function ConsultarRuta(){
     const [idState,setIdState]=useState();
     const [userobj,setUser]=useState({});
     const [todoOK,setTodoOK]=useState(false);
+    const [cords,setCords]=useState([]);
     const [rutaInfo,setRutaInfo]=useState({
         rut_origen:"Esperando informacion...",
         rut_destino:"Esperando informacion...",
@@ -23,6 +24,11 @@ export default function ConsultarRuta(){
             //no hay una sesion abierta
             window.location.href="/Mapas";
         }
+    }
+    const getCords=async()=>{
+        const {data}=await axios.post("/api/services/getCords",{
+            id:idState
+        });
     }
     const validarId=async()=>{
         const {data}=await axios.post("/api/services/validateId",{
@@ -47,8 +53,8 @@ export default function ConsultarRuta(){
         if(!userobj.user){
             getUser();
         }
-        if(todoOK){
-            console.log("Obteniendo coordenadas...");
+        if(todoOK && cords.length==0){
+            getCords();
         }
     });
     return(
