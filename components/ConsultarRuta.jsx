@@ -28,7 +28,7 @@ const ConsultarRuta = ({cords}) => {
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         />
                         {cords.map((item) => (
-                            <Marker key={item[0]} position={item} icon={icon} eventHandlers={{ click: onClick }}></Marker>
+                            <Marker key={item[0]} position={item} icon={icon}></Marker>
                         ))}
                     </MapContainer>
                 </div>
