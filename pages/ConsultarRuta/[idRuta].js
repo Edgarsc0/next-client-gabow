@@ -8,7 +8,11 @@ export default function ConsultarRuta(){
     const [idState,setIdState]=useState();
     const [userobj,setUser]=useState({});
     const [rutaInfo,setRutaInfo]=useState({
-        rut_destino:"Esperando informacion..."
+        rut_origen:"Esperando informacion...",
+        rut_destino:"Esperando informacion...",
+        rfc_dia:"Esperando informacion...",
+        rfc_mes:"Esperando informacion...",
+        rfc_anno:"Esperando informacion...",
     });
     const getUser=async()=>{
         const {data}=await axios.post("/api/auth/getCookie");
@@ -44,8 +48,11 @@ export default function ConsultarRuta(){
     });
     return(
         <>
-            <h1>hola</h1>
-            <h1>Destino: {rutaInfo.rut_destino}</h1>
+            <h1>Informacion de la ruta</h1>
+            <hr></hr>
+            <h3>Origen: </h3><p>{rutaInfo.rut_origen}</p>
+            <h3>Destino: </h3><p>{rutaInfo.rut_destino}</p>
+            <h3>Ruta realizada el: </h3><p>{rutaInfo.rfc_dia}/{rutaInfo.rfc_mes}/{rutaInfo.rfc_anno}</p>
         </>
     )
 }

@@ -15,8 +15,9 @@ const Contacto = () => {
   const getSesion = async() =>{
 
     const response = await axios.post('/api/auth/getCookie');
-    setSesion(response.status);
+    setSesion(Object.values(response.status)[0]);
     console.log(sesion);
+    console.log('que pedo')
 
   }
 
@@ -44,11 +45,11 @@ const Contacto = () => {
         <form className={styles.main}>
           <section>
             <label className={styles.label}>Tu Nombre:</label>
-            <input className={styles.input} type="text" placeholder="Tu Nombre:" />
+            <input name='name' className={styles.input} type="text" placeholder="Tu Nombre:" />
             <label className={styles.label}>Tu Email:</label>
-            <input className={styles.input} type="text" placeholder="Tu Email:" />
+            <input name='email' className={styles.input} type="text" placeholder="Tu Email:" />
             <label className={styles.label}>Asunto:</label>
-            <input className={styles.input} type="text" placeholder="Asunto:" />
+            <input name='affair' className={styles.input} type="text" placeholder="Asunto:" />
             <label className={styles.label}>Mensaje:</label>
             <textarea className={styles.mes} rows='6' placeholder="Mensaje:"></textarea>
           </section>
