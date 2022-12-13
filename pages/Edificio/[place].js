@@ -117,11 +117,19 @@ const Edificio=()=>{
                             }
                         }catch(error){}
                         //window.location.href='/Ruta/${item.id}'
+                        /*
+                            document.cookies=>
+                            params=asdsaddas;favs=[salon21]
+                            [params=asdsads,favs=[salon21]]
+
+                        */ 
                         document.getElementById("button").innerHTML=`
                             <button class="button" onclick="">Iniciar Ruta a ${item.id}</button>
                             <button class="button" onclick="function addToFavs(){
-                                document.cookie += 'favs=[${item.id}]';
-                                console.log(document.cookie);
+                                document.cookie ='favs=[${item.id}]';
+                                const contenido = document.cookie.split(';')
+                                const busqueda=contenido.find(item=>item.split("=").includes("favs"));
+                                console.log(busqueda);
                             }
                             addToFavs();
                             ">Añadir a Favoritos</button>
