@@ -55,7 +55,7 @@ const Contacto = () => {
           theme: "colored",
       });
 
-      window.location.reload();
+      document.getElementById("form").reset();
 
       }
       if(statusMail == 'Bad Email sent'){
@@ -114,7 +114,7 @@ const Contacto = () => {
         theme="colored"
       />
       <div className={styles.container}>
-        <form className={styles.main} onSubmit={handleSendEmail}>
+        <form id="form" className={styles.main} onSubmit={handleSendEmail}>
           <section>
             <label className={styles.label}>Tu Nombre:</label>
             <input name='name' className={styles.input} type="text" placeholder="Tu Nombre:" />
