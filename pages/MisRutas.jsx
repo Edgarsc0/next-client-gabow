@@ -56,7 +56,7 @@ export default function MisRutas(){
                                     <td className={favstyle.celda}>{item.esg_nombre}</td>
                                     <td>
                                         <Link href={`/ConsultarRuta/${item.id_ruta}`}>
-                                            <button type="button" className={styles.button}>Consultar ruta</button>
+                                            <button type="button" className={styles.button}>Consultar ruta({item.id_ruta})</button>
                                         </Link>
                                         <Link href={`/EliminarRuta/${item.id_ruta}`}>
                                             <button type="button" className={styles.button}>
