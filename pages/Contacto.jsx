@@ -8,7 +8,11 @@ const handleSendEmail =() =>{
 
 }
 
-const [sesion,setSesion] = useState();
+
+
+const Contacto = () => {
+
+  const [sesion,setSesion] = useState();
 
 const getSesion = async() =>{
 
@@ -18,8 +22,6 @@ const getSesion = async() =>{
   console.log('que pedo')
 
 }
-
-const Contacto = () => {
 
   if(sesion == 'Token verified'){
 
