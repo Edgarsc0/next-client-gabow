@@ -4,6 +4,8 @@ import { useState } from 'react';
 import styles from '../styles/Mapas.module.scss'
 import favstyle from '../styles/Favoritos.module.scss'
 import Script from 'next/script'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link'
 export default function MisRutas(){
     const [routes,setRoutes]=useState([]);
