@@ -9,6 +9,7 @@ const myQuerys={
     insertRoute:"insert into Ruta(rut_origen,rut_destino,usu_correo,id_fecha,id_espg) values(?,?,?,?,?)",
     insertCords:"insert into Coordenadas(cor_latitud,cor_longitud,id_ruta) values(?,?,?)",
     selectRoutes:"select * from ruta_fecha_espg where usu_correo=?",
+    selectCords:"select * from Coordenadas where id_ruta=?",
 }
 
 export default myQuerys;

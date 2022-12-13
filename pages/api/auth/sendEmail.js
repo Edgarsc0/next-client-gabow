@@ -1,7 +1,6 @@
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
-import CryptoJS from "crypto-js";
 
 dotenv.config();
 
