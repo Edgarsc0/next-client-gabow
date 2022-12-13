@@ -121,6 +121,7 @@ const Edificio=()=>{
                             <button class="button" onclick="">Iniciar Ruta a ${item.id}</button>
                             <button class="button" onclick="function addToFavs(){
                                 document.cookie='favs=[${item.id}]';
+                                console.log(document.cookie);
                             }
                             addToFavs();
                             ">Añadir a Favoritos</button>
