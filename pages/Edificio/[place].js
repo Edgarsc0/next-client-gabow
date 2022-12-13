@@ -121,14 +121,21 @@ const Edificio=()=>{
                             document.cookies=>
                             params=asdsaddas;favs=[salon21]
                             [params=asdsads,favs=[salon21]]
-
+                                document.cookie ='favs=[{
+                                    place:${place},
+                                    lugar:${item.id}
+                                }]';
+                                favs=[dasdadsas]
                         */ 
                         document.getElementById("button").innerHTML=`
                             <button class="button" onclick="">Iniciar Ruta a ${item.id}</button>
                             <button class="button" onclick="function addToFavs(){
-                                document.cookie ='favs=[${item.id}]';
+                                document.cookie ='favs=[{
+                                    place:${place},
+                                    lugar:${item.id}
+                                }]';
                                 const contenido = document.cookie.split(';')
-                                const busqueda=contenido.find(item=>item.split('=').includes('favs'));
+                                const busqueda=JSON.parse(contenido.find(item=>item.split('=').includes('favs')).split('=')[1]);
                                 console.log(busqueda);
                             }
                             addToFavs();
