@@ -116,7 +116,13 @@ const Edificio=()=>{
                                 document.getElementsByClassName("resaltado")[0].removeAttribute("class");
                             }
                         }catch(error){}
-                        document.getElementById("button").innerHTML=`<button class="button" onclick="window.location.href='/Ruta/${item.id}'">Iniciar Ruta a ${item.id}</button>`
+                        //window.location.href='/Ruta/${item.id}'
+                        document.getElementById("button").innerHTML=`
+                            <button class="button" onclick="">Iniciar Ruta a ${item.id}</button>
+                            <button class="button" onclick="function(){
+                                console.log("hola");
+                            }">Añadir a Favoritos</button>
+                        `
                     }                    
                     item.onmouseover=()=>{
                         item.style.fill="aqua";
