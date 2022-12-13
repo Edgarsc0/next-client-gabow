@@ -1,11 +1,19 @@
-import React from 'react'
+import React , {useState} from 'react'
 import styles from '../styles/Contacto.module.scss'
 import axios from 'axios'
 
-const response = axios.post("/api/auth/getCookie");
-console.log(response.status)
-
 const Contacto = () => {
+
+  const [sesion,setSesion] = useState();
+
+  const getSesion = async() =>{
+
+    const response = await axios.post('/api/auth/getCookie');
+    setSesion(response.status);
+    console.log(sesion);
+
+  }
+
   return (
     <div className={styles.container}>
       <form className={styles.main}>
