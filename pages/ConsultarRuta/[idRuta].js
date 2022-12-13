@@ -27,4 +27,9 @@ export default function ConsultarRuta(){
             getUser();
         }
     });
+    return(
+        <>
+            <h1>hola</h1>
+        </>
+    )
 }
