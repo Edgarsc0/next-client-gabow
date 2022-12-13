@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-
+const MyAwesomeMap = dynamic(() => import("../components/ConsultarRuta"), { ssr:false })
 export default function ConsultarRuta(){
     const router=useRouter();
     const {idRuta}=router.query;
@@ -29,7 +29,7 @@ export default function ConsultarRuta(){
         const {data}=await axios.post("/api/services/getCords",{
             id:idState
         });
-        console.log(data);
+        setCords(data.cords);
     }
     const validarId=async()=>{
         const {data}=await axios.post("/api/services/validateId",{
@@ -67,6 +67,7 @@ export default function ConsultarRuta(){
                 <h3>Destino: </h3><p>{rutaInfo.rut_destino}</p>
                 <h3>Ruta realizada el: </h3><p>{rutaInfo.rfc_dia}/{rutaInfo.rfc_mes}/{rutaInfo.rfc_anno}</p>
             </div>
+            <MyAwesomeMap cords={cords}/>
         </>
     )
 }
