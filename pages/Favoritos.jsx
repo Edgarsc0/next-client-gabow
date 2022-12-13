@@ -18,6 +18,8 @@ const Favoritos = () => {
     }
     const removeFavorite=id=>{
         console.log(id);
+        const localStorageList = JSON.parse(window.localStorage.getItem('favs'));
+        
     }
     
     useEffect(()=>{
@@ -41,7 +43,7 @@ const Favoritos = () => {
                                     <Link href={`/Ruta/${item.lugar}`}>
                                         <button type="button" className={styles.button}>Iniciar ruta</button>
                                     </Link>
-                                    <button type="button" className={styles.button} onClick={removeFavorite(item.lugar)}>
+                                    <button type="button" className={styles.button} id={item.lugar} onClick={removeFavorite}>
                                         <lord-icon src="https://cdn.lordicon.com/kfzfxczd.json" trigger="hover" colors="primary:#ffffff" width="32px" height="32px"></lord-icon>
                                     </button>
                                 </td>
