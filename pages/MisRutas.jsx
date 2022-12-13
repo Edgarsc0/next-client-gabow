@@ -27,6 +27,20 @@ export default function MisRutas(){
         const {data}=await axios.post("/api/services/deleteRoute",{
             id:id
         });
+        if(data.status=="ok"){
+            window.location.reload();
+        }else{
+            toast.error('Ups! Algo salio mal! Error:'+data.error, {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        }
     }   
     useEffect(()=>{
         if(!userobj.user){
@@ -40,6 +54,18 @@ export default function MisRutas(){
     return(
         <>
             <Script src="https://cdn.lordicon.com/pzdvqjsp.js"></Script>
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+            />
             <div className={styles.container3}>
                 <h1>Mis Rutas: {userobj.user}</h1>
             </div>

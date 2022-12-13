@@ -10,6 +10,8 @@ const myQuerys={
     insertCords:"insert into Coordenadas(cor_latitud,cor_longitud,id_ruta) values(?,?,?)",
     selectRoutes:"select * from ruta_fecha_espg where usu_correo=?",
     selectCords:"select * from Coordenadas where id_ruta=?",
+    deleteFromCords:"delete from Coordenadas where id_ruta=?",
+    deleteFromRoute:"delete from Coordenadas where id_ruta=?"
 }
 
 export default myQuerys;
