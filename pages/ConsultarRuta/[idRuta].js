@@ -30,6 +30,7 @@ export default function ConsultarRuta(){
         }else{
             //no existe en el id buscado
             console.log("no hay data.info");
+            window.location.href="/Mapas";
         }
     }
     useEffect(()=>{
