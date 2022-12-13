@@ -135,10 +135,12 @@ const Edificio=()=>{
                                 if(busqueda){
                                     const objeto =JSON.parse(busqueda.split("=")[1]);
                                     console.log(objeto);
-                                    objeto.push({
-                                        "place":"${place}",
-                                        "lugar":"${item.id}"
-                                    });
+                                    if(!objeto.find(item=>item.lugar=="${item.id}")){
+                                        objeto.push({
+                                            "place":"${place}",
+                                            "lugar":"${item.id}"
+                                        });
+                                    }
                                     console.log(JSON.stringify(objeto));
                                     document.cookie="favs="+JSON.stringify(objeto);
                                 }else{
