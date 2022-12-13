@@ -119,7 +119,7 @@ const Edificio=()=>{
                         //window.location.href='/Ruta/${item.id}'
                         document.getElementById("button").innerHTML=`
                             <button class="button" onclick="">Iniciar Ruta a ${item.id}</button>
-                            <button class="button" onclick="function(){
+                            <button class="button" onclick="function addToFavs(){
                                 console.log("hola");
                             }">Añadir a Favoritos</button>
                         `
