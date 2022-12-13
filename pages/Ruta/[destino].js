@@ -78,22 +78,13 @@ const Ruta = () => {
                     <div>
                         <br />
                         <h2>Instrucciones</h2>
+                        <h5><i>EN DESARROLLO...</i></h5>
                         <div>Continua Derecho</div>
                         <div>Gira a la derecha</div>
                         <div>Avanza 100m</div>
                     </div>
                     <div></div>
                     <br />
-                    <h2>Descripcion</h2>
-                    <div>
-                        <div>¡Agregar una descripcion!</div>
-                        <div>
-                            <div>
-                                <label htmlFor='comment'></label>
-                                <textarea rows="5" id="comment"></textarea>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <br></br>
             </div>
