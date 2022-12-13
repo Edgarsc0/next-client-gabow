@@ -130,25 +130,9 @@ const Edificio=()=>{
                         document.getElementById("button").innerHTML=`
                             <button class="button" onclick="">Iniciar Ruta a ${item.id}</button>
                             <button class="button" onclick='function addToFavs(){
-                                const contenido = document.cookie.split(";");
-                                const busqueda=contenido.find(item=>item.split("=").includes("favs"));
-                                if(busqueda){
-                                    const objeto =JSON.parse(busqueda.split("=")[1]);
-                                    console.log(objeto);
-                                    if(!objeto.find(item=>item.lugar=="${item.id}")){
-                                        objeto.push({
-                                            "place":"${place}",
-                                            "lugar":"${item.id}"
-                                        });
-                                    }
-                                    console.log(JSON.stringify(objeto));
-                                    document.cookie="favs="+JSON.stringify(objeto);
-                                }else{
-                                    const placeValue="${place}";
-                                    const lugarValue="${item.id}";
-                                    document.cookie ="favs=[{\\"place\\":\\""+placeValue+"\\",\\"lugar\\":\\""+lugarValue+"\\"}]";
-                                }
-                                console.log(document.cookie);
+                                console.log(window.localStorage.getItem("favs"))
+                                const object=JSON.stringify([{"place":"${place}","lugar":"${item.id}"]);
+                                window.localStorage.setItem("favs",object);
 
                             }
                             addToFavs();
