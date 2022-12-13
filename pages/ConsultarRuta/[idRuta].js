@@ -48,11 +48,13 @@ export default function ConsultarRuta(){
     });
     return(
         <>
-            <h1>Informacion de la ruta</h1>
-            <hr></hr>
-            <h3>Origen: </h3><p>{rutaInfo.rut_origen}</p>
-            <h3>Destino: </h3><p>{rutaInfo.rut_destino}</p>
-            <h3>Ruta realizada el: </h3><p>{rutaInfo.rfc_dia}/{rutaInfo.rfc_mes}/{rutaInfo.rfc_anno}</p>
+            <div className="containerIni">
+                <h1>Informacion de la ruta</h1>
+                <hr></hr>
+                <h3>Origen: </h3><p>{rutaInfo.rut_origen}</p>
+                <h3>Destino: </h3><p>{rutaInfo.rut_destino}</p>
+                <h3>Ruta realizada el: </h3><p>{rutaInfo.rfc_dia}/{rutaInfo.rfc_mes}/{rutaInfo.rfc_anno}</p>
+            </div>
         </>
     )
 }
