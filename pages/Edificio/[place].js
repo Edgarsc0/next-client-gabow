@@ -134,6 +134,8 @@ const Edificio=()=>{
                                 const contenido = document.cookie.split(';')
                                 const busqueda=contenido.find(item=>item.split('=').includes('favs'));
                                 console.log(busqueda);
+                                const objeto =JSON.parse(busqueda.split('=')[1]);
+                                console.log(objeto);
                             }
                             addToFavs();
                             ">Añadir a Favoritos</button>
