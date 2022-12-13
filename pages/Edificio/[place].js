@@ -129,18 +129,19 @@ const Edificio=()=>{
                         */ 
                         document.getElementById("button").innerHTML=`
                             <button class="button" onclick="">Iniciar Ruta a ${item.id}</button>
-                            <button class="button" onclick="function addToFavs(){
-                                const placeValue=${place};
-                                const lugarValue=${item.id};
-                                document.cookie ='favs=[{place:placeValue,lugar:lugarValue}]';
-                                const contenido = document.cookie.split(';');
-                                const busqueda=contenido.find(item=>item.split('=').includes('favs'));
+                            <button class="button" onclick='function addToFavs(){
+                                const placeValue="${place}";
+                                const lugarValue="${item.id}";
+                                document.cookie ="favs=[{\\"place\\":\\""+placeValue+"\\",\\"lugar\\":\\""+lugarValue+"\\"}]";
+                                const contenido = document.cookie.split(";");
+                                const busqueda=contenido.find(item=>item.split("=").includes("favs"));
                                 console.log(busqueda);
-                                const objeto =JSON.parse(busqueda.split('=')[1]);
+                                const objeto =JSON.parse(busqueda.split("=")[1]);
                                 console.log(objeto);
+                                console.log(JSON.stringify(objeto));
                             }
                             addToFavs();
-                            ">Añadir a Favoritos</button>
+                            '>Añadir a Favoritos</button>
                         `
                     }                    
                     item.onmouseover=()=>{
