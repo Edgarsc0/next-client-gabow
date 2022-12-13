@@ -30,6 +30,7 @@ export default function ConsultarRuta(){
         const {data}=await axios.post("/api/services/getCords",{
             id:idState
         });
+        console.log(data.cords);
         setCords(data.cords);
     }
     const validarId=async()=>{

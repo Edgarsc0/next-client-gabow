@@ -128,7 +128,7 @@ const Edificio=()=>{
                                 favs=[dasdadsas]
                         */ 
                         document.getElementById("button").innerHTML=`
-                            <button class="button" onclick="">Iniciar Ruta a ${item.id}</button>
+                            <button class="button" onclick="window.location.href='/Ruta/${item.id}'">Iniciar Ruta a ${item.id}</button>
                             <button class="button" onclick='function addToFavs(){
                                 if(window.localStorage.getItem("favs")!=null){
                                     const currentItems=window.localStorage.getItem("favs");
