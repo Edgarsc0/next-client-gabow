@@ -92,8 +92,21 @@ const Contacto = () => {
   if(sesion == 'Token verified'){
 
     return (
-      <div className={styles.container}>
-        <form className={styles.main} onSubmit={handleSendEmail}>
+      <>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
+        <div className={styles.container}>
+        <form id="form" className={styles.main} onSubmit={handleSendEmail}>
           <section>
             <label className={styles.label}>Asunto:</label>
             <input name="affair" className={styles.input} type="text" placeholder="Asunto:" />
@@ -103,6 +116,8 @@ const Contacto = () => {
           <div><button className={styles.button}>Enviar</button></div>
         </form>
       </div>
+      </>
+
     )
 
   }
