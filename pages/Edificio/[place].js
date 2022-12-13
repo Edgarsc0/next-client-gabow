@@ -171,7 +171,29 @@ const Edificio=()=>{
                                 document.getElementsByClassName("resaltado")[0].removeAttribute("class");
                             }
                         }catch(error){}
-                        document.getElementById("button").innerHTML=`<button class="button" onclick="window.location.href='/Ruta/${item.id}'">Iniciar Ruta a ${item.id}</button>`;
+                        document.getElementById("button").innerHTML=`
+                            <button class="button" onclick="window.location.href='/Ruta/${item.id}'">Iniciar Ruta a ${item.id}</button>
+                            <button class="button" onclick='function addToFavs(){
+                                if(window.localStorage.getItem("favs")!=null){
+                                    const currentItems=window.localStorage.getItem("favs");
+                                    console.log(currentItems);
+                                    const arrayCurrentItems=JSON.parse(currentItems);
+                                    console.log(arrayCurrentItems.find(item=>item.lugar=="${item.id}"));
+                                    if(!arrayCurrentItems.find(item=>item.lugar=="${item.id}")){
+                                        arrayCurrentItems.push({
+                                            "place":"${place}",
+                                            "lugar":"${item.id}"
+                                        });
+                                        window.localStorage.setItem("favs",JSON.stringify(arrayCurrentItems));
+                                    }
+                                }else{
+                                    const object=JSON.stringify([{"place":"${place}","lugar":"${item.id}"}]);
+                                    window.localStorage.setItem("favs",object);
+                                }
+                            }
+                            addToFavs();
+                            '>Añadir a Favoritos</button>
+                            `;
                     }
                     item.onmouseover=()=>{
                         item.style.fill="aqua";
