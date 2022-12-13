@@ -34,6 +34,14 @@ const ConsultarRuta = ({cords}) => {
                 </div>
             </>
         )
+    }else{
+        return(
+            <>
+                <div className={styles.container}>
+                    <h1>La ruta no tiene coordenadas guardadas</h1>
+                </div>
+            </>
+        )
     }
 }
 
