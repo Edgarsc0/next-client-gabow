@@ -131,7 +131,7 @@ const Edificio=()=>{
                             <button class="button" onclick="">Iniciar Ruta a ${item.id}</button>
                             <button class="button" onclick='function addToFavs(){
                                 console.log(window.localStorage.getItem("favs"))
-                                const object=JSON.stringify([{"place":"${place}","lugar":"${item.id}"]);
+                                const object=JSON.stringify([{"place":"${place}","lugar":"${item.id}"}]);
                                 window.localStorage.setItem("favs",object);
 
                             }
