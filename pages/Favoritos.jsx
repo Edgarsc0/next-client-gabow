@@ -19,7 +19,7 @@ const Favoritos = () => {
         }
     }
     useEffect(()=>{
-        if(!favs){
+        if(favs.length==0){
             getFavs();
         }
     });
