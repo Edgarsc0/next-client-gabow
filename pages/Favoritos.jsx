@@ -19,7 +19,9 @@ const Favoritos = () => {
     const removeFavorite=id=>{
         console.log(id);
         const localStorageList = JSON.parse(window.localStorage.getItem('favs'));
-        
+        const index = localStorageList.indexOf(localStorageList.find(item=>item.lugar == id));
+        const newLocalStorageList = localStorageList.splice(index);
+        window.localStorage.setItem('favs',JSON.stringify(newLocalStorageList));
     }
     
     useEffect(()=>{
