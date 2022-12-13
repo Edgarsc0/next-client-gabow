@@ -4,17 +4,17 @@ import Animacion from '../components/Animacion'
 import Footer from '../components/Footer'
 
 function MyApp({ Component, pageProps }) {
-  if (Component.name === 'index') {
-    return <>
+  if (Component.name == 'index') {
+    return (<>
       <Component {...pageProps} />
-    </>
+    </>)
   } else {
-    return <>
+    return (<>
       <Menu />
       <Animacion />
       <Component {...pageProps} />
       <Footer />
-    </>
+    </>)
   }
 }
 
