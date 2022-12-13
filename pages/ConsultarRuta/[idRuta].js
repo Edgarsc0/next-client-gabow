@@ -12,7 +12,12 @@ export default function ConsultarRuta(){
     });
     const getUser=async()=>{
         const {data}=await axios.post("/api/auth/getCookie");
-        setUser(data.token);
+        if(data.token){
+            setUser(data.token);
+        }else{
+            //no hay una sesion abierta
+            window.location.href="/Mapas";
+        }
     }
     const validarId=async()=>{
         const {data}=await axios.post("/api/services/validateId",{

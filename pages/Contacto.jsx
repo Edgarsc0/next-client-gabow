@@ -3,7 +3,7 @@ import styles from '../styles/Contacto.module.scss'
 import axios from 'axios'
 
 const response = axios.post("/api/auth/getCookie");
-console.log(response)
+console.log(response.status)
 
 const Contacto = () => {
   return (
