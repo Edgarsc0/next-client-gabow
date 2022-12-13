@@ -121,7 +121,9 @@ const Edificio=()=>{
                             <button class="button" onclick="">Iniciar Ruta a ${item.id}</button>
                             <button class="button" onclick="function addToFavs(){
                                 console.log('hola');
-                            }">Añadir a Favoritos</button>
+                            }
+                            addToFavs();
+                            ">Añadir a Favoritos</button>
                         `
                     }                    
                     item.onmouseover=()=>{
