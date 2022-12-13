@@ -117,6 +117,7 @@ const Edificio=()=>{
                             }
                         }catch(error){}
                         document.getElementById("button").innerHTML=`<button class="button" onclick="window.location.href='/Ruta/${item.id}'">Iniciar Ruta a ${item.id}</button>`
+                        setRectSelected(item.id);
                     }                    
                     item.onmouseover=()=>{
                         item.style.fill="aqua";
@@ -138,7 +139,8 @@ const Edificio=()=>{
                                 document.getElementsByClassName("resaltado")[0].removeAttribute("class");
                             }
                         }catch(error){}
-                        document.getElementById("button").innerHTML=`<button class="button" onclick="window.location.href='/Ruta/${item.id}'">Iniciar Ruta a ${item.id}</button>`
+                        document.getElementById("button").innerHTML=`<button class="button" onclick="window.location.href='/Ruta/${item.id}'">Iniciar Ruta a ${item.id}</button>`;
+                        setRectSelected(item.id);
                     }
                     item.onmouseover=()=>{
                         item.style.fill="aqua";

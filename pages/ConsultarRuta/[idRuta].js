@@ -6,7 +6,7 @@ export default function ConsultarRuta(){
     const router=useRouter();
     const {idRuta}=router.query;
     const [idState,setIdState]=useState();
-    const [userobj,setUser]=useState({});
+    const [userobj,setUser]=useState({});   
     const [todoOK,setTodoOK]=useState(false);
     const [cords,setCords]=useState([]);
     const [rutaInfo,setRutaInfo]=useState({
