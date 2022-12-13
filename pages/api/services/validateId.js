@@ -11,7 +11,7 @@ export default function(req,res){
         }else{
             return res.json({
                 status:"ok",
-                info:result.find(item=>item.id_ruta=id),
+                info:result.find(item=>item.id_ruta==id),
             });
         }
     });

@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 
 function MyApp({ Component, pageProps }) {
   if (Component.name == 'index') {
+    console.log(Component);
     return (<>
       <Component {...pageProps} />
     </>)
