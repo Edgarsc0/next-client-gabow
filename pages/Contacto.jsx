@@ -23,6 +23,13 @@ const Contacto = () => {
 
   const handleSendEmail =async(e) =>{  
       e.preventDefault();
+      console.log({
+        //params
+        name : e.target.name.value,
+        email : e.target.email.value,
+        affair : e.target.affair.value,
+        message : e.target.message.value
+      });
       const response = await axios.post('/api/auth/sendContactNS',{
         //params
         name : e.target.name.value,
