@@ -132,7 +132,7 @@ const Edificio=()=>{
                             <button class="button" onclick="function addToFavs(){
                                 document.cookie ='favs=[{place:${place},lugar:${item.id}}]';
                                 const contenido = document.cookie.split(';')
-                                const busqueda=JSON.parse(contenido.find(item=>item.split('=').includes('favs')).split('=')[1]);
+                                const busqueda=contenido.find(item=>item.split('=').includes('favs');
                                 console.log(busqueda);
                             }
                             addToFavs();
