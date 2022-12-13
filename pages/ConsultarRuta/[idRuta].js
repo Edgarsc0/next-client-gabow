@@ -24,6 +24,7 @@ export default function ConsultarRuta(){
             id:idState,
             email:userobj.email
         });
+        console.log(data);
         if(data.info){
             setRutaInfo(data.info);
         }else{
