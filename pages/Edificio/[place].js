@@ -133,6 +133,15 @@ const Edificio=()=>{
                                 if(window.localStorage.getItem("favs")!=null){
                                     const currentItems=window.localStorage.getItem("favs");
                                     console.log(currentItems);
+                                    const arrayCurrentItems=JSON.parse(currentItems);
+                                    console.log(arrayCurrentItems.find(item=>item.lugar=="${item.id}"));
+                                    if(!arrayCurrentItems.find(item=>item.lugar=="${item.id}")){
+                                        arrayCurrentItems.push({
+                                            "place":"${place}",
+                                            "lugar":"${item.id}"
+                                        });
+                                        window.localStorage.setItem("favs",JSON.stringify(arrayCurrentItems));
+                                    }
                                 }else{
                                     const object=JSON.stringify([{"place":"${place}","lugar":"${item.id}"}]);
                                     window.localStorage.setItem("favs",object);
