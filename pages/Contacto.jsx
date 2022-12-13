@@ -2,6 +2,12 @@ import React , {useState} from 'react'
 import styles from '../styles/Contacto.module.scss'
 import axios from 'axios'
 
+const handleSendEmail =() =>{
+
+
+
+}
+
 const Contacto = () => {
 
   const [sesion,setSesion] = useState();
@@ -31,7 +37,7 @@ const Contacto = () => {
     )
 
   }
-  else{
+  if(sesion == 'Invalid token'){
 
     return (
       <div className={styles.container}>
@@ -46,7 +52,7 @@ const Contacto = () => {
             <label className={styles.label}>Mensaje:</label>
             <textarea className={styles.mes} rows='6' placeholder="Mensaje:"></textarea>
           </section>
-          <div><button className={styles.button}>Enviar</button></div>
+          <div><button onClick={handleSendEmail} className={styles.button}>Enviar</button></div>
         </form>
       </div>
     )

@@ -34,7 +34,7 @@ export default function ConsultarRuta(){
     }
     useEffect(()=>{
         setIdState(idRuta);
-        if(idState && userobj.user){
+        if(idState && userobj.user && rutaInfo.rut_destino=="Esperando informacion..."){
             validarId();
         }
         if(!userobj.user){
