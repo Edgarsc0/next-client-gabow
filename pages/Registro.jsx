@@ -31,11 +31,10 @@ const Registro = () => {
     }
 
     const handleRegister=async(e)=>{
-
+        e.preventDefault();
         if(validate){
 
             const socket=io("https://auth-server-express-production.up.railway.app/");
-            e.preventDefault();
             const response=await axios.post("/api/auth/sendEmail",{
                 email:e.target.email.value,
                 user:e.target.user.value,
