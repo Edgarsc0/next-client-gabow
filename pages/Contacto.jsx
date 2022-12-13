@@ -96,9 +96,9 @@ const Contacto = () => {
         <form className={styles.main} onSubmit={handleSendEmail}>
           <section>
             <label className={styles.label}>Asunto:</label>
-            <input className={styles.input} type="text" placeholder="Asunto:" />
+            <input name="affair" className={styles.input} type="text" placeholder="Asunto:" />
             <label className={styles.label}>Mensaje:</label>
-            <textarea className={styles.mes} rows='6' placeholder="Mensaje:"></textarea>
+            <textarea name='message' className={styles.mes} rows='6' placeholder="Mensaje:"></textarea>
           </section>
           <div><button className={styles.button}>Enviar</button></div>
         </form>
