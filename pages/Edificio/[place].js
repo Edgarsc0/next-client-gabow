@@ -130,16 +130,9 @@ const Edificio=()=>{
                         document.getElementById("button").innerHTML=`
                             <button class="button" onclick="">Iniciar Ruta a ${item.id}</button>
                             <button class="button" onclick='function addToFavs(){
-                                console.log(window.localStorage.getItem("favs"))
                                 if(window.localStorage.getItem("favs")!=null){
                                     const currentItems=window.localStorage.getItem("favs");
-                                    if(!JSON.parse(currentItems).find(item=>item.lugar == "${item.id}")){
-                                        const newObj=JSON.parse(currentItems).push({
-                                            "place":"${place}",
-                                            "lugar":"${item.id}"
-                                        });
-                                        window.localStorage.setItem("favs",JSON.stringify(newObj));
-                                    }
+                                    console.log(currentItems);
                                 }else{
                                     const object=JSON.stringify([{"place":"${place}","lugar":"${item.id}"}]);
                                     window.localStorage.setItem("favs",object);
