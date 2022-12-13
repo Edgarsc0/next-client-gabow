@@ -22,7 +22,14 @@ const Contacto = () => {
   }
 
   const handleSendEmail =async(e) =>{  
-      const response = await axios.post('/api/auth/sendContactNS',{
+    console.log({
+      //params
+      name : e.target.name.value,
+      email : e.target.email.value,
+      affair : e.target.affair.value,
+      message : e.target.message.value
+    })
+      /*const response = await axios.post('/api/auth/sendContactNS',{
         //params
         name : e.target.name.value,
         email : e.target.email.value,
@@ -63,7 +70,7 @@ const Contacto = () => {
           theme: "colored",
       });
   
-    }
+    }*/
   
   }
 
