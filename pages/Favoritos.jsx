@@ -11,6 +11,7 @@ const Favoritos = () => {
     const [favs,setFavs]=useState([]);
     const getFavs=async()=>{
         const {data}=await axios.post("/api/services/getFavs");
+        console.log(data.favs);
         if(data.status=="ok"){
             setFavs(data.favs);
         }else{
