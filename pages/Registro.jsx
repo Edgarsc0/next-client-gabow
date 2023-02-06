@@ -116,6 +116,7 @@ const Registro = () => {
             password:e.target.pswd.value,
         });
         const {status,token}=response.data;
+        console.log(status);
         if(status=="Error User not found"){
             toast.error('Ups! No pudimos encontrar el usuario ingresado. Intentalo de nuevo.', {
                 position: "top-right",
