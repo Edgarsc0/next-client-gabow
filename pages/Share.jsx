@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import dynamic from "next/dynamic"
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
-import styles from "../styles/Mapas.module.scss";
+import styles from "../styles/Mapa.module.scss";
 const MyAwesomeMap = dynamic(() => import("../components/MapaShareLocation"), { ssr:false });
 const Share=()=>{
     const [visibility,setVisibility]=useState(false);

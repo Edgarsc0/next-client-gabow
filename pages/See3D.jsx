@@ -5,7 +5,7 @@ import { Piso3D } from "../components/Piso3D";
 import Select from 'react-select'
 import * as THREE from 'three';
 import { useState } from "react";
-import styles from '../styles/Mapas.module.scss';
+import styles from '../styles/Mapa.module.scss';
 const options = [
     {
         label : 'Piso 3',

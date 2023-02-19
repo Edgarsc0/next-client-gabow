@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import styles from '../styles/Mapas.module.scss'
+import styles from '../styles/Mapa.module.scss'
 import favstyle from '../styles/Favoritos.module.scss'
 import Script from 'next/script'
 import { ToastContainer, toast } from 'react-toastify';
