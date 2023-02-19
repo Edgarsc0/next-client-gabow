@@ -51,7 +51,7 @@ const Mapa = () => {
             </Head>
 
             {/* BUSCADOR */}
-            <div className={styles.header}>
+            <div className={styles.container2}>
                 <Select className={styles.buscador}  options={data} onChange={cambiar} placeholder='Buscar'/>
                 {/* <button className={styles.button} onClick={handleSharePositionRedirect}><strong>NEW! </strong>Compratir ubicacion</button>
                 <button className={styles.button} onClick={handleViewPositionRedirect}><strong>NEW! </strong>View</button> */}
