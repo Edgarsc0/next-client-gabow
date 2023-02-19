@@ -12,12 +12,8 @@
 //   align-items: center;
 // }
 
-
 .footer {
-  // margin-top: 80vh;
-  // position: absolute;
-  // z-index: 3;
-
+  // margin-top: 30%;
   display: flex;
   flex: 1;
   padding: 2rem 0;
@@ -26,7 +22,7 @@
   align-items: center;
 
   @media only screen and (max-width: 800px) {
-    // margin-top: 80vh;
+    // margin-top: 30%;
   }
 }
 
@@ -141,14 +137,14 @@
 
 .footer {
   background: #313646;
-  padding: 15px 0px;
-  font-family: 'Montserrat Alternates', sans-serif;
+  padding: 30px 0px;
+  font-family: 'Play', sans-serif;
   text-align: center;
 }
 
 .footer .row {
   width: 100%;
-  // margin: 1% 0%;
+  margin: 1% 0%;
   padding: 0.6% 0%;
   color: gray;
   font-size: 0.8em;
@@ -166,7 +162,6 @@
 
 .footer .row ul {
   width: 100%;
-  padding-left: 0px;
 }
 
 .footer .row ul li {
@@ -183,10 +178,6 @@
   .footer {
     text-align: left;
     padding: 5%;
-    padding-bottom: 0px;
-    padding-top: 0px;
-    margin-top: 10%;
-    font-size: 0.7em;
   }
 
   .footer .row ul li {
