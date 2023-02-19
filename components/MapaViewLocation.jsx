@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import Head from 'next/head'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { Icon } from 'leaflet'
-import styles from '../styles/Mapas.module.scss'
+import styles from '../styles/Mapa.module.scss'
 import { useEffect } from 'react'
 import axios from 'axios'
 import io from "socket.io-client";
