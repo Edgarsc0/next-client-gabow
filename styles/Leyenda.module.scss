@@ -1,0 +1,40 @@
+.container{
+    vertical-align: middle;
+}
+
+.welcome{
+    width: 300px;
+}
+
+.body{
+    width: 225px;
+}
+
+.item {
+    vertical-align: middle;
+    padding-right: 50px;
+}
+
+.btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    @media(max-width:1390px){
+        right: 0px;
+    }
+
+    // position: absolute;
+    // z-index: 1;
+    // margin-top: 5px;
+    // right: 10px;
+    // background-color: transparent;
+    // border: none;
+}
+
+// .btnIn{
+//     position: absolute;
+//     z-index: 1;
+//     margin-top: 15px;
+//     right: 100px;
+// }
