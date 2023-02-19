@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet'
 import { Icon } from 'leaflet'
 import styles from '../styles/Mapas.module.scss'
 import Select from 'react-select'
@@ -38,28 +38,33 @@ const Mapa = () => {
             duration:2
         });
     }
-    const handleSharePositionRedirect=()=>{
-        window.location.href="/Share";
-    }
-    const handleViewPositionRedirect=()=>{
-        window.location.href="/See3D";
-    }
+    // const handleSharePositionRedirect=()=>{
+    //     window.location.href="/Share";
+    // }
+    // const handleViewPositionRedirect=()=>{
+    //     window.location.href="/See3D";
+    // }
     return (
         <>
             <Head>
                 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
             </Head>
+
+            {/* BUSCADOR */}
             <div className={styles.header}>
                 <Select className={styles.buscador}  options={data} onChange={cambiar} placeholder='Buscar'/>
-                <button className={styles.button} onClick={handleSharePositionRedirect}><strong>NEW! </strong>Compratir ubicacion</button>
-                <button className={styles.button} onClick={handleViewPositionRedirect}><strong>NEW! </strong>View</button>
-            </div>            
+                {/* <button className={styles.button} onClick={handleSharePositionRedirect}><strong>NEW! </strong>Compratir ubicacion</button>
+                <button className={styles.button} onClick={handleViewPositionRedirect}><strong>NEW! </strong>View</button> */}
+            </div> 
+
+            {/* MAPA */}        
             <div className={styles.container}>
-                <MapContainer ref={mapRef} center={cord} zoom={11}>
+                <MapContainer ref={mapRef} center={cord} zoom={11} zoomControl={false}>
                     <TileLayer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     />
+                    <ZoomControl position='bottomleft'/>
                     {data.map((item) => (
                         <Marker key={item.id} position={item.value} icon={icon} eventHandlers={{ click: onClick }}>
                             <Popup>
@@ -72,14 +77,14 @@ const Mapa = () => {
                     ))}
                 </MapContainer>
             </div>
-            <div className="containerIni">
+            {/* <div className="containerIni">
                 <h1>Acerca de Compartir Ubicación</h1>
                 <hr></hr>
                 <p>Podras compartir tu ubicacion con los usuarios que tu quieras ingresando sus respectivos correos.</p>
                 <h1>Acerca de View</h1>
                 <hr></hr>
                 <p>Una vista <strong>tridimencional</strong> de los edificios, por ahora solo CECyT 9.<br></br>Edificio de aulas</p>
-            </div>
+            </div> */}
         </>
     )
 }
