@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-three/drei": "^9.46.4",
+    "@vercel/analytics": "^0.1.10",
     "axios": "^1.2.0",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.3",
