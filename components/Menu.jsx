@@ -8,8 +8,6 @@ import Info from './Info'
 import Inicio from './Inicio'
 import Ley from './Ley'
 
-import Info2 from './Info2'
-
 const Menu = () => {
     // const [data,setData]=useState([]);
     // useEffect(()=>{
@@ -102,7 +100,6 @@ const Menu = () => {
 
                     {/* COMPONENTE INFO */}
                     <Info/>
-                    <Info2/>
 
                 </div>
 
