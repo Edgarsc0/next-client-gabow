@@ -102,7 +102,6 @@ const Menu = () => {
 
                     {/* COMPONENTE INFO */}
                     <Info/>
-                    <Info2/>
 
                 </div>
 

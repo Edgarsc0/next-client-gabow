@@ -7,6 +7,8 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Modal from '@mui/material/Modal'
 
+import info2 from './info2'
+
 const Ley = () => {
 
     // const [showModal, setShowModal] = useState(false)
@@ -66,6 +68,9 @@ const Ley = () => {
                         </p>
                         <hr />
                     </div>
+
+                    <info2/>
+
                 </Box>
             </Modal>
 
