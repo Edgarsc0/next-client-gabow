@@ -1,20 +1,26 @@
 import React, { useState } from 'react'
-import Modal from './Modal';
+import { IconButton, Snackbar, Modal, Box, Typography } from '@mui/material'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import styles from '../styles/Inicio.module.scss'
 
 const Inicio = () => {
 
-    const [showModal, setShowModal] = useState(false)
+    const [open, setOpen] = useState(false)
 
     return (
 
         <>
-            <button onClick={() => setShowModal(true)} className={styles.btn}>Iniciar sesion</button>
-
-            <Modal onClose={() => setShowModal(false)} show={showModal} title={"Bienvenido a GABOW"}>
-                <div>
-                    AQUI VA EL INICIO/REGISTRO
-                </div>
+            <Snackbar open anchorOrigin={{ horizontal: 'right', vertical: 'top' }} className={styles.container}>
+                <IconButton onClick={() => setOpen(true)}>
+                    <AccountCircleIcon className={styles.icon} />
+                </IconButton>
+            </Snackbar>
+            <Modal open={open} onClose={() => setOpen(false)}>
+                <Box className={styles.mo}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2" className={styles.text}>
+                        Aqui va el Inicio/Registro
+                    </Typography>
+                </Box>
             </Modal>
         </>
 

@@ -1,11 +1,3 @@
-.container {
-    vertical-align: middle;
-}
-
-.welcome {
-    width: 300px;
-}
-
 .body {
     width: 225px;
 }
@@ -23,21 +15,7 @@
     @media(max-width:1390px) {
         right: 0px;
     }
-
-    // position: absolute;
-    // z-index: 1;
-    // margin-top: 5px;
-    // right: 10px;
-    // background-color: transparent;
-    // border: none;
 }
-
-// .btnIn{
-//     position: absolute;
-//     z-index: 1;
-//     margin-top: 15px;
-//     right: 100px;
-// }
 
 .mo {
     position: absolute;
@@ -50,8 +28,16 @@
     border: 2px solid #ffffff;
     box-shadow: 24;
     padding: 32px;
+    border-radius: 15px;
 }
 
 .text {
     font-family: 'Montserrat Alternates', sans-serif;
 }
+
+.prueba{
+    width: 40px;
+    height: 40px;
+    color: rgb(0, 0, 0);
+}
+

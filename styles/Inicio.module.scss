@@ -1,13 +1,23 @@
-.btn {
-    background-color: #4eb5f1;
-    border: none;
-    border-radius: 2em;
-    font-family: 'Montserrat Alternates', sans-serif;
-    text-align: center;
-    text-decoration: none;
-    padding: 5px
+.icon{
+    color: black;
+    height: 40px;
+    width: 40px;
 }
 
-.btn:hover {
-    background-color: #4095c6;
+.container{
+    top: 0px;
+}
+
+.mo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    height: max-content;
+    background-color: rgb(64, 49, 149);
+    border: 2px solid #ffffff;
+    box-shadow: 24;
+    padding: 32px;
+    border-radius: 15px;
 }
