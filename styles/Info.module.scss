@@ -1,36 +1,36 @@
 .icon {
-    z-index: 4;
+    z-index: 4 !important;
     width: 40px !important;
     height: 40px !important;
-    margin-left: 10%;
-    margin-top: 5px;
-    color: rgb(0, 0, 0);
+    margin-left: 10% !important;
+    margin-top: 5px !important;
+    color: rgb(0, 0, 0) !important;
 
     @media(max-width:1390px) {
-        margin-left: 40%;
+        margin-left: 40% !important;
     }
 }
 
 .cont {
-    position: absolute;
-    display: grid;
+    position: absolute !important;
+    display: grid !important;
 }
 
 .logo {
-    color: black;
-    margin-top: 6px;
-    font-size: 2rem;
-    max-height: 40px;
-    z-index: 2;
+    color: black !important;
+    margin-top: 6px !important;
+    font-size: 2rem !important;
+    max-height: 40px !important;
+    z-index: 2 !important;
 
     @media(max-width:1390px) {
-        color: transparent;
-        z-index: 0;
-        font-size: 0;
+        color: transparent !important;
+        z-index: 0 !important;
+        font-size: 0 !important;
     }
 }
 
 .box {
-    text-align: center;
-    width: 250px;
+    text-align: center !important;
+    width: 250px !important;
 }
