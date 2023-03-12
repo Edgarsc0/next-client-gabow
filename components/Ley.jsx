@@ -10,7 +10,7 @@ const Ley = () => {
     return (
 
         <>
-            <Snackbar open anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}>
+            <Snackbar className={styles.container} open anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}>
                 <IconButton onClick={() => setOpen(true)}>
                     <HelpOutlineIcon className={styles.prueba}/>
                 </IconButton>
