@@ -77,6 +77,7 @@ const Inicio = () => {
                                         <Grid item xs={1}>
                                             <Typography id="modal-modal-title" variant="h6" component="h2" className={styles.text}>
                                                 Crear cuenta
+                                                <AuthGoogleButton/>
                                             </Typography>
                                         </Grid>
                                         <Grid item xs={1}>
