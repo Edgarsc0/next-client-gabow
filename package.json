@@ -9,12 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^9.46.4",
-    "@vercel/analytics": "^0.1.10",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.9",
+    "@react-three/drei": "^9.46.4",
+    "@vercel/analytics": "^0.1.10",
     "axios": "^1.2.0",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.3",
@@ -25,6 +25,7 @@
     "mysql2": "^2.3.3",
     "net": "^1.0.2",
     "next": "^12.3.1",
+    "next-auth": "^4.20.1",
     "nodemailer": "^6.8.0",
     "plotly.js-dist": "^2.16.3",
     "react": "18.2.0",
