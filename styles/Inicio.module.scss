@@ -14,13 +14,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: max-content;
+    width: 300px;
     height: max-content;
-    background-color: rgb(64, 49, 149);
+    background-color: #0d47a1;
     border: 2px solid #ffffff;
     box-shadow: 24;
     padding: 32px;
     border-radius: 15px;
+
+    text-align: center;
 }
 
 .input{
