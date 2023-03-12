@@ -2,6 +2,7 @@ import con from "../db/config";
 import myQuerys from "../db/querys";
 
 export default function(req,res){
+    console.log("hola desde getPlaces");
     con.query(myQuerys.selectPlaces,(error,result)=>{
         const data=[];
         const places=[];
@@ -23,7 +24,6 @@ export default function(req,res){
             })
 
             console.log(data);
-            //console.log(data);
 
             return res.json({
                 info:data,
