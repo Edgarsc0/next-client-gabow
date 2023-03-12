@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leafl
 import { Icon } from 'leaflet'
 import styles from '../styles/Mapa.module.scss'
 import Select from 'react-select'
+import AuthGoogleButton from './AuthGoogleButton';
 import { useEffect } from 'react'
 import axios from 'axios'
 
