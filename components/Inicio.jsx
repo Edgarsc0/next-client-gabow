@@ -87,7 +87,7 @@ const Inicio = () => {
                                                 
                                                 id="user"
                                                 name="user"
-                                                value={formik.values.user}
+                                                // value={formik.values.user}
                                                 onChange={formik.handleChange}
                                                 error={formik.touched.user && Boolean(formik.errors.user)}
                                                 helperText={formik.touched.user && <i className={styles.error}>{formik.errors.user}</i>}
@@ -117,7 +117,7 @@ const Inicio = () => {
 
                                                 id="password"
                                                 name="password"
-                                                value={formik.values.password}
+                                                // value={formik.values.password}
                                                 onChange={formik.handleChange}
                                                 error={formik.touched.password && Boolean(formik.errors.password)}
                                                 helperText={formik.touched.password && <i className={styles.error}>{formik.errors.password}</i>}
