@@ -158,6 +158,9 @@ const Inicio = () => {
                                         <Grid item xs={1}>
                                             <Button variant="contained">Iniciar sesion</Button>
                                         </Grid>
+                                        <Grid tiem xs={1}>
+                                            <AuthGoogleButton/>
+                                        </Grid>
                                     </Grid>
                                 </form>
                             }
