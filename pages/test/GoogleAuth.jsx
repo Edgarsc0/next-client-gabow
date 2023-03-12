@@ -1,7 +1,11 @@
 import AuthGoogleButton from "../../components/AuthGoogleButton";
 const GoogleAuth=()=>{
     return(
-        <AuthGoogleButton></AuthGoogleButton>
+        <>
+            <br/>
+            <br/>
+            <AuthGoogleButton></AuthGoogleButton>
+        </>
     )
 }
 export default GoogleAuth;
