@@ -37,7 +37,7 @@ const Edificio = () => {
                     <Pagination count={nDat} page={change} onChange={arrowsAcction} />
                 </div>
             </Snackbar>
-            <Link  href="https://edgarsc0.github.io/prueba-grafos/">Iniciar Ruta</Link>
+            
             <Ley content={{tipo: "edi"}}/>
         </>
     )

@@ -36,6 +36,11 @@ const Info = () => {
                         <Link href="/">Home</Link>
                     </Typography>
                 </Box>
+                <Box className={styles.box}>
+                    <Typography variant='h6' role='presentation'>
+                        <Link href="https://edgarsc0.github.io/prueba-grafos/">Iniciar Ruta</Link>
+                    </Typography>
+                </Box>
             </Drawer>
         </>
     )
