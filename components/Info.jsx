@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Drawer, Box, Typography, IconButton, Grid } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import styles from '../styles/Info.module.scss'
+import Link from 'next/link';
 
 const Info = () => {
 
@@ -26,7 +27,13 @@ const Info = () => {
             <Drawer anchor='left' open={isOpen} onClose={() => setIsOpen(false)}>
                 <Box className={styles.box}>
                     <Typography variant='h6' role='presentation'>
-                        Mensaje de prueba
+                        GABOW
+                        <hr></hr>
+                    </Typography>
+                </Box>
+                <Box className={styles.box}>
+                    <Typography variant='h6' role='presentation'>
+                        <Link href="/">Home</Link>
                     </Typography>
                 </Box>
             </Drawer>
