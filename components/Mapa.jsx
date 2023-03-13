@@ -9,10 +9,11 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import Ley from './Ley'
 
-const icon = new Icon({
-    iconUrl: '/marker.svg',
-    iconSize: [50, 50]
-})
+// const icon = new Icon({
+//     iconUrl: '/marker.svg',
+//     iconSize: [50, 50]
+// })
+
 //escuela: 19.45371285983326, -99.17530557712774
 //town center: 19.503565296138603, -99.20305358194275
 const Mapa = () => {
@@ -47,6 +48,14 @@ const Mapa = () => {
             type: "plaza"
         }
     ];
+    // ICONOS PARA LA PRESENTACION
+    function icono(type) {
+        const icon = new Icon({
+            iconUrl: '/' + type + '.svg',
+            iconSize: [50, 50]
+        })
+        return icon
+    }
 
     const cambiar = selectedOption => {
         const mapC = mapRef.current;
@@ -88,7 +97,7 @@ const Mapa = () => {
                     />
                     <ZoomControl position='bottomleft'/>
                     {data.map((item) => (
-                        <Marker key={item.id} position={item.value} icon={icon} eventHandlers={{ click: onClick }}>
+                        <Marker key={item.id} position={item.value} icon={icono(item.type)} eventHandlers={{ click: onClick }}>
                             <Popup>
                                 {item.label} <br/>
                                 {item.desc} <br/>
