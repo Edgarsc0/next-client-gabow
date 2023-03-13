@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import Carousel from '../../components/Carousel'
 import Ley from '../../components/Ley'
 import styles from '../../styles/Edificio.module.scss'
-
+import Link from "next/link";
 const Edificio = () => {
 
     const router = useRouter()
