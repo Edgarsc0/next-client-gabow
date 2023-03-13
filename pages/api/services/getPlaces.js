@@ -1,4 +1,9 @@
-import con from "../db/config";
+export default getPlaces=(req,res)=>{
+    return res.json({
+        status:"recibido"
+    });
+}
+/*import con from "../db/config";
 import myQuerys from "../db/querys";
 
 export default function (req, res) {
@@ -38,4 +43,4 @@ export default function (req, res) {
         });
     }
 
-}
+}*/
