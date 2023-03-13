@@ -20,6 +20,9 @@ const Mapa = () => {
     const [cord, setCord] = useState([19.472819274952897, -99.14333273147834])
     const [data,setData]=useState([]);
     useEffect(()=>{
+        console.log(data);
+    },[data])
+    useEffect(()=>{
         async function getData(){
             const response=await axios.post("/api/services/getPlaces");
             setData(response.data.info);
