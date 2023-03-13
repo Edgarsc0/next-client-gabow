@@ -19,17 +19,35 @@ const Mapa = () => {
     
     const mapRef = useRef();
     const [cord, setCord] = useState([19.472819274952897, -99.14333273147834])
-    const [data,setData]=useState([]);
-    useEffect(()=>{
-        console.log(data);
-    },[data])
-    useEffect(()=>{
-        async function getData(){
-            const response=await axios.post("/api/services/getPlaces");
-            setData(response.data.info);
+
+    // const [data,setData]=useState([]);
+    // useEffect(()=>{
+    //     console.log(data);
+    // },[data])
+    // useEffect(()=>{
+    //     async function getData(){
+    //         const response=await axios.post("/api/services/getPlaces");
+    //         setData(response.data.info);
+    //     }
+    //     getData();
+    // },[]);  
+
+    // DATA PARA LA PRESENTACION
+    const data = [
+        {
+            id: 1,
+            label: "CECyT 9",
+            value: [19.453541614839263, -99.1755475346185],
+            type: "escuela"
+        },
+        {
+            id: 2,
+            label: "Town Center",
+            value: [19.50353658790755, -99.20293583642929],
+            type: "plaza"
         }
-        getData();
-    },[]);  
+    ];
+
     const cambiar = selectedOption => {
         const mapC = mapRef.current;
         mapC.flyTo(selectedOption.value, 18, {
@@ -75,7 +93,8 @@ const Mapa = () => {
                                 {item.label} <br/>
                                 {item.desc} <br/>
                                 {item.direccion}<br/>
-                                <Link href={"/Edificio/"+item.label}><button type='button' className={styles.button}>Ir a</button></Link>
+                                {/* <Link href={"/Edificio/"+item.label}><button type='button' className={styles.button}>Ir a</button></Link> */}
+                                <Link href={`/Edificio/${item.id}`}><button type='button' className={styles.button}>Ir a</button></Link>
                             </Popup>
                         </Marker>
                     ))}
