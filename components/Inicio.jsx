@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { TextField, IconButton, Snackbar, Modal, Box, Typography, Button, Link, FormControl, InputLabel, OutlinedInput, InputAdornment, Grid } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import AuthGoogleButton from './AuthGoogleButton';
+
 import styles from '../styles/Inicio.module.scss'
 
 import { Visibility, VisibilityOff } from '@mui/icons-material';
@@ -159,7 +159,6 @@ const Inicio = () => {
                                             <Button variant="contained">Iniciar sesion</Button>
                                         </Grid>
                                         <Grid tiem xs={1}>
-                                            <AuthGoogleButton/>
                                         </Grid>
                                     </Grid>
                                 </form>
