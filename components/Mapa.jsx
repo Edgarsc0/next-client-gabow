@@ -7,6 +7,7 @@ import styles from '../styles/Mapa.module.scss'
 import Select from 'react-select'
 import { useEffect } from 'react'
 import axios from 'axios'
+import Ley from './Ley'
 
 const icon = new Icon({
     iconUrl: '/marker.svg',
@@ -80,6 +81,7 @@ const Mapa = () => {
                     ))}
                 </MapContainer>
             </div>
+            <Ley content={{tipo: "gen"}}/>
             {/* <div className="containerIni">
                 <h1>Acerca de Compartir Ubicación</h1>
                 <hr></hr>

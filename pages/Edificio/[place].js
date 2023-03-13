@@ -2,19 +2,20 @@ import React, { useState } from 'react'
 import { Pagination, Snackbar } from '@mui/material'
 import { useRouter } from 'next/router'
 import Carousel from '../../components/Carousel'
+import Ley from '../../components/Ley'
 import styles from '../../styles/Edificio.module.scss'
-
-const data = [
-    { label: "PB", sr: "/Espacios/Aul_PlantaBaja.svg" },
-    { label: "P1", sr: "/Espacios/Aul_Piso1.svg" },
-    { label: "P2", sr: "/Espacios/Aul_Piso2.svg" },
-    { label: "P3", sr: "/Espacios/Aul_Piso3.svg" }
-]
 
 const Edificio = () => {
 
     const router = useRouter()
     const { place } = router.query
+
+    const data = [
+        { label: "PB", sr: `/${place}/PisoPB.svg` },
+        { label: "P1", sr: `/${place}/Piso01.svg` },
+        { label: "P2", sr: `/${place}/Piso02.svg` },
+        { label: "P3", sr: `/${place}/Piso03.svg` },
+    ]
 
     const [change, setChange] = useState(1)
     const dat = data[change - 1];
@@ -36,6 +37,7 @@ const Edificio = () => {
                     <Pagination count={nDat} page={change} onChange={arrowsAcction} />
                 </div>
             </Snackbar>
+            <Ley content={{tipo: "edi"}}/>
         </>
     )
 }
