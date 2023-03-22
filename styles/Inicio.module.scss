@@ -16,8 +16,8 @@
     transform: translate(-50%, -50%);
     width: 300px;
     height: max-content;
-    background-color: #0d47a1;
-    border: 2px solid #ffffff;
+    background-color: #2a475e;
+    border: 2px solid #c7d5e0;
     box-shadow: 24;
     padding: 32px;
     border-radius: 15px;
@@ -28,15 +28,15 @@
 .input{
     width: 250px;
     label{
-        color: #ffffff !important;
+        color: #c7d5e0 !important;
     }
     input{
-        color: #ffffff !important;
+        color: #c7d5e0 !important;
     }
 }
 
 .eye{
-    color: #ffffff !important;
+    color: #c7d5e0 !important;
 }
 
 .link{
@@ -44,5 +44,5 @@
 }
 
 .error{
-    color: #ffffff;
+    color: #c7d5e0;
 }

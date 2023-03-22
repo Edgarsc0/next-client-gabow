@@ -12,7 +12,9 @@
 }
 
 .cont {
-    position: absolute !important;
+    width: max-content !important;
+    top: 0px !important;
+    z-index: 2 !important;
     display: grid !important;
 }
 

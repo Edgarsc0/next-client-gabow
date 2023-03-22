@@ -1,5 +1,4 @@
 import React from 'react'
-import { Image } from 'mui-image'
 import styles from '../styles/Carousel.module.scss'
 
 const Carousel = (props) => {
@@ -9,7 +8,7 @@ const Carousel = (props) => {
     return (
         <>
             <div className={styles.edi}>
-                <Image src={sr} showLoading fit='scale-down' />
+                <img src={sr} className={styles.edi2}/>
             </div>
         </>
     )

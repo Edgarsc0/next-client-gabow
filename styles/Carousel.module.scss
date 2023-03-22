@@ -1,9 +1,14 @@
 .edi {
     height: 100vh !important;
     z-index: 0;
+    @media(max-width:1390px) {
+        height: max-content;
+        width: max-content;
+    }
 }
 
 .edi2 {
-    height: 100vh !important;
-    z-index: 1;
+    object-fit: scale-down;
+    width: 100%;
+    height: 100%;
 }

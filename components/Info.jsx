@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Drawer, Box, Typography, IconButton, Grid } from "@mui/material"
+import { Drawer, Box, Typography, IconButton, Grid, Snackbar } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import styles from '../styles/Info.module.scss'
 import Link from 'next/link';
@@ -10,7 +10,7 @@ const Info = () => {
 
     return (
         <>
-        <div className={styles.cont}>
+        <Snackbar open anchorOrigin={{ horizontal: 'left', vertical: 'top' }} className={styles.cont}>
             <Grid container spacing={2}>
                 <Grid item>
                     <IconButton variant='contained' className={styles.icon} onClick={() => setIsOpen(true)}>
@@ -23,7 +23,7 @@ const Info = () => {
                     </div>
                 </Grid>
             </Grid>
-        </div>
+        </Snackbar>
             <Drawer anchor='left' open={isOpen} onClose={() => setIsOpen(false)}>
                 <Box className={styles.box}>
                     <Typography variant='h6' role='presentation'>
