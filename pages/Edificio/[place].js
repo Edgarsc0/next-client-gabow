@@ -11,10 +11,6 @@ const Edificio = () => {
     const { place } = router.query
 
     const data = [
-        { label: "PB", sr: `/${place}/PisoPB.svg` },
-        { label: "P1", sr: `/${place}/Piso01.svg` },
-        { label: "P2", sr: `/${place}/Piso02.svg` },
-        { label: "P3", sr: `/${place}/Piso03.svg` },
         { label: "PBv2", sr: `/${place}/PB.jpg` },
         { label: "P3v2", sr: `/${place}/P03.jpg` },
     ]
@@ -34,7 +30,7 @@ const Edificio = () => {
             </div>
 
             <Carousel content={dat} />
-            <Snackbar open anchorOrigin={{ horizontal: 'center', vertical: 'bottom' }} className={styles.sna}>
+            <Snackbar open anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }} className={styles.sna}>
                 <div className={styles.arrows}>
                     <Pagination count={nDat} page={change} onChange={arrowsAcction} siblingCount={0}/>
                 </div>

@@ -18,6 +18,9 @@
         bottom: 16px;
         left: 8px;
     }
+    @media (min-width: 600px) {
+        bottom: 18px !important;
+    }
 }
 
 .arrows {

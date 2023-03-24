@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Drawer, Box, Typography, IconButton, Grid, Snackbar } from "@mui/material"
+import { Drawer, Box, Typography, IconButton, Grid, Snackbar, useMediaQuery } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import styles from '../styles/Info.module.scss'
 import Link from 'next/link';
@@ -7,6 +7,7 @@ import Link from 'next/link';
 const Info = () => {
 
     const [isOpen, setIsOpen] = useState(false)
+    const isDesktop = useMediaQuery('(min-width:960px)');
 
     return (
         <>
@@ -24,7 +25,7 @@ const Info = () => {
                 </Grid>
             </Grid>
         </Snackbar>
-            <Drawer anchor='left' open={isOpen} onClose={() => setIsOpen(false)}>
+            <Drawer anchor={isDesktop ? 'left' : 'bottom'} open={isOpen} onClose={() => setIsOpen(false)}>
                 <Box className={styles.box}>
                     <Typography variant='h6' role='presentation'>
                         GABOW

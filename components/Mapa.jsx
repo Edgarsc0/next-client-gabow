@@ -51,7 +51,7 @@ const Mapa = () => {
     // ICONOS PARA LA PRESENTACION
     function icono(type) {
         const icon = new Icon({
-            iconUrl: '/' + type + '.svg',
+            iconUrl: '/icons/' + type + '.png',
             iconSize: [50, 50]
         })
         return icon

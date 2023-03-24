@@ -27,17 +27,17 @@ const Ley = (props) => {
                             Leyenda
                         </Typography>
                         <div className={styles.body}>
-                            <hr />
+                            <hr className={styles.di}/>
                             <p>
                                 <img src="/escuela.svg" width={50} height={50} className={styles.item} />
                                 Escuela
                             </p>
-                            <hr />
+                            <hr className={styles.di}/>
                             <p>
                                 <img src="/plaza.svg" width={50} height={50} className={styles.item} />
                                 Plaza
                             </p>
-                            <hr />
+                            <hr className={styles.di}/>
                         </div>
                     </Box>
                 </Modal>
@@ -61,42 +61,42 @@ const Ley = (props) => {
                             Leyenda
                         </Typography>
                         <div className={styles.body}>
-                            <hr />
+                            <hr className={styles.di}/>
                             <p>
                                 <img src="/sen/extintor.png" width={25} height={25} className={styles.item2} />
                                 Extintor
                             </p>
-                            <hr />
+                            <hr className={styles.di}/>
                             <p>
                                 <img src="/sen/punto.png" width={25} height={25} className={styles.item2} />
                                 Punto de encuentro
                             </p>
-                            <hr />
+                            <hr className={styles.di}/>
                             <p>
                                 <img src="/sen/salida.png" width={25} height={25} className={styles.item2} />
                                 Salida de emergencia
                             </p>
-                            <hr />
+                            <hr className={styles.di}/>
                             <p>
                                 <img src="/sen/elevar.png" width={25} height={25} className={styles.item2} />
                                 Elevador
                             </p>
-                            <hr />
+                            <hr className={styles.di}/>
                             <p>
                                 <img src="/sen/public.png" width={25} height={25} className={styles.item2} />
                                 Baños
                             </p>
-                            <hr />
+                            <hr className={styles.di}/>
                             <p>
                                 <img src="/sen/escaleraUp.png" width={25} height={25} className={styles.item2} />
                                 Escaleras (Subida)
                             </p>
-                            <hr />
+                            <hr className={styles.di}/>
                             <p>
                                 <img src="/sen/escaleraDo.png" width={25} height={25} className={styles.item2} />
                                 Escaleras (Bajada)
                             </p>
-                            <hr />
+                            <hr className={styles.di}/>
                         </div>
                     </Box>
                 </Modal>
