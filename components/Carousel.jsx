@@ -7,11 +7,16 @@ const Carousel = ({ sr, sv, place }) => {
     const [openInfo, setOpenInfo] = useState(false);
     const [room, setRoom] = useState("");
     const [svgCode, setSvgCode] = useState('');
-    useEffect(() => {
-        fetch(`/${place}/${sv}.svg`)
+
+    fetch(`/${place}/${sv}.svg`)
             .then(response => response.text())
             .then(data => setSvgCode(data));
-    }, [sv]);
+            
+    // useEffect(() => {
+    //     fetch(`/${place}/${sv}.svg`)
+    //         .then(response => response.text())
+    //         .then(data => setSvgCode(data));
+    // }, [sv]);
 
     const closeInfo = () => {
         setOpenInfo(false);
