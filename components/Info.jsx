@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Drawer, Box, Typography, IconButton, Grid, Snackbar, useMediaQuery } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import styles from '../styles/Info.module.scss'

@@ -8,15 +8,11 @@ const Carousel = ({ sr, sv, place }) => {
     const [room, setRoom] = useState("");
     const [svgCode, setSvgCode] = useState('');
 
-    fetch(`/${place}/${sv}.svg`)
+    useEffect(() => {
+        fetch(`/${place}/${sv}.svg`)
             .then(response => response.text())
             .then(data => setSvgCode(data));
-            
-    // useEffect(() => {
-    //     fetch(`/${place}/${sv}.svg`)
-    //         .then(response => response.text())
-    //         .then(data => setSvgCode(data));
-    // }, [sv]);
+    }, [sv]);
 
     const closeInfo = () => {
         setOpenInfo(false);
