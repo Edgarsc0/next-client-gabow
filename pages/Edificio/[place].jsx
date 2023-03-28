@@ -32,7 +32,7 @@ const Edificio = () => {
 
     return (
         <>
-            <Carousel sr={dat.sr} sv={datSvg} place={place} />
+            <Carousel sr={dat.sr} sv={datSvg} place={1} />
 
             <Snackbar open anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }} className={styles.sna}>
                 <div className={styles.arrows}>
