@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Pagination, Snackbar } from '@mui/material'
 import { useRouter } from 'next/router'
 import Carousel from '../../components/Carousel'
@@ -6,11 +6,15 @@ import Ley from '../../components/Ley'
 import styles from '../../styles/Edificio.module.scss'
 
 const Edificio = () => {
-
+    
+    const [change, setChange] = useState(1)
+    
     const router = useRouter()
+
     if (!router.isReady) {
         return <div>Cargando...</div>;
     }
+
     const { place } = router.query
 
     const data = [
@@ -18,7 +22,6 @@ const Edificio = () => {
         { label: "P3v2", sr: `/${place}/P03.jpg` },
     ]
 
-    const [change, setChange] = useState(1)
     const dat = data[change - 1];
     const datSvg = change - 1;
     const nDat = data.length;
