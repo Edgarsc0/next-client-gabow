@@ -11,7 +11,7 @@ const Carousel = ({ sr, sv, place }) => {
         fetch(`/${place}/${sv}.svg`)
             .then(response => response.text())
             .then(data => setSvgCode(data));
-    }, []);
+    }, [sv]);
 
     const closeInfo = () => {
         setOpenInfo(false);
