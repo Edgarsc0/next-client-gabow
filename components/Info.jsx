@@ -4,10 +4,19 @@ import MenuIcon from '@mui/icons-material/Menu';
 import styles from '../styles/Info.module.scss'
 import Link from 'next/link';
 
-const Info = () => {
+const Info = ({ openInfo, closeInfo, room }) => {
 
     const [isOpen, setIsOpen] = useState(false)
     const isDesktop = useMediaQuery('(min-width:960px)');
+
+    useEffect(() => {
+        setIsOpen(openInfo);
+    }, [openInfo]);
+
+    const closeAll = () => {
+        closeInfo();
+        setIsOpen(false);
+    }
 
     return (
         <>
@@ -25,10 +34,10 @@ const Info = () => {
                 </Grid>
             </Grid>
         </Snackbar>
-            <Drawer anchor={isDesktop ? 'left' : 'bottom'} open={isOpen} onClose={() => setIsOpen(false)}>
+            <Drawer anchor={isDesktop ? 'left' : 'bottom'} open={isOpen} onClose={closeAll}>
                 <Box className={styles.box}>
                     <Typography variant='h6' role='presentation'>
-                        GABOW
+                        GABOW cuarto: {room}
                         <hr></hr>
                     </Typography>
                 </Box>

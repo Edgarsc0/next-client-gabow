@@ -1,5 +1,5 @@
 .edi {
-    height: 100vh !important;
+    height: 100vh;
     overflow-x: scroll;
     z-index: 0;
 }
@@ -7,8 +7,25 @@
 .edi2 {
     width: 100%;
     height: auto;
+    position: absolute;
+    z-index: 0;
+
     @media(max-width:1060px) {
         width: auto;
         height: 100%;
+        position: fixed;
+    }
+}
+
+.edi3 {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    
+    @media(max-width:1060px) {
+        width: auto;
+        height: 100%;
+        position: fixed;
     }
 }

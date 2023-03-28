@@ -5,7 +5,7 @@ import Inicio from './Inicio'
 const Menu = () => {
     return (
         <>
-            <Info />
+            {/* <Info /> */}
             <Inicio/>
         </>
     )

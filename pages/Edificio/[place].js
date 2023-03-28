@@ -4,10 +4,13 @@ import { useRouter } from 'next/router'
 import Carousel from '../../components/Carousel'
 import Ley from '../../components/Ley'
 import styles from '../../styles/Edificio.module.scss'
-import Link from "next/link";
+
 const Edificio = () => {
 
     const router = useRouter()
+    if (!router.isReady) {
+        return <div>Cargando...</div>;
+    }
     const { place } = router.query
 
     const data = [
@@ -17,6 +20,7 @@ const Edificio = () => {
 
     const [change, setChange] = useState(1)
     const dat = data[change - 1];
+    const datSvg = change - 1;
     const nDat = data.length;
 
     const arrowsAcction = (event, value) => {
@@ -25,18 +29,15 @@ const Edificio = () => {
 
     return (
         <>
-            <div className={styles.container}>
-                {place}
-            </div>
+            <Carousel sr={dat.sr} sv={datSvg} place={place} />
 
-            <Carousel content={dat} />
             <Snackbar open anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }} className={styles.sna}>
                 <div className={styles.arrows}>
-                    <Pagination count={nDat} page={change} onChange={arrowsAcction} siblingCount={0}/>
+                    <Pagination count={nDat} page={change} onChange={arrowsAcction} siblingCount={0} />
                 </div>
             </Snackbar>
-            
-            <Ley content={{tipo: "edi"}}/>
+
+            <Ley content={{ tipo: "edi" }} />
         </>
     )
 }

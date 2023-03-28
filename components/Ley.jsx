@@ -29,12 +29,12 @@ const Ley = (props) => {
                         <div className={styles.body}>
                             <hr className={styles.di}/>
                             <p>
-                                <img src="/escuela.svg" width={50} height={50} className={styles.item} />
+                                <img src="/icons/escuela.png" width={50} height={50} className={styles.item} />
                                 Escuela
                             </p>
                             <hr className={styles.di}/>
                             <p>
-                                <img src="/plaza.svg" width={50} height={50} className={styles.item} />
+                                <img src="/icons/plaza.png" width={50} height={50} className={styles.item} />
                                 Plaza
                             </p>
                             <hr className={styles.di}/>
