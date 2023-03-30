@@ -48,7 +48,7 @@ const Contacto = () => {
       //setStatus(respone.data.status);
       setStatusMail(response.data.status);
       console.log(statusMail);
-      if(statusMail = 'Message sent'){
+      if(statusMail == 'Message sent'){
 
         toast.success(`Se envio correctamente el correo, gracias`, {
           position: "top-right",
