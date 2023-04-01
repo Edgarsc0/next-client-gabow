@@ -2,6 +2,8 @@
     height: 100vh;
     overflow-x: scroll;
     z-index: 0;
+    position: sticky;
+    top: 0px;
 }
 
 .edi2 {
@@ -13,7 +15,6 @@
     @media(max-width:1060px) {
         width: auto;
         height: 100%;
-        position: fixed;
     }
 }
 
@@ -26,6 +27,5 @@
     @media(max-width:1060px) {
         width: auto;
         height: 100%;
-        position: fixed;
     }
 }
