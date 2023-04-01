@@ -37,7 +37,7 @@ const Carousel = ({ sr, sv, place }) => {
         <>
             <div className={styles.edi} >
                 <img src={sr} className={styles.edi2} />
-                <div dangerouslySetInnerHTML={{ __html: svgCode }} className={styles.edi3} onClick={handleClick} />
+                {/* <div dangerouslySetInnerHTML={{ __html: svgCode }} className={styles.edi3} onClick={handleClick} /> */}
             </div>
 
             <Info openInfo={openInfo} closeInfo={closeInfo} room={room}/>
