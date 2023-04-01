@@ -9,6 +9,7 @@
     height: auto;
     position: absolute;
     z-index: 0;
+    overflow-x: scroll;
 
     @media(max-width:1060px) {
         width: auto;
@@ -22,6 +23,7 @@
     height: auto;
     position: absolute;
     z-index: 1;
+    overflow-x: scroll;
     
     @media(max-width:1060px) {
         width: auto;
