@@ -62,7 +62,8 @@ const Mapa = () => {
         console.log(mapC.e);
         console.log(mapC);
         console.log(mapC.options.onClick);
-        mapC.options.onClick(e);
+        const handler=mapC.options.onClick;
+        handler();
         mapC.flyTo(selectedOption.value, 18, {
             duration: 2
         });
