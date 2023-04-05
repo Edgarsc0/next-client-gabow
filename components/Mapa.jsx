@@ -59,7 +59,8 @@ const Mapa = () => {
     
     const cambiar = selectedOption => {
         const mapC = mapRef.current;
-        
+        console.log(mapC.e);
+        console.log(mapC);
         mapC.flyTo(selectedOption.value, 18, {
             duration: 2
         });
