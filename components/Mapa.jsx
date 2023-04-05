@@ -56,10 +56,9 @@ const Mapa = () => {
         })
         return icon
     }
-
+    mapRef.options.onClick();
     const cambiar = selectedOption => {
         const mapC = mapRef.current;
-        console.log(mapC);
         mapC.flyTo(selectedOption.value, 18, {
             duration: 2
         });
