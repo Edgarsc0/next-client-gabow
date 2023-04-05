@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet'
-import { Icon } from 'leaflet'
+import { Icon, map } from 'leaflet'
 import styles from '../styles/Mapa.module.scss'
 import Select from 'react-select'
 import { useEffect } from 'react'
@@ -59,6 +59,7 @@ const Mapa = () => {
 
     const cambiar = selectedOption => {
         const mapC = mapRef.current;
+        console.log(mapC);
         mapC.flyTo(selectedOption.value, 18, {
             duration: 2
         });
