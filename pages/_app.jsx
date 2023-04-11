@@ -1,5 +1,5 @@
 import '../styles/globals.scss'
-import Menu from '../components/Menu'
+// import Menu from '../components/Menu'
 // import Animacion from '../components/Animacion'
 // import Footer from '../components/Footer'
 
@@ -7,7 +7,7 @@ import Menu from '../components/Menu'
 function App({ Component, pageProps }) {
   return (
     <>
-      <Menu />
+      {/* <Menu /> */}
       <Component {...pageProps} />
 
     </>
